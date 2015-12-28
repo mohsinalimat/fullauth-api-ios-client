@@ -38,3 +38,31 @@ public enum OAuthError : ErrorType,CustomStringConvertible {
         }
     }
 }
+
+
+public enum OAuthErrorCode : String{
+    
+    case INVALID_CREDENTIALS = "invalid_credentials"
+
+    case INVALID_REQUEST = "invalid_request"
+    
+    case INVALID_CLIENT = "invalid_client"
+    
+    case INVALID_CODE = "invalid_code"
+    
+    case INVALID_SCOPE = "invalid_scope"
+    
+    case INTERNAL_SERVER_ERROR = "internal_server_error"
+    
+    case INVALID_GRANT = "invalid_grant"
+    
+    case INVALID_TOKEN = "invalid_token"
+    
+    case REQUEST_FAILED = "request_failed"
+    
+    case INVALID_DOMAIN = "invalid_domain"
+    
+    case UNAUTHORIZED_CLIENT = "unauthorized_client"
+    
+    case INVALID_SUBJECT = "invalid_subject"
+}

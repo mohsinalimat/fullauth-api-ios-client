@@ -17,7 +17,7 @@ public class FullAuthOAuthService {
     public typealias ApiResponseHandler = (success : Bool, httpRequest : NSURLRequest?, httpResponse :  NSHTTPURLResponse?, responseJson : [String : AnyObject?]?, error : NSError?) -> Void
     
     
-    public typealias TokenInfoHandler = (error : OAuthError?, responce : OAuthAccessToken?) -> Void
+    public typealias TokenInfoHandler = (error : NSError?,errorResponse : OAuthTokenErrorResponse?,accessToken : OAuthAccessToken?) -> Void
     
     
     public init(authDomain : String,clientId :String? = nil,clientSecret : String? = nil){
@@ -50,7 +50,7 @@ public class FullAuthOAuthService {
     
     
     //MARK: REFRESH ACCESS TOKEN
-    public func refreshAccessToken(refreshToken refreshToken : String,expiryType : OauthExpiryType? = nil, handler : TokenInfoHandler?) throws{
+    public func refreshAccessToken(refreshToken  : String,expiryType : OauthExpiryType? = nil, handler : TokenInfoHandler?) throws{
         
         try self.validateOauthDomain()
         
@@ -181,7 +181,7 @@ public class FullAuthOAuthService {
         }
     }
     
-    public func fetchAccessTokenInfo(authDomain : String,accessToken:String,handler : TokenInfoHandler?){
+    internal func fetchAccessTokenInfo(authDomain : String,accessToken:String,handler : TokenInfoHandler?){
         
         let URL = NSURL(string: Constants.OAuth.getTokenUrl(authDomain))
             
@@ -226,7 +226,8 @@ public class FullAuthOAuthService {
             
             if success {
                 
-                handler!(error : nil ,responce : OAuthAccessToken(data: respJson!))
+                handler!(error : nil,errorResponse: nil, accessToken : OAuthAccessToken(data: respJson!))
+                
                 return
             }
             
@@ -237,7 +238,8 @@ public class FullAuthOAuthService {
                 errorResp = OAuthTokenErrorResponse(data: respJson!)
             }
             
-            handler!(error : OAuthError.ResponseError(error: error, errorResponce: errorResp) ,responce : nil)
+            
+            handler!(error: error, errorResponse: errorResp, accessToken: nil)
         }
     }
 }

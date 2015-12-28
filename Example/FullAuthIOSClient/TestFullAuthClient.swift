@@ -76,12 +76,15 @@ class TestFullAuthClient: UIViewController {
         let obj = FullAuthOAuthService(authDomain: OAuthParamHelper.AuthDomain, clientId: OAuthParamHelper.ClientId, clientSecret: OAuthParamHelper.ClientSecret)
         
         do{
-            try obj.requestAccessTokenForResourceCredentials("karthik.samy@a-cti.com", password: "password", scope: OAuthParamHelper.Scope, handler: { (error, responce) -> Void in
-                
+            
+            try obj.requestAccessTokenForResourceCredentials("UserName", password: "UserPassword", scope: OAuthParamHelper.Scope, handler: { (error, responce) -> Void in
                 
                 if error != nil {
                     
                     let err : OAuthError = error!
+                    
+                    err._code
+
                     
                     print("Error --\(err.description)")
                     
