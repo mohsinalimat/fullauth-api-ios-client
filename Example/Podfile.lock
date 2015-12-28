@@ -1,0 +1,18 @@
+PODS:
+  - Alamofire (3.1.4)
+  - FullAuthIOSClient (0.1.0):
+    - Alamofire (~> 3.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.0)
+  - FullAuthIOSClient (from `../`)
+
+EXTERNAL SOURCES:
+  FullAuthIOSClient:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: fbc829692f351fa1d8a31dd75fd7f7f56fea31fb
+  FullAuthIOSClient: b95c50c9dac3ed7233b3522b389d3ff9230be2b8
+
+COCOAPODS: 0.39.0
