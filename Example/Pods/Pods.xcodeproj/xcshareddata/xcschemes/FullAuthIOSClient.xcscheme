@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '4977641632BBCC63F7EBB95D'
+               BlueprintIdentifier = '20D809D58F952DE6DD18ED07'
                BlueprintName = 'FullAuthIOSClient'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'FullAuthIOSClient.framework'>

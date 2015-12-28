@@ -33,8 +33,6 @@ class TestFullAuthClient: UIViewController {
         super.viewDidLoad()
         
         self.requestTokenInfo()
-
-        self.userNameAndPasswordFetch()
     }
 
 
@@ -46,16 +44,27 @@ class TestFullAuthClient: UIViewController {
     
         do{
 
-            try oauthObj.getTokenInfo(OAuthParamHelper.AccessToken, handler: { (error, responce) -> Void in
-                
+            try oauthObj.getTokenInfo("", handler: { (error, errorResponse, accessToken) -> Void in
+            
                 if error != nil{
                     
-                    print("Error ---\(error)")
+                    print("Error ---\(error!)")
                 }
                 
-                if responce != nil{
+                if errorResponse != nil{
                     
-                    print("Response -- \(responce)")
+                    print("Error Response --\(errorResponse!)")
+                    
+                    let errResp  = errorResponse
+                    
+                    print("error_dese --\(errResp?.errorDesc)")
+                }
+                
+                if accessToken != nil{
+                    
+                    print("Response -- \(accessToken!)")
+                    
+                    print("AccessToken -- \(accessToken?.accessToken)")
                 }
                 
             })
@@ -67,48 +76,5 @@ class TestFullAuthClient: UIViewController {
             print("Error -- \(err?.description)")
         }
     }
-    
-    
-    //MARK: RESOURCD OWNER CREDENTIALS 
-    
-    func userNameAndPasswordFetch(){
-        
-        let obj = FullAuthOAuthService(authDomain: OAuthParamHelper.AuthDomain, clientId: OAuthParamHelper.ClientId, clientSecret: OAuthParamHelper.ClientSecret)
-        
-        do{
-            
-            try obj.requestAccessTokenForResourceCredentials("UserName", password: "UserPassword", scope: OAuthParamHelper.Scope, handler: { (error, responce) -> Void in
-                
-                if error != nil {
-                    
-                    let err : OAuthError = error!
-                    
-                    err._code
-
-                    
-                    print("Error --\(err.description)")
-                    
-                }
-                
-                if responce != nil {
-                    
-                    print("\n Response --\(responce!) \n")
-                    
-                    let temp : OAuthAccessToken = responce!
-                    
-                    print("\n Access Token --\(temp.accessToken) \n")
-                }
-                
-            })
-            
-        }catch let err {
-            
-            let error = err as? OAuthError
-            
-            print("catched err --\(error?.description)")
-            
-        }
-    }
-
 }
 
