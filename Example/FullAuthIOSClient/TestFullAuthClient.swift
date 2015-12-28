@@ -13,15 +13,16 @@ import FullAuthIOSClient
 
 struct OAuthParamHelper {
     
-    static let AuthDomain = "set your sub domain"
     
-    static let ClientId = "your client id"
+    static let AuthDomain = "subdomain"
     
-    static let ClientSecret = "your client secret"
+    static let ClientId = "yourClientId"
     
-    static let Scope = [""]
+    static let ClientSecret = "yourClientSecret"
     
-    static let AccessToken = "set your access token"
+    static let Scope = ["yourScopes"]
+    
+    static let AccessToken = "yourAccessToken"
     
 }
 
@@ -33,6 +34,7 @@ class TestFullAuthClient: UIViewController {
         
         self.requestTokenInfo()
 
+        self.userNameAndPasswordFetch()
     }
 
 
@@ -46,7 +48,16 @@ class TestFullAuthClient: UIViewController {
 
             try oauthObj.getTokenInfo(OAuthParamHelper.AccessToken, handler: { (error, responce) -> Void in
                 
-                print("Response -- \(responce)")
+                if error != nil{
+                    
+                    print("Error ---\(error)")
+                }
+                
+                if responce != nil{
+                    
+                    print("Response -- \(responce)")
+                }
+                
             })
             
         }catch let error {
@@ -54,6 +65,45 @@ class TestFullAuthClient: UIViewController {
             let err = error as? OAuthError
             
             print("Error -- \(err?.description)")
+        }
+    }
+    
+    
+    //MARK: RESOURCD OWNER CREDENTIALS 
+    
+    func userNameAndPasswordFetch(){
+        
+        let obj = FullAuthOAuthService(authDomain: OAuthParamHelper.AuthDomain, clientId: OAuthParamHelper.ClientId, clientSecret: OAuthParamHelper.ClientSecret)
+        
+        do{
+            try obj.requestAccessTokenForResourceCredentials("karthik.samy@a-cti.com", password: "password", scope: OAuthParamHelper.Scope, handler: { (error, responce) -> Void in
+                
+                
+                if error != nil {
+                    
+                    let err : OAuthError = error!
+                    
+                    print("Error --\(err.description)")
+                    
+                }
+                
+                if responce != nil {
+                    
+                    print("\n Response --\(responce!) \n")
+                    
+                    let temp : OAuthAccessToken = responce!
+                    
+                    print("\n Access Token --\(temp.accessToken) \n")
+                }
+                
+            })
+            
+        }catch let err {
+            
+            let error = err as? OAuthError
+            
+            print("catched err --\(error?.description)")
+            
         }
     }
 

@@ -1,0 +1,6 @@
+framework module Pods_FullAuthIOSClient_Example {
+  umbrella header "Pods-FullAuthIOSClient_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

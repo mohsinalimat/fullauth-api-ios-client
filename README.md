@@ -22,7 +22,7 @@ pod "FullAuthIOSClient"
 
 ## Author
 
-karthik-dev, mkkarthiik@gmail.com
+karthik-dev,karthik.samy@a-cti.com
 
 ## License
 

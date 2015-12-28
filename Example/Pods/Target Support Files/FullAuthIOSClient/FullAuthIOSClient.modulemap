@@ -1,0 +1,6 @@
+framework module FullAuthIOSClient {
+  umbrella header "FullAuthIOSClient-umbrella.h"
+
+  export *
+  module * { export * }
+}
