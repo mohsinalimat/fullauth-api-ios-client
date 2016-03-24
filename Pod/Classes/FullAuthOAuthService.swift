@@ -37,32 +37,26 @@ public class FullAuthOAuthService {
     //MARK: GET TOKEN INFO
     public func getTokenInfo(accessToken : String, handler : TokenInfoHandler?) throws{
         
-        try self.validateOauthDomain()
+        try validateOauthDomain()
         
-        guard !accessToken.isEmpty else{
-            
-            throw OAuthError.IllegalParameter("invalid access token")
-        }
+        try validateAccessToken(accesstoken: accessToken, tokenType: .DEFAULT)
         
-        self.fetchAccessTokenInfo(authDomain, accessToken: accessToken, handler: handler)
+        fetchAccessTokenInfo(authDomain, accessToken: accessToken, handler: handler)
     }
-    
     
     
     //MARK: REFRESH ACCESS TOKEN
     public func refreshAccessToken(refreshToken  : String,expiryType : OauthExpiryType? = nil, handler : TokenInfoHandler?) throws{
         
-        try self.validateOauthDomain()
+        try validateOauthDomain()
         
-        try self.validateOauthClient()
-        
-        guard !refreshToken.isEmpty else{
-            throw OAuthError.IllegalParameter("invalid refresh token")
-        }
+        try validateOauthClient()
+            
+        try validateAccessToken(accesstoken: refreshToken, tokenType: .REFRESH)
         
         let request = RefreshTokenRequest(authDomain: self.authDomain, clientId: self.clientId!, clientSecret: self.clientSecret!, refreshToken: refreshToken, expiryType: expiryType)
         
-        self.makeTokenRequest(request, handler: handler)
+        makeTokenRequest(request, handler: handler)
     }
     
     //MARK:REQUEST ACCESS FOR USERNAME AND PASSWORD
@@ -84,22 +78,20 @@ public class FullAuthOAuthService {
         
         let request = ResourceOwnerTokenRequest(authDomain: authDomain, clientId: self.clientId!, clientSecret: self.clientSecret!, scope: scope, userName: userName, password: password, accessType: accessType)
         
-        self.makeTokenRequest(request, handler: handler)
+        makeTokenRequest(request, handler: handler)
     }
     
     
     //MARK:REQUEST ACCESS FOR GOOGLE TOKEN
     public func requestAccessTokenForGoogleToken(googleAccessToken googleAccessToken : String, scope : [String],accessType : OauthAccessType? = nil, handler : TokenInfoHandler?) throws{
         
-        try self.validateOauthDomain()
+        try validateOauthDomain()
         
-        try self.validateOauthClient()
+        try validateOauthClient()
         
-        guard !googleAccessToken.isEmpty else{
-            throw OAuthError.IllegalParameter("invalid google access token")
-        }
+        try validateAccessToken(accesstoken: googleAccessToken, tokenType: .GOOGLE)
         
-        try self.validateScope(scope)
+        try validateScope(scope)
         
         let request =  GoogleTokenRequest(authDomain: self.authDomain, clientId: self.clientId!, clientSecret: self.clientSecret!, scope: scope, googleToken: googleAccessToken, accessType: accessType)
         
@@ -109,24 +101,39 @@ public class FullAuthOAuthService {
     //MARK:REQUEST ACCESS FOR FACEBOOK TOKEN
     public func requestAccessTokenForFacebookToken(facebookAccessToken facebookAccessToken : String, scope : [String],accessType : OauthAccessType? = nil, handler : TokenInfoHandler?) throws{
         
-        try self.validateOauthDomain()
+        try validateOauthDomain()
         
-        guard !facebookAccessToken.isEmpty else{
-            
-            throw OAuthError.IllegalParameter("invalid facebook access token")
-        }
+        try validateAccessToken(accesstoken: facebookAccessToken, tokenType: .FACEBOOK)
         
-        try self.validateOauthClient()
+        try validateOauthClient()
         
-        try self.validateScope(scope)
+        try validateScope(scope)
         
         let request = FacebookTokenRequest(authDomain: self.authDomain, clientId: self.clientId!, clientSecret: self.clientSecret!, scope: scope, facebookToken: facebookAccessToken, accessType: accessType)
         
-        self.makeTokenRequest(request, handler: handler)
+        makeTokenRequest(request, handler: handler)
+    }
+    
+    
+    //MARK:REVOKE ACCESS TOKEN
+    public func revokeAccessToken(accessToken accessToken: String, handler: TokenInfoHandler?) throws{
+        
+        try validateOauthDomain()
+        
+        try validateAccessToken(accesstoken: accessToken, tokenType: .DEFAULT)
+        
+        revokeAccessToken(authDomain, accessToken: accessToken, handler: handler)
     }
     
     
     //MARK: VALIDATION UTILS
+    func validateAccessToken(accesstoken accesstoken: String, tokenType: AccessTokenType) throws {
+        
+        guard !accesstoken.isEmpty else{
+            throw OAuthError.IllegalParameter("invalid \(AccessTokenType.getAccessTokenString(tokenType))")
+        }
+    }
+    
     func validateOauthClient() throws{
         
         guard !Utils.isNilOrEmptyStr(clientId) else{
@@ -194,6 +201,26 @@ public class FullAuthOAuthService {
         let urlRequest =  ParameterEncoding.URL.encode(mutableURLRequest, parameters: param).0
         
         makeRequest(urlRequest) { (success, httpRequest, httpResponse, responseJson, error) -> Void in
+            
+            self.handleTokenResponse(success, respJson: responseJson, error: error, handler: handler)
+        }
+    }
+    
+    
+    internal func revokeAccessToken(authDomain: String, accessToken: String,handler: TokenInfoHandler?){
+        
+    
+        let URL = NSURL(string: Constants.OAuth.getRevokeTokenUrl(authDomain: authDomain))
+
+        let mutableRequest = NSMutableURLRequest(URL: URL!)
+        mutableRequest.HTTPMethod = Alamofire.Method.POST.rawValue
+        mutableRequest.timeoutInterval = timeOutInterval
+        
+        let param = ["token": accessToken]
+        
+        let urlRequest = ParameterEncoding.URL.encode(mutableRequest, parameters: param).0
+        
+        makeRequest(urlRequest) { (success, httpRequest, httpResponse, responseJson, error) in
             
             self.handleTokenResponse(success, respJson: responseJson, error: error, handler: handler)
         }

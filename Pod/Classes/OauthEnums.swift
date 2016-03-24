@@ -60,3 +60,33 @@ public enum OauthGrantType : String {
     case FACEBOOK_TOKEN = "facebook_token"
 }
 
+public enum AccessTokenType: String {
+    
+    case REFRESH = "refresh"
+    
+    case GOOGLE = "google"
+    
+    case FACEBOOK = "facebook"
+    
+    case DEFAULT = "access token"
+    
+    
+    static func getAccessTokenString(type: AccessTokenType) -> String{
+    
+        var tokenStr : String
+        
+        switch type {
+            
+        case .REFRESH:
+            tokenStr = "refresh token"
+        case .GOOGLE:
+            tokenStr = "google access token"
+        case .FACEBOOK:
+            tokenStr = "facebook access token"
+        default:
+            tokenStr = "access token"
+        }
+        
+        return tokenStr
+    }
+}

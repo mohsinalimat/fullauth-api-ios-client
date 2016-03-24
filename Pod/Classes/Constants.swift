@@ -27,6 +27,8 @@ public class Constants {
          */
         public static let FULLAUTH_OAUTH2_TOKEN = "/o/oauth2/v1/token"
         
+        public static let FULLAUTH_REVOKE_TOKEN = "o/oauth2/revoke"
+        
         /**
          * Get auth url.
          *
@@ -48,6 +50,12 @@ public class Constants {
             
             return getAuthUrl(authDomain) + FULLAUTH_OAUTH2_TOKEN
 
+        }
+
+
+        public static func getRevokeTokenUrl(authDomain authDomain: String) -> String{
+            
+            return getAuthUrl(authDomain) + FULLAUTH_REVOKE_TOKEN
         }
     }
 }

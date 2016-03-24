@@ -76,5 +76,27 @@ class TestFullAuthClient: UIViewController {
             print("Error -- \(err?.description)")
         }
     }
+    
+    func revokeAccessToken(){
+        
+        
+        let oauthObj = FullAuthOAuthService(authDomain: OAuthParamHelper.AuthDomain)
+        
+        do{
+            
+            try oauthObj.revokeAccessToken(accessToken: "", handler: { (error, errorResponse, accessToken) in
+            
+                
+            })
+            
+            
+        }catch let error{
+            
+            let err = error as? OAuthError
+            
+            print("Error --\(err?.description)")
+        }
+        
+    }
 }
 
