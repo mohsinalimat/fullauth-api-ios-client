@@ -19,6 +19,8 @@ public class FullAuthOAuthService {
     
     public typealias TokenInfoHandler = (error : NSError?,errorResponse : OAuthTokenErrorResponse?,accessToken : OAuthAccessToken?) -> Void
     
+    public typealias revokeTokenHandler = (success: Bool, error : NSError?,errorResponse : OAuthTokenErrorResponse?) -> Void
+    
     
     public init(authDomain : String,clientId :String? = nil,clientSecret : String? = nil){
         
@@ -116,7 +118,7 @@ public class FullAuthOAuthService {
     
     
     //MARK:REVOKE ACCESS TOKEN
-    public func revokeAccessToken(accessToken accessToken: String, handler: TokenInfoHandler?) throws{
+    public func revokeAccessToken(accessToken accessToken: String, handler: revokeTokenHandler?) throws{
         
         try validateOauthDomain()
         
@@ -207,7 +209,9 @@ public class FullAuthOAuthService {
     }
     
     
-    internal func revokeAccessToken(authDomain: String, accessToken: String,handler: TokenInfoHandler?){
+    internal func revokeAccessToken(authDomain: String, accessToken: String,handler: revokeTokenHandler?){
+        
+        (success: Bool, error : NSError?,errorResponse : OAuthTokenErrorResponse?)
         
     
         let URL = NSURL(string: Constants.OAuth.getRevokeTokenUrl(authDomain: authDomain))
@@ -221,8 +225,21 @@ public class FullAuthOAuthService {
         let urlRequest = ParameterEncoding.URL.encode(mutableRequest, parameters: param).0
         
         makeRequest(urlRequest) { (success, httpRequest, httpResponse, responseJson, error) in
+        
+            if success{
+                
+                handler!(success: true, error:nil, errorResponse: nil)
+                return
+            }
             
-            self.handleTokenResponse(success, respJson: responseJson, error: error, handler: handler)
+            var errorResp : OAuthTokenErrorResponse?
+            
+            if responseJson != nil {
+                
+                errorResp = OAuthTokenErrorResponse(data: responseJson!)
+            }
+            
+            handler!(success: false, error:error, errorResponse: errorResp)
         }
     }
     
