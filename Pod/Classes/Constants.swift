@@ -27,7 +27,7 @@ public class Constants {
          */
         public static let FULLAUTH_OAUTH2_TOKEN = "/o/oauth2/v1/token"
         
-        public static let FULLAUTH_REVOKE_TOKEN = "o/oauth2/revoke"
+        public static let FULLAUTH_REVOKE_TOKEN = "/o/oauth2/revoke"
         
         /**
          * Get auth url.

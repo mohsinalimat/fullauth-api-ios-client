@@ -211,9 +211,9 @@ public class FullAuthOAuthService {
         
     
         let URL = NSURL(string: Constants.OAuth.getRevokeTokenUrl(authDomain: authDomain))
-
+        
         let mutableRequest = NSMutableURLRequest(URL: URL!)
-        mutableRequest.HTTPMethod = Alamofire.Method.POST.rawValue
+        mutableRequest.HTTPMethod = Alamofire.Method.GET.rawValue
         mutableRequest.timeoutInterval = timeOutInterval
         
         let param = ["token": accessToken]
@@ -242,7 +242,7 @@ public class FullAuthOAuthService {
                 
                 let jsonDict = response.result.value as? [String: AnyObject]
                 
-                handler!(success : success, httpRequest : response.request!, httpResponse : response.response!, responseJson :jsonDict , error : error)
+                handler!(success : success, httpRequest : response.request, httpResponse : response.response, responseJson :jsonDict , error : error)
             }
         }
     }

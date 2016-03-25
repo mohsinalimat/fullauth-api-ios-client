@@ -28,14 +28,16 @@ struct OAuthParamHelper {
 
 
 class TestFullAuthClient: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.requestTokenInfo()
+        //requestTokenInfo()
+        
+        revokeAccessToken()
     }
-
-
+    
+    
     //MARK: REQUEST TOKEN INFO
     
     func requestTokenInfo(){
@@ -43,9 +45,9 @@ class TestFullAuthClient: UIViewController {
         let oauthObj = FullAuthOAuthService(authDomain: OAuthParamHelper.AuthDomain)
     
         do{
-
-            try oauthObj.getTokenInfo("", handler: { (error, errorResponse, accessToken) -> Void in
             
+            try oauthObj.getTokenInfo("", handler: { (error, errorResponse, accessToken) -> Void in
+                
                 if error != nil{
                     
                     print("Error ---\(error!)")
@@ -70,12 +72,13 @@ class TestFullAuthClient: UIViewController {
             })
             
         }catch let error {
-        
+            
             let err = error as? OAuthError
             
             print("Error -- \(err?.description)")
         }
     }
+    
     
     func revokeAccessToken(){
         
@@ -85,8 +88,26 @@ class TestFullAuthClient: UIViewController {
         do{
             
             try oauthObj.revokeAccessToken(accessToken: "", handler: { (error, errorResponse, accessToken) in
-            
                 
+                if error != nil{
+                    
+                    print("Error ---\(error!)")
+                }
+                
+                if errorResponse != nil{
+                    
+                    print("Error Response --\(errorResponse!)")
+                    
+                    let errResp  = errorResponse
+                    
+                    print("error_desc --\(errResp?.errorDesc)")
+                }
+                
+                if accessToken != nil{
+                    
+                    print("Response -- \(accessToken!)")
+                    
+                }
             })
             
             
