@@ -211,9 +211,6 @@ public class FullAuthOAuthService {
     
     internal func revokeAccessToken(authDomain: String, accessToken: String,handler: revokeTokenHandler?){
         
-        (success: Bool, error : NSError?,errorResponse : OAuthTokenErrorResponse?)
-        
-    
         let URL = NSURL(string: Constants.OAuth.getRevokeTokenUrl(authDomain: authDomain))
         
         let mutableRequest = NSMutableURLRequest(URL: URL!)

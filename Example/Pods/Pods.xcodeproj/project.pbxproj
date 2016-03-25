@@ -1,1087 +1,2812 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		02790709BBD5B7EE8A24F9F170F71700 /* ResourceOwnerTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A729637020C2609E3710F9AC493413 /* ResourceOwnerTokenRequest.swift */; };
-		033E62707F0715D56E7AB16FC7B2EF3A /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706C7AFFE37BA158C3553250F4B5FAED /* Alamofire.framework */; };
-		03F494989CC1A8857B68A317D5D6860F /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AE82608C8C2A46981A07D7E422BEB45 /* Response.swift */; };
-		0681ADC8BAE2C3185F13487BAAB4D9DD /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948996616B0A38BD6FE8C4CB309CC964 /* Upload.swift */; };
-		1C3942570798A98345391FCA8423641C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21379CE82FF1D2F2CB48458ED91D6919 /* Constants.swift */; };
-		27574793F85E379E29C978AA20EE9FC2 /* OAuthTokenErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1727358E2BEB8817B02AFE51232368C /* OAuthTokenErrorResponse.swift */; };
-		290EBA503297AB9F53AB932CB1D85266 /* Pods-FullAuthIOSClient_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9669F6805F5E0E8273D835404A9243 /* Pods-FullAuthIOSClient_Tests-dummy.m */; };
-		2C5450AC69398958CF6F7539EF7D99E5 /* Alamofire-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FC4583A4BD15196E6859EA5E990AD3F /* Alamofire-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		377DBD252FD471BA88E8F6652153B08F /* RefreshTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465297C34E1429B6D7D6CC4A7A552BA9 /* RefreshTokenRequest.swift */; };
-		391EF5C0D4551025EC9A9ABC172A1635 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFCE8A3DC08536A2B19894C1FF3E86D /* Foundation.framework */; };
-		39FC710E305E574E9272AF9F250E33D2 /* OAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA14B54A4C36862656C6F0EA070B10 /* OAuthError.swift */; };
-		49FB64F920C01C7EBE30D8EBADF00A49 /* OauthEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED758C3EEEA4F737CE9130F9B18F4CE /* OauthEnums.swift */; };
-		4DE5FCC41D100B113B6645EA64410F16 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5465E2051CE332BA7D4E0595F9B44718 /* ParameterEncoding.swift */; };
-		615A0A165F3E1E66A8A84B1F1E0E9B0E /* FacebookTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8EBDAF13F6136EDC1198E39DFB4EB8 /* FacebookTokenRequest.swift */; };
-		791561357D822DAC22B0D01AF9FC56A0 /* FullAuthOAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39DC106DEC7A341CE750944A9340FA2 /* FullAuthOAuthService.swift */; };
-		7C1E18BB3A9F5612866F4D751555482C /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BFE98142476FAB3FD0C6A0678EB19EB /* Utils.swift */; };
-		80F496237530D382A045A29654D8C11C /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52836A3E223CCB5C120D4BE7D37AC1BF /* ServerTrustPolicy.swift */; };
-		817F3DB410E3DCD37F8DD1F60072EA9A /* OAuthTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328720159EC0A35A5E8EBB7C12BCC676 /* OAuthTokenRequest.swift */; };
-		82971968CBDAB224212EEB4607C9FB8D /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7835749D1C4FA403E4BB17A0C787EDCA /* Result.swift */; };
-		8399DBEE3E2D98EB1F466132E476F4D9 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10653C142FFDF1986227894BF0317944 /* MultipartFormData.swift */; };
-		83DC579D7C79807796E3C433EC93814E /* OauthParamName.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DBB9CC32B41690DA01D85B3B841C3C /* OauthParamName.swift */; };
-		8A9968B958F7BD1C7B55BAB0B431AEEE /* GoogleTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68028E51F960851CD5A1B70A9CD4FAF6 /* GoogleTokenRequest.swift */; };
-		966E5E52F214D530781B1FE22B0716E9 /* OAuthAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55515FB486FD6558DF3AC790070CBD9E /* OAuthAccessToken.swift */; };
-		96D99D0C2472535A169DED65CB231CD7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFCE8A3DC08536A2B19894C1FF3E86D /* Foundation.framework */; };
-		99BEA3099E6F775F2444BD949C5AE930 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFCE8A3DC08536A2B19894C1FF3E86D /* Foundation.framework */; };
-		9A2B3F76EE5B393C5D8242CD73EE8218 /* FullAuthIOSClient-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 42E10C6FB6516F29B58D28451A9B6C57 /* FullAuthIOSClient-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A2C172FE407C0BC3478ADCA91A6C9CEC /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5241F56B5C8C48BD734958D586267D1A /* Manager.swift */; };
-		A3505FA2FB3067D53847AD288AC04F03 /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA14379DE2012C9EFB2B9C3A3A39AB4 /* Download.swift */; };
-		AB0FB7ED3BFBE1C2B6D397EA60519697 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EFCE8A3DC08536A2B19894C1FF3E86D /* Foundation.framework */; };
-		B0FB4B01682814B9E3D32F9DC4A5E762 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D4D8DBF3D77B1F970DB9DF6C963A84 /* Alamofire.swift */; };
-		B6D2DC3E3DA44CD382B9B425F40E11C1 /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D1C843C58F0C2DFE4522F24897D8CCE /* Alamofire-dummy.m */; };
-		B892CEDE4C182F4C010950028038CA8F /* FullAuthIOSClient-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 88899C0D0767767AA79B026F61F53C88 /* FullAuthIOSClient-dummy.m */; };
-		BB529BA292A3857EF88A7556EAFDF886 /* FullAuthIOSClient.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 111FF91FD086208C789BC9B95EE70E80 /* FullAuthIOSClient.bundle */; };
-		C75519F0450166A6F28126ECC7664E9C /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779B19103BE8402A434ED95F67573911 /* Validation.swift */; };
-		D21B7325B3642887BFBE977E021F2D26 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5EBB70A7BA5F9037CD2DA409E148A73 /* ResponseSerialization.swift */; };
-		D75CA395D510E08C404E55F5BDAE55CE /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83957AB2EE778B52399CC4C903539BD0 /* Error.swift */; };
-		DAE9FC66CF4DD41539DDA130EC67676E /* Pods-FullAuthIOSClient_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 360E9EE1B8CDFCBA74838D9E89529D94 /* Pods-FullAuthIOSClient_Example-dummy.m */; };
-		E6B29EA0BBBE9D7D4E45CBE5C1B7D72D /* Pods-FullAuthIOSClient_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 98721A4E0DCD4632DD3DA63214D74565 /* Pods-FullAuthIOSClient_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F63186FAD98F8E25E9460DDEF9D7317E /* Pods-FullAuthIOSClient_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ED2411C274842D3AB51CFFFAFC81341F /* Pods-FullAuthIOSClient_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FC14480CECE872865A9C6E584F886DA3 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA23887509C9FF173ECBE0A470EDD527 /* Request.swift */; };
-		FEF0D7653948988B804226129471C1EC /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89117FC38D94C9DF36CA21E3C96EEB7 /* Stream.swift */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0326F82861528A4BE0CCB8CB60718F79 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 432ECC54282C84882B482CCB4CF227FC;
-			remoteInfo = Alamofire;
-		};
-		3BEA3D713E3C81A0E46EEA95A55F2596 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 432ECC54282C84882B482CCB4CF227FC;
-			remoteInfo = Alamofire;
-		};
-		3ED34BA3800CF839C27B9927DE211716 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1DE0EBCD5E3994F81C6AC1EA1F2B4922;
-			remoteInfo = "FullAuthIOSClient-FullAuthIOSClient";
-		};
-		870D4CBFF92381D05EA84F68DF58484F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F2DC6F84DFDCCBA7383B1F4CDAA759A5;
-			remoteInfo = FullAuthIOSClient;
-		};
-		D128F12F629A3EDD94F27BB157886266 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 432ECC54282C84882B482CCB4CF227FC;
-			remoteInfo = Alamofire;
-		};
-		E4462EC74F642254D54F15F9FABDC499 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F2DC6F84DFDCCBA7383B1F4CDAA759A5;
-			remoteInfo = FullAuthIOSClient;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		10653C142FFDF1986227894BF0317944 /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
-		111FF91FD086208C789BC9B95EE70E80 /* FullAuthIOSClient.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FullAuthIOSClient.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		11A729637020C2609E3710F9AC493413 /* ResourceOwnerTokenRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ResourceOwnerTokenRequest.swift; sourceTree = "<group>"; };
-		138BB31698882EFE12C6B1347C8FEBD9 /* Pods-FullAuthIOSClient_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FullAuthIOSClient_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		172192E02DCC95EF81751D4F3B1B2812 /* FullAuthIOSClient-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FullAuthIOSClient-prefix.pch"; sourceTree = "<group>"; };
-		192C754DD0CACED05603FAFBA9774849 /* Pods-FullAuthIOSClient_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-FullAuthIOSClient_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		1A978A7CB8C1E4827237D7BA7ADFE2C2 /* Pods-FullAuthIOSClient_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FullAuthIOSClient_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		21379CE82FF1D2F2CB48458ED91D6919 /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		21FA4AD1EF77337F9C8F2AD871ED371D /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
-		23D4D8DBF3D77B1F970DB9DF6C963A84 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
-		29A7AEFAADC97D95CAB5FF5E780328FD /* Pods-FullAuthIOSClient_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FullAuthIOSClient_Example.modulemap"; sourceTree = "<group>"; };
-		2C64204AE0296DD5A03A8A6473744DAD /* Pods-FullAuthIOSClient_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FullAuthIOSClient_Example-resources.sh"; sourceTree = "<group>"; };
-		2E650E32673A379AB5615D85DAB53C8D /* Pods-FullAuthIOSClient_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FullAuthIOSClient_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		328720159EC0A35A5E8EBB7C12BCC676 /* OAuthTokenRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OAuthTokenRequest.swift; sourceTree = "<group>"; };
-		360E9EE1B8CDFCBA74838D9E89529D94 /* Pods-FullAuthIOSClient_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FullAuthIOSClient_Example-dummy.m"; sourceTree = "<group>"; };
-		3BFE98142476FAB3FD0C6A0678EB19EB /* Utils.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		42E10C6FB6516F29B58D28451A9B6C57 /* FullAuthIOSClient-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FullAuthIOSClient-umbrella.h"; sourceTree = "<group>"; };
-		465297C34E1429B6D7D6CC4A7A552BA9 /* RefreshTokenRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RefreshTokenRequest.swift; sourceTree = "<group>"; };
-		4A5909CDA21FEA464656B05EEAE1C0EA /* Pods-FullAuthIOSClient_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FullAuthIOSClient_Tests-resources.sh"; sourceTree = "<group>"; };
-		4FC4583A4BD15196E6859EA5E990AD3F /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
-		5241F56B5C8C48BD734958D586267D1A /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Source/Manager.swift; sourceTree = "<group>"; };
-		52836A3E223CCB5C120D4BE7D37AC1BF /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
-		5465E2051CE332BA7D4E0595F9B44718 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
-		55515FB486FD6558DF3AC790070CBD9E /* OAuthAccessToken.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OAuthAccessToken.swift; sourceTree = "<group>"; };
-		5E53BF5A61CAF6972C5CDD2C3EE6C003 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		627724FA8C803BFB8F24F06B6E7C1A11 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		62B5D39C7E6FF9103566B70FAC8C5C12 /* Pods_FullAuthIOSClient_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FullAuthIOSClient_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		68028E51F960851CD5A1B70A9CD4FAF6 /* GoogleTokenRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = GoogleTokenRequest.swift; sourceTree = "<group>"; };
-		6A8EBDAF13F6136EDC1198E39DFB4EB8 /* FacebookTokenRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FacebookTokenRequest.swift; sourceTree = "<group>"; };
-		6ED758C3EEEA4F737CE9130F9B18F4CE /* OauthEnums.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OauthEnums.swift; sourceTree = "<group>"; };
-		706C7AFFE37BA158C3553250F4B5FAED /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		779B19103BE8402A434ED95F67573911 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
-		7835749D1C4FA403E4BB17A0C787EDCA /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
-		7CF2E6E36C558596968A7A37ED8AAA08 /* Pods-FullAuthIOSClient_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FullAuthIOSClient_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7D7AAA0E85E40ED735D6BCBF7A243C46 /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
-		83957AB2EE778B52399CC4C903539BD0 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Source/Error.swift; sourceTree = "<group>"; };
-		88899C0D0767767AA79B026F61F53C88 /* FullAuthIOSClient-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FullAuthIOSClient-dummy.m"; sourceTree = "<group>"; };
-		8A62C5C4B0403F971E20A0F27554F239 /* Pods-FullAuthIOSClient_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FullAuthIOSClient_Tests.modulemap"; sourceTree = "<group>"; };
-		8AE82608C8C2A46981A07D7E422BEB45 /* Response.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Response.swift; path = Source/Response.swift; sourceTree = "<group>"; };
-		8D1C843C58F0C2DFE4522F24897D8CCE /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
-		92631F2E5A550F5A7E4CA65794B958EA /* Pods-FullAuthIOSClient_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FullAuthIOSClient_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		948996616B0A38BD6FE8C4CB309CC964 /* Upload.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Upload.swift; path = Source/Upload.swift; sourceTree = "<group>"; };
-		981929955821A84C84C1F5A87DAC8DF5 /* Pods_FullAuthIOSClient_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FullAuthIOSClient_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		98721A4E0DCD4632DD3DA63214D74565 /* Pods-FullAuthIOSClient_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FullAuthIOSClient_Tests-umbrella.h"; sourceTree = "<group>"; };
-		9CF5833C3762D5DE359763BC722A956F /* Pods-FullAuthIOSClient_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FullAuthIOSClient_Example-frameworks.sh"; sourceTree = "<group>"; };
-		9EFCE8A3DC08536A2B19894C1FF3E86D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		A00C76B09BF2028B3A08D543244A13AA /* Pods-FullAuthIOSClient_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FullAuthIOSClient_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		A3DE7FC58041582DE2D7294A9336B970 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7CFC511BA89BBCB6B261E26176241FD /* Pods-FullAuthIOSClient_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FullAuthIOSClient_Example.release.xcconfig"; sourceTree = "<group>"; };
-		ADA14379DE2012C9EFB2B9C3A3A39AB4 /* Download.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Download.swift; path = Source/Download.swift; sourceTree = "<group>"; };
-		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BDBEBC61A0862FFEDFEC9F164363F725 /* Pods-FullAuthIOSClient_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FullAuthIOSClient_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C38AE0FAECB53B3F504A3251C8B9A738 /* FullAuthIOSClient.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FullAuthIOSClient.modulemap; sourceTree = "<group>"; };
-		C89117FC38D94C9DF36CA21E3C96EEB7 /* Stream.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Stream.swift; path = Source/Stream.swift; sourceTree = "<group>"; };
-		CCB3883102DC4A9AFDAE2B5799720B37 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D1727358E2BEB8817B02AFE51232368C /* OAuthTokenErrorResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OAuthTokenErrorResponse.swift; sourceTree = "<group>"; };
-		DB1E90F937EFD6A4A1B1DEA57C7DDAD2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC9669F6805F5E0E8273D835404A9243 /* Pods-FullAuthIOSClient_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FullAuthIOSClient_Tests-dummy.m"; sourceTree = "<group>"; };
-		E39DC106DEC7A341CE750944A9340FA2 /* FullAuthOAuthService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FullAuthOAuthService.swift; sourceTree = "<group>"; };
-		E6D51E88CF06503F74AC8F5ECD5A209B /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
-		E75292D8EC09809F28CDF59CD550728E /* FullAuthIOSClient.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FullAuthIOSClient.xcconfig; sourceTree = "<group>"; };
-		E8DBB9CC32B41690DA01D85B3B841C3C /* OauthParamName.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OauthParamName.swift; sourceTree = "<group>"; };
-		ED2411C274842D3AB51CFFFAFC81341F /* Pods-FullAuthIOSClient_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FullAuthIOSClient_Example-umbrella.h"; sourceTree = "<group>"; };
-		F01E771F83515492F8BB04475267A8AD /* FullAuthIOSClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FullAuthIOSClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0CA14B54A4C36862656C6F0EA070B10 /* OAuthError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OAuthError.swift; sourceTree = "<group>"; };
-		F5EBB70A7BA5F9037CD2DA409E148A73 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
-		FA23887509C9FF173ECBE0A470EDD527 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		1766A54600525601C584F96B03ECF110 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				033E62707F0715D56E7AB16FC7B2EF3A /* Alamofire.framework in Frameworks */,
-				AB0FB7ED3BFBE1C2B6D397EA60519697 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6F5DC52C0BF3BB226D9CB326B49BC2CA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		952048F7AB51C36DB952B2A4CE8013AC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				391EF5C0D4551025EC9A9ABC172A1635 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A5AE1D340C4A0691EC28EEA8241C9FCD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				96D99D0C2472535A169DED65CB231CD7 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9A8138507A3A905ADBE3959E9235915 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				99BEA3099E6F775F2444BD949C5AE930 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		09192E6B9C45ACAB5568261F45FA3D88 /* Alamofire */ = {
-			isa = PBXGroup;
-			children = (
-				23D4D8DBF3D77B1F970DB9DF6C963A84 /* Alamofire.swift */,
-				ADA14379DE2012C9EFB2B9C3A3A39AB4 /* Download.swift */,
-				83957AB2EE778B52399CC4C903539BD0 /* Error.swift */,
-				5241F56B5C8C48BD734958D586267D1A /* Manager.swift */,
-				10653C142FFDF1986227894BF0317944 /* MultipartFormData.swift */,
-				5465E2051CE332BA7D4E0595F9B44718 /* ParameterEncoding.swift */,
-				FA23887509C9FF173ECBE0A470EDD527 /* Request.swift */,
-				8AE82608C8C2A46981A07D7E422BEB45 /* Response.swift */,
-				F5EBB70A7BA5F9037CD2DA409E148A73 /* ResponseSerialization.swift */,
-				7835749D1C4FA403E4BB17A0C787EDCA /* Result.swift */,
-				52836A3E223CCB5C120D4BE7D37AC1BF /* ServerTrustPolicy.swift */,
-				C89117FC38D94C9DF36CA21E3C96EEB7 /* Stream.swift */,
-				948996616B0A38BD6FE8C4CB309CC964 /* Upload.swift */,
-				779B19103BE8402A434ED95F67573911 /* Validation.swift */,
-				405A7C3030F6D3BDE3978D6D558FDF7F /* Support Files */,
-			);
-			path = Alamofire;
-			sourceTree = "<group>";
-		};
-		1DBE908E9D478AD833C3CA3E0419EF12 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C13F4564E16770CF73682CA14ABBE763 /* FullAuthIOSClient */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		20C396BA1B90EEE39D4B19FE012C4F6D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				09192E6B9C45ACAB5568261F45FA3D88 /* Alamofire */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		25308A143ED5AA82593A7E1D950849C4 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				9EFCE8A3DC08536A2B19894C1FF3E86D /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		3E213F2BC4B47AF7D0FDBB08E36D1E9C /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				D8C39EB0A980A33BBF3A85CE1166E736 /* Classes */,
-			);
-			path = Pod;
-			sourceTree = "<group>";
-		};
-		405A7C3030F6D3BDE3978D6D558FDF7F /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				21FA4AD1EF77337F9C8F2AD871ED371D /* Alamofire.modulemap */,
-				7D7AAA0E85E40ED735D6BCBF7A243C46 /* Alamofire.xcconfig */,
-				8D1C843C58F0C2DFE4522F24897D8CCE /* Alamofire-dummy.m */,
-				E6D51E88CF06503F74AC8F5ECD5A209B /* Alamofire-prefix.pch */,
-				4FC4583A4BD15196E6859EA5E990AD3F /* Alamofire-umbrella.h */,
-				5E53BF5A61CAF6972C5CDD2C3EE6C003 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/Alamofire";
-			sourceTree = "<group>";
-		};
-		59B91F212518421F271EBA85D5530651 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				706C7AFFE37BA158C3553250F4B5FAED /* Alamofire.framework */,
-				25308A143ED5AA82593A7E1D950849C4 /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		77EE535643F3563E6887F6A2020A4340 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C38AE0FAECB53B3F504A3251C8B9A738 /* FullAuthIOSClient.modulemap */,
-				E75292D8EC09809F28CDF59CD550728E /* FullAuthIOSClient.xcconfig */,
-				88899C0D0767767AA79B026F61F53C88 /* FullAuthIOSClient-dummy.m */,
-				172192E02DCC95EF81751D4F3B1B2812 /* FullAuthIOSClient-prefix.pch */,
-				42E10C6FB6516F29B58D28451A9B6C57 /* FullAuthIOSClient-umbrella.h */,
-				DB1E90F937EFD6A4A1B1DEA57C7DDAD2 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/FullAuthIOSClient";
-			sourceTree = "<group>";
-		};
-		7DB346D0F39D3F0E887471402A8071AB = {
-			isa = PBXGroup;
-			children = (
-				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				1DBE908E9D478AD833C3CA3E0419EF12 /* Development Pods */,
-				59B91F212518421F271EBA85D5530651 /* Frameworks */,
-				20C396BA1B90EEE39D4B19FE012C4F6D /* Pods */,
-				8E181CCA8E402A35D576D9560EF1C4CC /* Products */,
-				EF69C2537EC52A0870823149BA473877 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		850D658460F1D5F543BFE0C8DC8589B9 /* Pods-FullAuthIOSClient_Example */ = {
-			isa = PBXGroup;
-			children = (
-				627724FA8C803BFB8F24F06B6E7C1A11 /* Info.plist */,
-				29A7AEFAADC97D95CAB5FF5E780328FD /* Pods-FullAuthIOSClient_Example.modulemap */,
-				7CF2E6E36C558596968A7A37ED8AAA08 /* Pods-FullAuthIOSClient_Example-acknowledgements.markdown */,
-				192C754DD0CACED05603FAFBA9774849 /* Pods-FullAuthIOSClient_Example-acknowledgements.plist */,
-				360E9EE1B8CDFCBA74838D9E89529D94 /* Pods-FullAuthIOSClient_Example-dummy.m */,
-				9CF5833C3762D5DE359763BC722A956F /* Pods-FullAuthIOSClient_Example-frameworks.sh */,
-				2C64204AE0296DD5A03A8A6473744DAD /* Pods-FullAuthIOSClient_Example-resources.sh */,
-				ED2411C274842D3AB51CFFFAFC81341F /* Pods-FullAuthIOSClient_Example-umbrella.h */,
-				A00C76B09BF2028B3A08D543244A13AA /* Pods-FullAuthIOSClient_Example.debug.xcconfig */,
-				A7CFC511BA89BBCB6B261E26176241FD /* Pods-FullAuthIOSClient_Example.release.xcconfig */,
-			);
-			name = "Pods-FullAuthIOSClient_Example";
-			path = "Target Support Files/Pods-FullAuthIOSClient_Example";
-			sourceTree = "<group>";
-		};
-		8E181CCA8E402A35D576D9560EF1C4CC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A3DE7FC58041582DE2D7294A9336B970 /* Alamofire.framework */,
-				111FF91FD086208C789BC9B95EE70E80 /* FullAuthIOSClient.bundle */,
-				F01E771F83515492F8BB04475267A8AD /* FullAuthIOSClient.framework */,
-				981929955821A84C84C1F5A87DAC8DF5 /* Pods_FullAuthIOSClient_Example.framework */,
-				62B5D39C7E6FF9103566B70FAC8C5C12 /* Pods_FullAuthIOSClient_Tests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		C13F4564E16770CF73682CA14ABBE763 /* FullAuthIOSClient */ = {
-			isa = PBXGroup;
-			children = (
-				3E213F2BC4B47AF7D0FDBB08E36D1E9C /* Pod */,
-				77EE535643F3563E6887F6A2020A4340 /* Support Files */,
-			);
-			name = FullAuthIOSClient;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		C78998CD2604C13E3BAAE1859DEB4CB2 /* Pods-FullAuthIOSClient_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				CCB3883102DC4A9AFDAE2B5799720B37 /* Info.plist */,
-				8A62C5C4B0403F971E20A0F27554F239 /* Pods-FullAuthIOSClient_Tests.modulemap */,
-				BDBEBC61A0862FFEDFEC9F164363F725 /* Pods-FullAuthIOSClient_Tests-acknowledgements.markdown */,
-				138BB31698882EFE12C6B1347C8FEBD9 /* Pods-FullAuthIOSClient_Tests-acknowledgements.plist */,
-				DC9669F6805F5E0E8273D835404A9243 /* Pods-FullAuthIOSClient_Tests-dummy.m */,
-				1A978A7CB8C1E4827237D7BA7ADFE2C2 /* Pods-FullAuthIOSClient_Tests-frameworks.sh */,
-				4A5909CDA21FEA464656B05EEAE1C0EA /* Pods-FullAuthIOSClient_Tests-resources.sh */,
-				98721A4E0DCD4632DD3DA63214D74565 /* Pods-FullAuthIOSClient_Tests-umbrella.h */,
-				92631F2E5A550F5A7E4CA65794B958EA /* Pods-FullAuthIOSClient_Tests.debug.xcconfig */,
-				2E650E32673A379AB5615D85DAB53C8D /* Pods-FullAuthIOSClient_Tests.release.xcconfig */,
-			);
-			name = "Pods-FullAuthIOSClient_Tests";
-			path = "Target Support Files/Pods-FullAuthIOSClient_Tests";
-			sourceTree = "<group>";
-		};
-		D8C39EB0A980A33BBF3A85CE1166E736 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				21379CE82FF1D2F2CB48458ED91D6919 /* Constants.swift */,
-				6A8EBDAF13F6136EDC1198E39DFB4EB8 /* FacebookTokenRequest.swift */,
-				E39DC106DEC7A341CE750944A9340FA2 /* FullAuthOAuthService.swift */,
-				68028E51F960851CD5A1B70A9CD4FAF6 /* GoogleTokenRequest.swift */,
-				55515FB486FD6558DF3AC790070CBD9E /* OAuthAccessToken.swift */,
-				6ED758C3EEEA4F737CE9130F9B18F4CE /* OauthEnums.swift */,
-				F0CA14B54A4C36862656C6F0EA070B10 /* OAuthError.swift */,
-				E8DBB9CC32B41690DA01D85B3B841C3C /* OauthParamName.swift */,
-				D1727358E2BEB8817B02AFE51232368C /* OAuthTokenErrorResponse.swift */,
-				328720159EC0A35A5E8EBB7C12BCC676 /* OAuthTokenRequest.swift */,
-				465297C34E1429B6D7D6CC4A7A552BA9 /* RefreshTokenRequest.swift */,
-				11A729637020C2609E3710F9AC493413 /* ResourceOwnerTokenRequest.swift */,
-				3BFE98142476FAB3FD0C6A0678EB19EB /* Utils.swift */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		EF69C2537EC52A0870823149BA473877 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				850D658460F1D5F543BFE0C8DC8589B9 /* Pods-FullAuthIOSClient_Example */,
-				C78998CD2604C13E3BAAE1859DEB4CB2 /* Pods-FullAuthIOSClient_Tests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		47A46385D2542DA3D40349BB8C3197D1 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E6B29EA0BBBE9D7D4E45CBE5C1B7D72D /* Pods-FullAuthIOSClient_Tests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5F7B61281F714E2A64A51E80A2C9C062 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2C5450AC69398958CF6F7539EF7D99E5 /* Alamofire-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9A6A073C9BFC0DF59100FE3B80274F22 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				9A2B3F76EE5B393C5D8242CD73EE8218 /* FullAuthIOSClient-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A29425F60F5791D2D69C141A084C0053 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F63186FAD98F8E25E9460DDEF9D7317E /* Pods-FullAuthIOSClient_Example-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
-/* Begin PBXNativeTarget section */
-		177F46EE5B12BE1D32BFDCCC2B696BDB /* Pods-FullAuthIOSClient_Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A9978A8F749793DC6F72CE9668BFFA56 /* Build configuration list for PBXNativeTarget "Pods-FullAuthIOSClient_Tests" */;
-			buildPhases = (
-				BE609E8EFA2CCE80C6992DA36D430E2C /* Sources */,
-				E9A8138507A3A905ADBE3959E9235915 /* Frameworks */,
-				47A46385D2542DA3D40349BB8C3197D1 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				8BFF240F4B1062D3CE32C7375C2472B0 /* PBXTargetDependency */,
-				77160991B789C4170AE5E73DD2A6D042 /* PBXTargetDependency */,
-			);
-			name = "Pods-FullAuthIOSClient_Tests";
-			productName = "Pods-FullAuthIOSClient_Tests";
-			productReference = 62B5D39C7E6FF9103566B70FAC8C5C12 /* Pods_FullAuthIOSClient_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		1DE0EBCD5E3994F81C6AC1EA1F2B4922 /* FullAuthIOSClient-FullAuthIOSClient */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 140EEE345D35EE52B945ED3E6A295F89 /* Build configuration list for PBXNativeTarget "FullAuthIOSClient-FullAuthIOSClient" */;
-			buildPhases = (
-				1DD042AECBC2367D39E12B1C1AE21A81 /* Sources */,
-				6F5DC52C0BF3BB226D9CB326B49BC2CA /* Frameworks */,
-				FF3130B807260847E19FC2BD299568F7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "FullAuthIOSClient-FullAuthIOSClient";
-			productName = "FullAuthIOSClient-FullAuthIOSClient";
-			productReference = 111FF91FD086208C789BC9B95EE70E80 /* FullAuthIOSClient.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		432ECC54282C84882B482CCB4CF227FC /* Alamofire */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 8B2B2DA2F7F80D41B1FDB5FACFA4B3DE /* Build configuration list for PBXNativeTarget "Alamofire" */;
-			buildPhases = (
-				EF659EFF40D426A3A32A82CDB98CC6EE /* Sources */,
-				A5AE1D340C4A0691EC28EEA8241C9FCD /* Frameworks */,
-				5F7B61281F714E2A64A51E80A2C9C062 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Alamofire;
-			productName = Alamofire;
-			productReference = A3DE7FC58041582DE2D7294A9336B970 /* Alamofire.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		94D2880DCE1047CCC06EBD9CEDBA400C /* Pods-FullAuthIOSClient_Example */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9672E482D70D07473826DF4FBCB13F56 /* Build configuration list for PBXNativeTarget "Pods-FullAuthIOSClient_Example" */;
-			buildPhases = (
-				DDBF4AA1DB78FC914716F7F3C8D64E57 /* Sources */,
-				952048F7AB51C36DB952B2A4CE8013AC /* Frameworks */,
-				A29425F60F5791D2D69C141A084C0053 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9B3260490720DC785316630CBD5FDD17 /* PBXTargetDependency */,
-				0B68C3420519B072515B4ADD567E4B50 /* PBXTargetDependency */,
-			);
-			name = "Pods-FullAuthIOSClient_Example";
-			productName = "Pods-FullAuthIOSClient_Example";
-			productReference = 981929955821A84C84C1F5A87DAC8DF5 /* Pods_FullAuthIOSClient_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		F2DC6F84DFDCCBA7383B1F4CDAA759A5 /* FullAuthIOSClient */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C5830246704CACDD9D1BA3C3B800B706 /* Build configuration list for PBXNativeTarget "FullAuthIOSClient" */;
-			buildPhases = (
-				277F1F8A9FAA21AB0A81A4F8DE9445A7 /* Sources */,
-				1766A54600525601C584F96B03ECF110 /* Frameworks */,
-				DBF7978EEF69B24D2E9DC4293B86C852 /* Resources */,
-				9A6A073C9BFC0DF59100FE3B80274F22 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				643E8F82636CD3897DF1FBB72A18A3A5 /* PBXTargetDependency */,
-				901EEE443D5FCA7A593526BE1FA5159B /* PBXTargetDependency */,
-			);
-			name = FullAuthIOSClient;
-			productName = FullAuthIOSClient;
-			productReference = F01E771F83515492F8BB04475267A8AD /* FullAuthIOSClient.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0730;
-			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 8E181CCA8E402A35D576D9560EF1C4CC /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				432ECC54282C84882B482CCB4CF227FC /* Alamofire */,
-				F2DC6F84DFDCCBA7383B1F4CDAA759A5 /* FullAuthIOSClient */,
-				1DE0EBCD5E3994F81C6AC1EA1F2B4922 /* FullAuthIOSClient-FullAuthIOSClient */,
-				94D2880DCE1047CCC06EBD9CEDBA400C /* Pods-FullAuthIOSClient_Example */,
-				177F46EE5B12BE1D32BFDCCC2B696BDB /* Pods-FullAuthIOSClient_Tests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		DBF7978EEF69B24D2E9DC4293B86C852 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BB529BA292A3857EF88A7556EAFDF886 /* FullAuthIOSClient.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FF3130B807260847E19FC2BD299568F7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		1DD042AECBC2367D39E12B1C1AE21A81 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		277F1F8A9FAA21AB0A81A4F8DE9445A7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1C3942570798A98345391FCA8423641C /* Constants.swift in Sources */,
-				615A0A165F3E1E66A8A84B1F1E0E9B0E /* FacebookTokenRequest.swift in Sources */,
-				B892CEDE4C182F4C010950028038CA8F /* FullAuthIOSClient-dummy.m in Sources */,
-				791561357D822DAC22B0D01AF9FC56A0 /* FullAuthOAuthService.swift in Sources */,
-				8A9968B958F7BD1C7B55BAB0B431AEEE /* GoogleTokenRequest.swift in Sources */,
-				966E5E52F214D530781B1FE22B0716E9 /* OAuthAccessToken.swift in Sources */,
-				49FB64F920C01C7EBE30D8EBADF00A49 /* OauthEnums.swift in Sources */,
-				39FC710E305E574E9272AF9F250E33D2 /* OAuthError.swift in Sources */,
-				83DC579D7C79807796E3C433EC93814E /* OauthParamName.swift in Sources */,
-				27574793F85E379E29C978AA20EE9FC2 /* OAuthTokenErrorResponse.swift in Sources */,
-				817F3DB410E3DCD37F8DD1F60072EA9A /* OAuthTokenRequest.swift in Sources */,
-				377DBD252FD471BA88E8F6652153B08F /* RefreshTokenRequest.swift in Sources */,
-				02790709BBD5B7EE8A24F9F170F71700 /* ResourceOwnerTokenRequest.swift in Sources */,
-				7C1E18BB3A9F5612866F4D751555482C /* Utils.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE609E8EFA2CCE80C6992DA36D430E2C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				290EBA503297AB9F53AB932CB1D85266 /* Pods-FullAuthIOSClient_Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DDBF4AA1DB78FC914716F7F3C8D64E57 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DAE9FC66CF4DD41539DDA130EC67676E /* Pods-FullAuthIOSClient_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		EF659EFF40D426A3A32A82CDB98CC6EE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B6D2DC3E3DA44CD382B9B425F40E11C1 /* Alamofire-dummy.m in Sources */,
-				B0FB4B01682814B9E3D32F9DC4A5E762 /* Alamofire.swift in Sources */,
-				A3505FA2FB3067D53847AD288AC04F03 /* Download.swift in Sources */,
-				D75CA395D510E08C404E55F5BDAE55CE /* Error.swift in Sources */,
-				A2C172FE407C0BC3478ADCA91A6C9CEC /* Manager.swift in Sources */,
-				8399DBEE3E2D98EB1F466132E476F4D9 /* MultipartFormData.swift in Sources */,
-				4DE5FCC41D100B113B6645EA64410F16 /* ParameterEncoding.swift in Sources */,
-				FC14480CECE872865A9C6E584F886DA3 /* Request.swift in Sources */,
-				03F494989CC1A8857B68A317D5D6860F /* Response.swift in Sources */,
-				D21B7325B3642887BFBE977E021F2D26 /* ResponseSerialization.swift in Sources */,
-				82971968CBDAB224212EEB4607C9FB8D /* Result.swift in Sources */,
-				80F496237530D382A045A29654D8C11C /* ServerTrustPolicy.swift in Sources */,
-				FEF0D7653948988B804226129471C1EC /* Stream.swift in Sources */,
-				0681ADC8BAE2C3185F13487BAAB4D9DD /* Upload.swift in Sources */,
-				C75519F0450166A6F28126ECC7664E9C /* Validation.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0B68C3420519B072515B4ADD567E4B50 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FullAuthIOSClient;
-			target = F2DC6F84DFDCCBA7383B1F4CDAA759A5 /* FullAuthIOSClient */;
-			targetProxy = 870D4CBFF92381D05EA84F68DF58484F /* PBXContainerItemProxy */;
-		};
-		643E8F82636CD3897DF1FBB72A18A3A5 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = 432ECC54282C84882B482CCB4CF227FC /* Alamofire */;
-			targetProxy = 0326F82861528A4BE0CCB8CB60718F79 /* PBXContainerItemProxy */;
-		};
-		77160991B789C4170AE5E73DD2A6D042 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = FullAuthIOSClient;
-			target = F2DC6F84DFDCCBA7383B1F4CDAA759A5 /* FullAuthIOSClient */;
-			targetProxy = E4462EC74F642254D54F15F9FABDC499 /* PBXContainerItemProxy */;
-		};
-		8BFF240F4B1062D3CE32C7375C2472B0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = 432ECC54282C84882B482CCB4CF227FC /* Alamofire */;
-			targetProxy = 3BEA3D713E3C81A0E46EEA95A55F2596 /* PBXContainerItemProxy */;
-		};
-		901EEE443D5FCA7A593526BE1FA5159B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "FullAuthIOSClient-FullAuthIOSClient";
-			target = 1DE0EBCD5E3994F81C6AC1EA1F2B4922 /* FullAuthIOSClient-FullAuthIOSClient */;
-			targetProxy = 3ED34BA3800CF839C27B9927DE211716 /* PBXContainerItemProxy */;
-		};
-		9B3260490720DC785316630CBD5FDD17 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			target = 432ECC54282C84882B482CCB4CF227FC /* Alamofire */;
-			targetProxy = D128F12F629A3EDD94F27BB157886266 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin XCBuildConfiguration section */
-		07378CA88577A3D0851F72D8C2D94A19 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E75292D8EC09809F28CDF59CD550728E /* FullAuthIOSClient.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FullAuthIOSClient/FullAuthIOSClient-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FullAuthIOSClient/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FullAuthIOSClient/FullAuthIOSClient.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = FullAuthIOSClient;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		2F4F619A5A688D806F5B77BDD55E7461 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E75292D8EC09809F28CDF59CD550728E /* FullAuthIOSClient.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = FullAuthIOSClient;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		38A9D2FB80C3B3C0D4919975FBB97D42 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A00C76B09BF2028B3A08D543244A13AA /* Pods-FullAuthIOSClient_Example.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-FullAuthIOSClient_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FullAuthIOSClient_Example/Pods-FullAuthIOSClient_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_FullAuthIOSClient_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		42982C5D6CAC5CFBF12196130D81CFF1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E75292D8EC09809F28CDF59CD550728E /* FullAuthIOSClient.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FullAuthIOSClient/FullAuthIOSClient-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FullAuthIOSClient/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/FullAuthIOSClient/FullAuthIOSClient.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = FullAuthIOSClient;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		7E3CDE8E44764347D7E651D03731454F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E75292D8EC09809F28CDF59CD550728E /* FullAuthIOSClient.xcconfig */;
-			buildSettings = {
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				PRODUCT_NAME = FullAuthIOSClient;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
-		A3427C918F24207B5FD3A44958345D7E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D7AAA0E85E40ED735D6BCBF7A243C46 /* Alamofire.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				ONLY_ACTIVE_ARCH = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Debug;
-		};
-		B4CCD0C8C0BF4154B12CE86464B058E8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 92631F2E5A550F5A7E4CA65794B958EA /* Pods-FullAuthIOSClient_Tests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-FullAuthIOSClient_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FullAuthIOSClient_Tests/Pods-FullAuthIOSClient_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_FullAuthIOSClient_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C993D8405F342C8E23BAD4EDF32D79E0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D7AAA0E85E40ED735D6BCBF7A243C46 /* Alamofire.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Alamofire/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Alamofire;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		CACF94730BE4D711D6D166A576B5ECBE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A7CFC511BA89BBCB6B261E26176241FD /* Pods-FullAuthIOSClient_Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-FullAuthIOSClient_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FullAuthIOSClient_Example/Pods-FullAuthIOSClient_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_FullAuthIOSClient_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		CFFBB9E4D104E6BDB4A722F381B746F3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E650E32673A379AB5615D85DAB53C8D /* Pods-FullAuthIOSClient_Tests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-FullAuthIOSClient_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-FullAuthIOSClient_Tests/Pods-FullAuthIOSClient_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_FullAuthIOSClient_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		140EEE345D35EE52B945ED3E6A295F89 /* Build configuration list for PBXNativeTarget "FullAuthIOSClient-FullAuthIOSClient" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				2F4F619A5A688D806F5B77BDD55E7461 /* Debug */,
-				7E3CDE8E44764347D7E651D03731454F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
-				FB45FFD90572718D82AB9092B750F0CA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		8B2B2DA2F7F80D41B1FDB5FACFA4B3DE /* Build configuration list for PBXNativeTarget "Alamofire" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C993D8405F342C8E23BAD4EDF32D79E0 /* Debug */,
-				A3427C918F24207B5FD3A44958345D7E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9672E482D70D07473826DF4FBCB13F56 /* Build configuration list for PBXNativeTarget "Pods-FullAuthIOSClient_Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				38A9D2FB80C3B3C0D4919975FBB97D42 /* Debug */,
-				CACF94730BE4D711D6D166A576B5ECBE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A9978A8F749793DC6F72CE9668BFFA56 /* Build configuration list for PBXNativeTarget "Pods-FullAuthIOSClient_Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B4CCD0C8C0BF4154B12CE86464B058E8 /* Debug */,
-				CFFBB9E4D104E6BDB4A722F381B746F3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C5830246704CACDD9D1BA3C3B800B706 /* Build configuration list for PBXNativeTarget "FullAuthIOSClient" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				42982C5D6CAC5CFBF12196130D81CFF1 /* Debug */,
-				07378CA88577A3D0851F72D8C2D94A19 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>02790709BBD5B7EE8A24F9F170F71700</key>
+		<dict>
+			<key>fileRef</key>
+			<string>11A729637020C2609E3710F9AC493413</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0326F82861528A4BE0CCB8CB60718F79</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>432ECC54282C84882B482CCB4CF227FC</string>
+			<key>remoteInfo</key>
+			<string>Alamofire</string>
+		</dict>
+		<key>033E62707F0715D56E7AB16FC7B2EF3A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>706C7AFFE37BA158C3553250F4B5FAED</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>03F494989CC1A8857B68A317D5D6860F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8AE82608C8C2A46981A07D7E422BEB45</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>0681ADC8BAE2C3185F13487BAAB4D9DD</key>
+		<dict>
+			<key>fileRef</key>
+			<string>948996616B0A38BD6FE8C4CB309CC964</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>07378CA88577A3D0851F72D8C2D94A19</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E75292D8EC09809F28CDF59CD550728E</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/FullAuthIOSClient/FullAuthIOSClient-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/FullAuthIOSClient/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/FullAuthIOSClient/FullAuthIOSClient.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>PRODUCT_NAME</key>
+				<string>FullAuthIOSClient</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>09192E6B9C45ACAB5568261F45FA3D88</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>23D4D8DBF3D77B1F970DB9DF6C963A84</string>
+				<string>ADA14379DE2012C9EFB2B9C3A3A39AB4</string>
+				<string>83957AB2EE778B52399CC4C903539BD0</string>
+				<string>5241F56B5C8C48BD734958D586267D1A</string>
+				<string>10653C142FFDF1986227894BF0317944</string>
+				<string>5465E2051CE332BA7D4E0595F9B44718</string>
+				<string>FA23887509C9FF173ECBE0A470EDD527</string>
+				<string>8AE82608C8C2A46981A07D7E422BEB45</string>
+				<string>F5EBB70A7BA5F9037CD2DA409E148A73</string>
+				<string>7835749D1C4FA403E4BB17A0C787EDCA</string>
+				<string>52836A3E223CCB5C120D4BE7D37AC1BF</string>
+				<string>C89117FC38D94C9DF36CA21E3C96EEB7</string>
+				<string>948996616B0A38BD6FE8C4CB309CC964</string>
+				<string>779B19103BE8402A434ED95F67573911</string>
+				<string>405A7C3030F6D3BDE3978D6D558FDF7F</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Alamofire</string>
+			<key>path</key>
+			<string>Alamofire</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>0B68C3420519B072515B4ADD567E4B50</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>FullAuthIOSClient</string>
+			<key>target</key>
+			<string>F2DC6F84DFDCCBA7383B1F4CDAA759A5</string>
+			<key>targetProxy</key>
+			<string>870D4CBFF92381D05EA84F68DF58484F</string>
+		</dict>
+		<key>10653C142FFDF1986227894BF0317944</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>MultipartFormData.swift</string>
+			<key>path</key>
+			<string>Source/MultipartFormData.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>111FF91FD086208C789BC9B95EE70E80</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>FullAuthIOSClient.bundle</string>
+			<key>path</key>
+			<string>FullAuthIOSClient.bundle</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>11A729637020C2609E3710F9AC493413</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>ResourceOwnerTokenRequest.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>138BB31698882EFE12C6B1347C8FEBD9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-FullAuthIOSClient_Tests-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>140EEE345D35EE52B945ED3E6A295F89</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>2F4F619A5A688D806F5B77BDD55E7461</string>
+				<string>7E3CDE8E44764347D7E651D03731454F</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>172192E02DCC95EF81751D4F3B1B2812</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>FullAuthIOSClient-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1766A54600525601C584F96B03ECF110</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>033E62707F0715D56E7AB16FC7B2EF3A</string>
+				<string>AB0FB7ED3BFBE1C2B6D397EA60519697</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>177F46EE5B12BE1D32BFDCCC2B696BDB</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>A9978A8F749793DC6F72CE9668BFFA56</string>
+			<key>buildPhases</key>
+			<array>
+				<string>BE609E8EFA2CCE80C6992DA36D430E2C</string>
+				<string>E9A8138507A3A905ADBE3959E9235915</string>
+				<string>47A46385D2542DA3D40349BB8C3197D1</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>8BFF240F4B1062D3CE32C7375C2472B0</string>
+				<string>77160991B789C4170AE5E73DD2A6D042</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-FullAuthIOSClient_Tests</string>
+			<key>productName</key>
+			<string>Pods-FullAuthIOSClient_Tests</string>
+			<key>productReference</key>
+			<string>62B5D39C7E6FF9103566B70FAC8C5C12</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>192C754DD0CACED05603FAFBA9774849</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Pods-FullAuthIOSClient_Example-acknowledgements.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1A978A7CB8C1E4827237D7BA7ADFE2C2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-FullAuthIOSClient_Tests-frameworks.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1C3942570798A98345391FCA8423641C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>21379CE82FF1D2F2CB48458ED91D6919</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>1DBE908E9D478AD833C3CA3E0419EF12</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C13F4564E16770CF73682CA14ABBE763</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Development Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>1DD042AECBC2367D39E12B1C1AE21A81</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>1DE0EBCD5E3994F81C6AC1EA1F2B4922</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>140EEE345D35EE52B945ED3E6A295F89</string>
+			<key>buildPhases</key>
+			<array>
+				<string>1DD042AECBC2367D39E12B1C1AE21A81</string>
+				<string>6F5DC52C0BF3BB226D9CB326B49BC2CA</string>
+				<string>FF3130B807260847E19FC2BD299568F7</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>FullAuthIOSClient-FullAuthIOSClient</string>
+			<key>productName</key>
+			<string>FullAuthIOSClient-FullAuthIOSClient</string>
+			<key>productReference</key>
+			<string>111FF91FD086208C789BC9B95EE70E80</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle</string>
+		</dict>
+		<key>20C396BA1B90EEE39D4B19FE012C4F6D</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>09192E6B9C45ACAB5568261F45FA3D88</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>21379CE82FF1D2F2CB48458ED91D6919</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Constants.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>21FA4AD1EF77337F9C8F2AD871ED371D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Alamofire.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>23D4D8DBF3D77B1F970DB9DF6C963A84</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>Alamofire.swift</string>
+			<key>path</key>
+			<string>Source/Alamofire.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>25308A143ED5AA82593A7E1D950849C4</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>9EFCE8A3DC08536A2B19894C1FF3E86D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>iOS</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>27574793F85E379E29C978AA20EE9FC2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D1727358E2BEB8817B02AFE51232368C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>277F1F8A9FAA21AB0A81A4F8DE9445A7</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>1C3942570798A98345391FCA8423641C</string>
+				<string>615A0A165F3E1E66A8A84B1F1E0E9B0E</string>
+				<string>B892CEDE4C182F4C010950028038CA8F</string>
+				<string>791561357D822DAC22B0D01AF9FC56A0</string>
+				<string>8A9968B958F7BD1C7B55BAB0B431AEEE</string>
+				<string>966E5E52F214D530781B1FE22B0716E9</string>
+				<string>49FB64F920C01C7EBE30D8EBADF00A49</string>
+				<string>39FC710E305E574E9272AF9F250E33D2</string>
+				<string>83DC579D7C79807796E3C433EC93814E</string>
+				<string>27574793F85E379E29C978AA20EE9FC2</string>
+				<string>817F3DB410E3DCD37F8DD1F60072EA9A</string>
+				<string>377DBD252FD471BA88E8F6652153B08F</string>
+				<string>02790709BBD5B7EE8A24F9F170F71700</string>
+				<string>7C1E18BB3A9F5612866F4D751555482C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>290EBA503297AB9F53AB932CB1D85266</key>
+		<dict>
+			<key>fileRef</key>
+			<string>DC9669F6805F5E0E8273D835404A9243</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>29A7AEFAADC97D95CAB5FF5E780328FD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods-FullAuthIOSClient_Example.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2C5450AC69398958CF6F7539EF7D99E5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>4FC4583A4BD15196E6859EA5E990AD3F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>2C64204AE0296DD5A03A8A6473744DAD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-FullAuthIOSClient_Example-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2D8E8EC45A3A1A1D94AE762CB5028504</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>A70CDAD61F90AC503C7D04CC22DA2923</string>
+				<string>FB45FFD90572718D82AB9092B750F0CA</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>2E650E32673A379AB5615D85DAB53C8D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-FullAuthIOSClient_Tests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2F4F619A5A688D806F5B77BDD55E7461</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E75292D8EC09809F28CDF59CD550728E</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>FullAuthIOSClient</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>bundle</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>328720159EC0A35A5E8EBB7C12BCC676</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>OAuthTokenRequest.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>360E9EE1B8CDFCBA74838D9E89529D94</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-FullAuthIOSClient_Example-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>377DBD252FD471BA88E8F6652153B08F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>465297C34E1429B6D7D6CC4A7A552BA9</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>38A9D2FB80C3B3C0D4919975FBB97D42</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>A00C76B09BF2028B3A08D543244A13AA</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-FullAuthIOSClient_Example/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-FullAuthIOSClient_Example/Pods-FullAuthIOSClient_Example.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_FullAuthIOSClient_Example</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>391EF5C0D4551025EC9A9ABC172A1635</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9EFCE8A3DC08536A2B19894C1FF3E86D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>39FC710E305E574E9272AF9F250E33D2</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F0CA14B54A4C36862656C6F0EA070B10</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>3BEA3D713E3C81A0E46EEA95A55F2596</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>432ECC54282C84882B482CCB4CF227FC</string>
+			<key>remoteInfo</key>
+			<string>Alamofire</string>
+		</dict>
+		<key>3BFE98142476FAB3FD0C6A0678EB19EB</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>Utils.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3E213F2BC4B47AF7D0FDBB08E36D1E9C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D8C39EB0A980A33BBF3A85CE1166E736</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pod</string>
+			<key>path</key>
+			<string>Pod</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3ED34BA3800CF839C27B9927DE211716</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>1DE0EBCD5E3994F81C6AC1EA1F2B4922</string>
+			<key>remoteInfo</key>
+			<string>FullAuthIOSClient-FullAuthIOSClient</string>
+		</dict>
+		<key>405A7C3030F6D3BDE3978D6D558FDF7F</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>21FA4AD1EF77337F9C8F2AD871ED371D</string>
+				<string>7D7AAA0E85E40ED735D6BCBF7A243C46</string>
+				<string>8D1C843C58F0C2DFE4522F24897D8CCE</string>
+				<string>E6D51E88CF06503F74AC8F5ECD5A209B</string>
+				<string>4FC4583A4BD15196E6859EA5E990AD3F</string>
+				<string>5E53BF5A61CAF6972C5CDD2C3EE6C003</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>../Target Support Files/Alamofire</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>42982C5D6CAC5CFBF12196130D81CFF1</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E75292D8EC09809F28CDF59CD550728E</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/FullAuthIOSClient/FullAuthIOSClient-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/FullAuthIOSClient/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/FullAuthIOSClient/FullAuthIOSClient.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>FullAuthIOSClient</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>42E10C6FB6516F29B58D28451A9B6C57</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>FullAuthIOSClient-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>432ECC54282C84882B482CCB4CF227FC</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>8B2B2DA2F7F80D41B1FDB5FACFA4B3DE</string>
+			<key>buildPhases</key>
+			<array>
+				<string>EF659EFF40D426A3A32A82CDB98CC6EE</string>
+				<string>A5AE1D340C4A0691EC28EEA8241C9FCD</string>
+				<string>5F7B61281F714E2A64A51E80A2C9C062</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Alamofire</string>
+			<key>productName</key>
+			<string>Alamofire</string>
+			<key>productReference</key>
+			<string>A3DE7FC58041582DE2D7294A9336B970</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>465297C34E1429B6D7D6CC4A7A552BA9</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>RefreshTokenRequest.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>47A46385D2542DA3D40349BB8C3197D1</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>E6B29EA0BBBE9D7D4E45CBE5C1B7D72D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>49FB64F920C01C7EBE30D8EBADF00A49</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6ED758C3EEEA4F737CE9130F9B18F4CE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4A5909CDA21FEA464656B05EEAE1C0EA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-FullAuthIOSClient_Tests-resources.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>4DE5FCC41D100B113B6645EA64410F16</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5465E2051CE332BA7D4E0595F9B44718</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>4FC4583A4BD15196E6859EA5E990AD3F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Alamofire-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5241F56B5C8C48BD734958D586267D1A</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>Manager.swift</string>
+			<key>path</key>
+			<string>Source/Manager.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>52836A3E223CCB5C120D4BE7D37AC1BF</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>ServerTrustPolicy.swift</string>
+			<key>path</key>
+			<string>Source/ServerTrustPolicy.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5465E2051CE332BA7D4E0595F9B44718</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>ParameterEncoding.swift</string>
+			<key>path</key>
+			<string>Source/ParameterEncoding.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>55515FB486FD6558DF3AC790070CBD9E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>OAuthAccessToken.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>59B91F212518421F271EBA85D5530651</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>706C7AFFE37BA158C3553250F4B5FAED</string>
+				<string>25308A143ED5AA82593A7E1D950849C4</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5E53BF5A61CAF6972C5CDD2C3EE6C003</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5F7B61281F714E2A64A51E80A2C9C062</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>2C5450AC69398958CF6F7539EF7D99E5</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>615A0A165F3E1E66A8A84B1F1E0E9B0E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>6A8EBDAF13F6136EDC1198E39DFB4EB8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>627724FA8C803BFB8F24F06B6E7C1A11</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>62B5D39C7E6FF9103566B70FAC8C5C12</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods_FullAuthIOSClient_Tests.framework</string>
+			<key>path</key>
+			<string>Pods_FullAuthIOSClient_Tests.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>643E8F82636CD3897DF1FBB72A18A3A5</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>Alamofire</string>
+			<key>target</key>
+			<string>432ECC54282C84882B482CCB4CF227FC</string>
+			<key>targetProxy</key>
+			<string>0326F82861528A4BE0CCB8CB60718F79</string>
+		</dict>
+		<key>68028E51F960851CD5A1B70A9CD4FAF6</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>GoogleTokenRequest.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6A8EBDAF13F6136EDC1198E39DFB4EB8</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>FacebookTokenRequest.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6ED758C3EEEA4F737CE9130F9B18F4CE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>OauthEnums.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>6F5DC52C0BF3BB226D9CB326B49BC2CA</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>706C7AFFE37BA158C3553250F4B5FAED</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Alamofire.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>77160991B789C4170AE5E73DD2A6D042</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>FullAuthIOSClient</string>
+			<key>target</key>
+			<string>F2DC6F84DFDCCBA7383B1F4CDAA759A5</string>
+			<key>targetProxy</key>
+			<string>E4462EC74F642254D54F15F9FABDC499</string>
+		</dict>
+		<key>779B19103BE8402A434ED95F67573911</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>Validation.swift</string>
+			<key>path</key>
+			<string>Source/Validation.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>77EE535643F3563E6887F6A2020A4340</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C38AE0FAECB53B3F504A3251C8B9A738</string>
+				<string>E75292D8EC09809F28CDF59CD550728E</string>
+				<string>88899C0D0767767AA79B026F61F53C88</string>
+				<string>172192E02DCC95EF81751D4F3B1B2812</string>
+				<string>42E10C6FB6516F29B58D28451A9B6C57</string>
+				<string>DB1E90F937EFD6A4A1B1DEA57C7DDAD2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Support Files</string>
+			<key>path</key>
+			<string>Example/Pods/Target Support Files/FullAuthIOSClient</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7835749D1C4FA403E4BB17A0C787EDCA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>Result.swift</string>
+			<key>path</key>
+			<string>Source/Result.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>791561357D822DAC22B0D01AF9FC56A0</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E39DC106DEC7A341CE750944A9340FA2</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7C1E18BB3A9F5612866F4D751555482C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>3BFE98142476FAB3FD0C6A0678EB19EB</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>7CF2E6E36C558596968A7A37ED8AAA08</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-FullAuthIOSClient_Example-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7D7AAA0E85E40ED735D6BCBF7A243C46</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Alamofire.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7DB346D0F39D3F0E887471402A8071AB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>BA6428E9F66FD5A23C0A2E06ED26CD2F</string>
+				<string>1DBE908E9D478AD833C3CA3E0419EF12</string>
+				<string>59B91F212518421F271EBA85D5530651</string>
+				<string>20C396BA1B90EEE39D4B19FE012C4F6D</string>
+				<string>8E181CCA8E402A35D576D9560EF1C4CC</string>
+				<string>EF69C2537EC52A0870823149BA473877</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>7E3CDE8E44764347D7E651D03731454F</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E75292D8EC09809F28CDF59CD550728E</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>FullAuthIOSClient</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>bundle</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>80F496237530D382A045A29654D8C11C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>52836A3E223CCB5C120D4BE7D37AC1BF</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>817F3DB410E3DCD37F8DD1F60072EA9A</key>
+		<dict>
+			<key>fileRef</key>
+			<string>328720159EC0A35A5E8EBB7C12BCC676</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>82971968CBDAB224212EEB4607C9FB8D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>7835749D1C4FA403E4BB17A0C787EDCA</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>83957AB2EE778B52399CC4C903539BD0</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>Error.swift</string>
+			<key>path</key>
+			<string>Source/Error.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8399DBEE3E2D98EB1F466132E476F4D9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>10653C142FFDF1986227894BF0317944</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>83DC579D7C79807796E3C433EC93814E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>E8DBB9CC32B41690DA01D85B3B841C3C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>850D658460F1D5F543BFE0C8DC8589B9</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>627724FA8C803BFB8F24F06B6E7C1A11</string>
+				<string>29A7AEFAADC97D95CAB5FF5E780328FD</string>
+				<string>7CF2E6E36C558596968A7A37ED8AAA08</string>
+				<string>192C754DD0CACED05603FAFBA9774849</string>
+				<string>360E9EE1B8CDFCBA74838D9E89529D94</string>
+				<string>9CF5833C3762D5DE359763BC722A956F</string>
+				<string>2C64204AE0296DD5A03A8A6473744DAD</string>
+				<string>ED2411C274842D3AB51CFFFAFC81341F</string>
+				<string>A00C76B09BF2028B3A08D543244A13AA</string>
+				<string>A7CFC511BA89BBCB6B261E26176241FD</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-FullAuthIOSClient_Example</string>
+			<key>path</key>
+			<string>Target Support Files/Pods-FullAuthIOSClient_Example</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>870D4CBFF92381D05EA84F68DF58484F</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>F2DC6F84DFDCCBA7383B1F4CDAA759A5</string>
+			<key>remoteInfo</key>
+			<string>FullAuthIOSClient</string>
+		</dict>
+		<key>88899C0D0767767AA79B026F61F53C88</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>FullAuthIOSClient-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8A62C5C4B0403F971E20A0F27554F239</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods-FullAuthIOSClient_Tests.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8A9968B958F7BD1C7B55BAB0B431AEEE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>68028E51F960851CD5A1B70A9CD4FAF6</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>8AE82608C8C2A46981A07D7E422BEB45</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>Response.swift</string>
+			<key>path</key>
+			<string>Source/Response.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8B2B2DA2F7F80D41B1FDB5FACFA4B3DE</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>C993D8405F342C8E23BAD4EDF32D79E0</string>
+				<string>A3427C918F24207B5FD3A44958345D7E</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>8BFF240F4B1062D3CE32C7375C2472B0</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>Alamofire</string>
+			<key>target</key>
+			<string>432ECC54282C84882B482CCB4CF227FC</string>
+			<key>targetProxy</key>
+			<string>3BEA3D713E3C81A0E46EEA95A55F2596</string>
+		</dict>
+		<key>8D1C843C58F0C2DFE4522F24897D8CCE</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Alamofire-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8E181CCA8E402A35D576D9560EF1C4CC</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A3DE7FC58041582DE2D7294A9336B970</string>
+				<string>111FF91FD086208C789BC9B95EE70E80</string>
+				<string>F01E771F83515492F8BB04475267A8AD</string>
+				<string>981929955821A84C84C1F5A87DAC8DF5</string>
+				<string>62B5D39C7E6FF9103566B70FAC8C5C12</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>901EEE443D5FCA7A593526BE1FA5159B</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>FullAuthIOSClient-FullAuthIOSClient</string>
+			<key>target</key>
+			<string>1DE0EBCD5E3994F81C6AC1EA1F2B4922</string>
+			<key>targetProxy</key>
+			<string>3ED34BA3800CF839C27B9927DE211716</string>
+		</dict>
+		<key>92631F2E5A550F5A7E4CA65794B958EA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-FullAuthIOSClient_Tests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>948996616B0A38BD6FE8C4CB309CC964</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>Upload.swift</string>
+			<key>path</key>
+			<string>Source/Upload.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>94D2880DCE1047CCC06EBD9CEDBA400C</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>9672E482D70D07473826DF4FBCB13F56</string>
+			<key>buildPhases</key>
+			<array>
+				<string>DDBF4AA1DB78FC914716F7F3C8D64E57</string>
+				<string>952048F7AB51C36DB952B2A4CE8013AC</string>
+				<string>A29425F60F5791D2D69C141A084C0053</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>9B3260490720DC785316630CBD5FDD17</string>
+				<string>0B68C3420519B072515B4ADD567E4B50</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>Pods-FullAuthIOSClient_Example</string>
+			<key>productName</key>
+			<string>Pods-FullAuthIOSClient_Example</string>
+			<key>productReference</key>
+			<string>981929955821A84C84C1F5A87DAC8DF5</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>952048F7AB51C36DB952B2A4CE8013AC</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>391EF5C0D4551025EC9A9ABC172A1635</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>966E5E52F214D530781B1FE22B0716E9</key>
+		<dict>
+			<key>fileRef</key>
+			<string>55515FB486FD6558DF3AC790070CBD9E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9672E482D70D07473826DF4FBCB13F56</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>38A9D2FB80C3B3C0D4919975FBB97D42</string>
+				<string>CACF94730BE4D711D6D166A576B5ECBE</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>96D99D0C2472535A169DED65CB231CD7</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9EFCE8A3DC08536A2B19894C1FF3E86D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>981929955821A84C84C1F5A87DAC8DF5</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Pods_FullAuthIOSClient_Example.framework</string>
+			<key>path</key>
+			<string>Pods_FullAuthIOSClient_Example.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>98721A4E0DCD4632DD3DA63214D74565</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-FullAuthIOSClient_Tests-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>99BEA3099E6F775F2444BD949C5AE930</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9EFCE8A3DC08536A2B19894C1FF3E86D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>9A2B3F76EE5B393C5D8242CD73EE8218</key>
+		<dict>
+			<key>fileRef</key>
+			<string>42E10C6FB6516F29B58D28451A9B6C57</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>9A6A073C9BFC0DF59100FE3B80274F22</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>9A2B3F76EE5B393C5D8242CD73EE8218</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>9B3260490720DC785316630CBD5FDD17</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>name</key>
+			<string>Alamofire</string>
+			<key>target</key>
+			<string>432ECC54282C84882B482CCB4CF227FC</string>
+			<key>targetProxy</key>
+			<string>D128F12F629A3EDD94F27BB157886266</string>
+		</dict>
+		<key>9CF5833C3762D5DE359763BC722A956F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.script.sh</string>
+			<key>path</key>
+			<string>Pods-FullAuthIOSClient_Example-frameworks.sh</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>9EFCE8A3DC08536A2B19894C1FF3E86D</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>A00C76B09BF2028B3A08D543244A13AA</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-FullAuthIOSClient_Example.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A29425F60F5791D2D69C141A084C0053</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>F63186FAD98F8E25E9460DDEF9D7317E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXHeadersBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A2C172FE407C0BC3478ADCA91A6C9CEC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>5241F56B5C8C48BD734958D586267D1A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A3427C918F24207B5FD3A44958345D7E</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>7D7AAA0E85E40ED735D6BCBF7A243C46</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Alamofire/Alamofire-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Alamofire/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Alamofire/Alamofire.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>PRODUCT_NAME</key>
+				<string>Alamofire</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>A3505FA2FB3067D53847AD288AC04F03</key>
+		<dict>
+			<key>fileRef</key>
+			<string>ADA14379DE2012C9EFB2B9C3A3A39AB4</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>A3DE7FC58041582DE2D7294A9336B970</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>Alamofire.framework</string>
+			<key>path</key>
+			<string>Alamofire.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>A5AE1D340C4A0691EC28EEA8241C9FCD</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>96D99D0C2472535A169DED65CB231CD7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>A70CDAD61F90AC503C7D04CC22DA2923</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>A7CFC511BA89BBCB6B261E26176241FD</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>Pods-FullAuthIOSClient_Example.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A9978A8F749793DC6F72CE9668BFFA56</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>B4CCD0C8C0BF4154B12CE86464B058E8</string>
+				<string>CFFBB9E4D104E6BDB4A722F381B746F3</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>AB0FB7ED3BFBE1C2B6D397EA60519697</key>
+		<dict>
+			<key>fileRef</key>
+			<string>9EFCE8A3DC08536A2B19894C1FF3E86D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>ADA14379DE2012C9EFB2B9C3A3A39AB4</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>Download.swift</string>
+			<key>path</key>
+			<string>Source/Download.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B0FB4B01682814B9E3D32F9DC4A5E762</key>
+		<dict>
+			<key>fileRef</key>
+			<string>23D4D8DBF3D77B1F970DB9DF6C963A84</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B4CCD0C8C0BF4154B12CE86464B058E8</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>92631F2E5A550F5A7E4CA65794B958EA</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-FullAuthIOSClient_Tests/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-FullAuthIOSClient_Tests/Pods-FullAuthIOSClient_Tests.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_FullAuthIOSClient_Tests</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>B6D2DC3E3DA44CD382B9B425F40E11C1</key>
+		<dict>
+			<key>fileRef</key>
+			<string>8D1C843C58F0C2DFE4522F24897D8CCE</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>B892CEDE4C182F4C010950028038CA8F</key>
+		<dict>
+			<key>fileRef</key>
+			<string>88899C0D0767767AA79B026F61F53C88</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BA6428E9F66FD5A23C0A2E06ED26CD2F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>name</key>
+			<string>Podfile</string>
+			<key>path</key>
+			<string>../Podfile</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+			<key>xcLanguageSpecificationIdentifier</key>
+			<string>xcode.lang.ruby</string>
+		</dict>
+		<key>BB529BA292A3857EF88A7556EAFDF886</key>
+		<dict>
+			<key>fileRef</key>
+			<string>111FF91FD086208C789BC9B95EE70E80</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>BDBEBC61A0862FFEDFEC9F164363F725</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>Pods-FullAuthIOSClient_Tests-acknowledgements.markdown</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BE609E8EFA2CCE80C6992DA36D430E2C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>290EBA503297AB9F53AB932CB1D85266</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C13F4564E16770CF73682CA14ABBE763</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>3E213F2BC4B47AF7D0FDBB08E36D1E9C</string>
+				<string>77EE535643F3563E6887F6A2020A4340</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>FullAuthIOSClient</string>
+			<key>path</key>
+			<string>../..</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C38AE0FAECB53B3F504A3251C8B9A738</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>FullAuthIOSClient.modulemap</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C5830246704CACDD9D1BA3C3B800B706</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>42982C5D6CAC5CFBF12196130D81CFF1</string>
+				<string>07378CA88577A3D0851F72D8C2D94A19</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>C75519F0450166A6F28126ECC7664E9C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>779B19103BE8402A434ED95F67573911</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C78998CD2604C13E3BAAE1859DEB4CB2</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>CCB3883102DC4A9AFDAE2B5799720B37</string>
+				<string>8A62C5C4B0403F971E20A0F27554F239</string>
+				<string>BDBEBC61A0862FFEDFEC9F164363F725</string>
+				<string>138BB31698882EFE12C6B1347C8FEBD9</string>
+				<string>DC9669F6805F5E0E8273D835404A9243</string>
+				<string>1A978A7CB8C1E4827237D7BA7ADFE2C2</string>
+				<string>4A5909CDA21FEA464656B05EEAE1C0EA</string>
+				<string>98721A4E0DCD4632DD3DA63214D74565</string>
+				<string>92631F2E5A550F5A7E4CA65794B958EA</string>
+				<string>2E650E32673A379AB5615D85DAB53C8D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods-FullAuthIOSClient_Tests</string>
+			<key>path</key>
+			<string>Target Support Files/Pods-FullAuthIOSClient_Tests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C89117FC38D94C9DF36CA21E3C96EEB7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>Stream.swift</string>
+			<key>path</key>
+			<string>Source/Stream.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C993D8405F342C8E23BAD4EDF32D79E0</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>7D7AAA0E85E40ED735D6BCBF7A243C46</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>Target Support Files/Alamofire/Alamofire-prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Alamofire/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Alamofire/Alamofire.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>PRODUCT_NAME</key>
+				<string>Alamofire</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>CACF94730BE4D711D6D166A576B5ECBE</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>A7CFC511BA89BBCB6B261E26176241FD</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-FullAuthIOSClient_Example/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-FullAuthIOSClient_Example/Pods-FullAuthIOSClient_Example.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_FullAuthIOSClient_Example</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>CCB3883102DC4A9AFDAE2B5799720B37</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>CFFBB9E4D104E6BDB4A722F381B746F3</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>2E650E32673A379AB5615D85DAB53C8D</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>CURRENT_PROJECT_VERSION</key>
+				<string>1</string>
+				<key>DEFINES_MODULE</key>
+				<string>YES</string>
+				<key>DYLIB_COMPATIBILITY_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_CURRENT_VERSION</key>
+				<string>1</string>
+				<key>DYLIB_INSTALL_NAME_BASE</key>
+				<string>@rpath</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>INFOPLIST_FILE</key>
+				<string>Target Support Files/Pods-FullAuthIOSClient_Tests/Info.plist</string>
+				<key>INSTALL_PATH</key>
+				<string>$(LOCAL_LIBRARY_DIR)/Frameworks</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<array>
+					<string>$(inherited)</string>
+					<string>@executable_path/Frameworks</string>
+					<string>@loader_path/Frameworks</string>
+				</array>
+				<key>MACH_O_TYPE</key>
+				<string>staticlib</string>
+				<key>MODULEMAP_FILE</key>
+				<string>Target Support Files/Pods-FullAuthIOSClient_Tests/Pods-FullAuthIOSClient_Tests.modulemap</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>OTHER_LDFLAGS</key>
+				<string></string>
+				<key>OTHER_LIBTOOLFLAGS</key>
+				<string></string>
+				<key>PODS_ROOT</key>
+				<string>$(SRCROOT)</string>
+				<key>PRODUCT_NAME</key>
+				<string>Pods_FullAuthIOSClient_Tests</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SKIP_INSTALL</key>
+				<string>YES</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>1,2</string>
+				<key>VERSIONING_SYSTEM</key>
+				<string>apple-generic</string>
+				<key>VERSION_INFO_PREFIX</key>
+				<string></string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>D128F12F629A3EDD94F27BB157886266</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>432ECC54282C84882B482CCB4CF227FC</string>
+			<key>remoteInfo</key>
+			<string>Alamofire</string>
+		</dict>
+		<key>D1727358E2BEB8817B02AFE51232368C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>OAuthTokenErrorResponse.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D21B7325B3642887BFBE977E021F2D26</key>
+		<dict>
+			<key>fileRef</key>
+			<string>F5EBB70A7BA5F9037CD2DA409E148A73</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D41D8CD98F00B204E9800998ECF8427E</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastSwiftUpdateCheck</key>
+				<string>0700</string>
+				<key>LastUpgradeCheck</key>
+				<string>0700</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>2D8E8EC45A3A1A1D94AE762CB5028504</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>7DB346D0F39D3F0E887471402A8071AB</string>
+			<key>productRefGroup</key>
+			<string>8E181CCA8E402A35D576D9560EF1C4CC</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>432ECC54282C84882B482CCB4CF227FC</string>
+				<string>F2DC6F84DFDCCBA7383B1F4CDAA759A5</string>
+				<string>1DE0EBCD5E3994F81C6AC1EA1F2B4922</string>
+				<string>94D2880DCE1047CCC06EBD9CEDBA400C</string>
+				<string>177F46EE5B12BE1D32BFDCCC2B696BDB</string>
+			</array>
+		</dict>
+		<key>D75CA395D510E08C404E55F5BDAE55CE</key>
+		<dict>
+			<key>fileRef</key>
+			<string>83957AB2EE778B52399CC4C903539BD0</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D8C39EB0A980A33BBF3A85CE1166E736</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>21379CE82FF1D2F2CB48458ED91D6919</string>
+				<string>6A8EBDAF13F6136EDC1198E39DFB4EB8</string>
+				<string>E39DC106DEC7A341CE750944A9340FA2</string>
+				<string>68028E51F960851CD5A1B70A9CD4FAF6</string>
+				<string>55515FB486FD6558DF3AC790070CBD9E</string>
+				<string>6ED758C3EEEA4F737CE9130F9B18F4CE</string>
+				<string>F0CA14B54A4C36862656C6F0EA070B10</string>
+				<string>E8DBB9CC32B41690DA01D85B3B841C3C</string>
+				<string>D1727358E2BEB8817B02AFE51232368C</string>
+				<string>328720159EC0A35A5E8EBB7C12BCC676</string>
+				<string>465297C34E1429B6D7D6CC4A7A552BA9</string>
+				<string>11A729637020C2609E3710F9AC493413</string>
+				<string>3BFE98142476FAB3FD0C6A0678EB19EB</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Classes</string>
+			<key>path</key>
+			<string>Classes</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DAE9FC66CF4DD41539DDA130EC67676E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>360E9EE1B8CDFCBA74838D9E89529D94</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>DB1E90F937EFD6A4A1B1DEA57C7DDAD2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DBF7978EEF69B24D2E9DC4293B86C852</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>BB529BA292A3857EF88A7556EAFDF886</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>DC9669F6805F5E0E8273D835404A9243</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Pods-FullAuthIOSClient_Tests-dummy.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>DDBF4AA1DB78FC914716F7F3C8D64E57</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>DAE9FC66CF4DD41539DDA130EC67676E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>E39DC106DEC7A341CE750944A9340FA2</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>FullAuthOAuthService.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E4462EC74F642254D54F15F9FABDC499</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>D41D8CD98F00B204E9800998ECF8427E</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>F2DC6F84DFDCCBA7383B1F4CDAA759A5</string>
+			<key>remoteInfo</key>
+			<string>FullAuthIOSClient</string>
+		</dict>
+		<key>E6B29EA0BBBE9D7D4E45CBE5C1B7D72D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>98721A4E0DCD4632DD3DA63214D74565</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>E6D51E88CF06503F74AC8F5ECD5A209B</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Alamofire-prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E75292D8EC09809F28CDF59CD550728E</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>path</key>
+			<string>FullAuthIOSClient.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E8DBB9CC32B41690DA01D85B3B841C3C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>OauthParamName.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>E9A8138507A3A905ADBE3959E9235915</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>99BEA3099E6F775F2444BD949C5AE930</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>ED2411C274842D3AB51CFFFAFC81341F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Pods-FullAuthIOSClient_Example-umbrella.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>EF659EFF40D426A3A32A82CDB98CC6EE</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>B6D2DC3E3DA44CD382B9B425F40E11C1</string>
+				<string>B0FB4B01682814B9E3D32F9DC4A5E762</string>
+				<string>A3505FA2FB3067D53847AD288AC04F03</string>
+				<string>D75CA395D510E08C404E55F5BDAE55CE</string>
+				<string>A2C172FE407C0BC3478ADCA91A6C9CEC</string>
+				<string>8399DBEE3E2D98EB1F466132E476F4D9</string>
+				<string>4DE5FCC41D100B113B6645EA64410F16</string>
+				<string>FC14480CECE872865A9C6E584F886DA3</string>
+				<string>03F494989CC1A8857B68A317D5D6860F</string>
+				<string>D21B7325B3642887BFBE977E021F2D26</string>
+				<string>82971968CBDAB224212EEB4607C9FB8D</string>
+				<string>80F496237530D382A045A29654D8C11C</string>
+				<string>FEF0D7653948988B804226129471C1EC</string>
+				<string>0681ADC8BAE2C3185F13487BAAB4D9DD</string>
+				<string>C75519F0450166A6F28126ECC7664E9C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>EF69C2537EC52A0870823149BA473877</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>850D658460F1D5F543BFE0C8DC8589B9</string>
+				<string>C78998CD2604C13E3BAAE1859DEB4CB2</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Targets Support Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F01E771F83515492F8BB04475267A8AD</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>FullAuthIOSClient.framework</string>
+			<key>path</key>
+			<string>FullAuthIOSClient.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>F0CA14B54A4C36862656C6F0EA070B10</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>OAuthError.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F2DC6F84DFDCCBA7383B1F4CDAA759A5</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>C5830246704CACDD9D1BA3C3B800B706</string>
+			<key>buildPhases</key>
+			<array>
+				<string>277F1F8A9FAA21AB0A81A4F8DE9445A7</string>
+				<string>1766A54600525601C584F96B03ECF110</string>
+				<string>DBF7978EEF69B24D2E9DC4293B86C852</string>
+				<string>9A6A073C9BFC0DF59100FE3B80274F22</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>643E8F82636CD3897DF1FBB72A18A3A5</string>
+				<string>901EEE443D5FCA7A593526BE1FA5159B</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>FullAuthIOSClient</string>
+			<key>productName</key>
+			<string>FullAuthIOSClient</string>
+			<key>productReference</key>
+			<string>F01E771F83515492F8BB04475267A8AD</string>
+			<key>productType</key>
+			<string>com.apple.product-type.framework</string>
+		</dict>
+		<key>F5EBB70A7BA5F9037CD2DA409E148A73</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>ResponseSerialization.swift</string>
+			<key>path</key>
+			<string>Source/ResponseSerialization.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>F63186FAD98F8E25E9460DDEF9D7317E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>ED2411C274842D3AB51CFFFAFC81341F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Public</string>
+				</array>
+			</dict>
+		</dict>
+		<key>FA23887509C9FF173ECBE0A470EDD527</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>name</key>
+			<string>Request.swift</string>
+			<key>path</key>
+			<string>Source/Request.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>FB45FFD90572718D82AB9092B750F0CA</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>RELEASE=1</string>
+				</array>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.0</string>
+				<key>STRIP_INSTALLED_PRODUCT</key>
+				<string>NO</string>
+				<key>SYMROOT</key>
+				<string>${SRCROOT}/../build</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>FC14480CECE872865A9C6E584F886DA3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>FA23887509C9FF173ECBE0A470EDD527</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FEF0D7653948988B804226129471C1EC</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C89117FC38D94C9DF36CA21E3C96EEB7</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>FF3130B807260847E19FC2BD299568F7</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>D41D8CD98F00B204E9800998ECF8427E</string>
+</dict>
+</plist>
