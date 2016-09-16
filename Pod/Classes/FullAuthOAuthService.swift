@@ -13,21 +13,11 @@ open class FullAuthOAuthService {
     
     open var timeOutInterval : TimeInterval = 60
     
+    public typealias ApiResponseHandler = (_ success : Bool,_ httpRequest : URLRequest?,_ httpResponse :  HTTPURLResponse?,_ responseJson : [String : AnyObject?]?,_ error : NSError?) -> Void
     
-    public typealias ApiResponseHandler = (_ success : Bool,
-        _ httpRequest : URLRequest?,
-        _ httpResponse :  HTTPURLResponse?,
-        _ responseJson : [String : AnyObject?]?,
-        _ error : NSError?) -> Void
+    public typealias TokenInfoHandler = (_ error : NSError?,_ errorResponse : OAuthTokenErrorResponse?,_ accessToken : OAuthAccessToken?) -> Void
     
-    
-    public typealias TokenInfoHandler = (_ error : NSError?,
-        _ errorResponse : OAuthTokenErrorResponse?,
-        _ accessToken : OAuthAccessToken?) -> Void
-    
-    public typealias revokeTokenHandler = (_ success: Bool,
-        _ error : NSError?,
-        _ errorResponse : OAuthTokenErrorResponse?) -> Void
+    public typealias revokeTokenHandler = (_ success: Bool,_ error : NSError?,_ errorResponse : OAuthTokenErrorResponse?) -> Void
     
     
     public init(authDomain : String,clientId :String? = nil,clientSecret : String? = nil){

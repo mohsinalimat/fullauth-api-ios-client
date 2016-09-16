@@ -12,7 +12,12 @@ open class FacebookTokenRequest : OAuthTokenRequest {
     
     open let facebookToken :String
     
-    public init(authDomain: String, clientId: String, clientSecret: String, scope: [String],facebookToken : String, accessType : OauthAccessType? = nil) {
+    public init(authDomain: String,
+                clientId: String,
+                clientSecret: String,
+                scope: [String],
+                facebookToken : String,
+                accessType : OauthAccessType? = nil) {
         
         self.facebookToken = facebookToken
         
@@ -20,7 +25,6 @@ open class FacebookTokenRequest : OAuthTokenRequest {
         
         self.accessType = accessType
     }
-    
     
     override open func getRequestParam() -> [String : AnyObject] {
        

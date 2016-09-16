@@ -12,7 +12,12 @@ open class GoogleTokenRequest: OAuthTokenRequest {
 
     open let googleToken :String
     
-    public init(authDomain : String,clientId : String,clientSecret :String,scope : [String],googleToken : String,accessType : OauthAccessType? = nil){
+    public init(authDomain : String,
+                clientId : String,
+                clientSecret :String,
+                scope : [String],
+                googleToken : String,
+                accessType : OauthAccessType? = nil){
     
         self.googleToken = googleToken
         
