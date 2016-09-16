@@ -14,7 +14,13 @@ open class ResourceOwnerTokenRequest : OAuthTokenRequest{
     
    open let password : String
     
-   public init(authDomain: String, clientId: String, clientSecret: String, scope: [String],userName : String,password :String,accessType :OauthAccessType? = nil) {
+   public init(authDomain: String,
+               clientId: String,
+               clientSecret: String,
+               scope: [String],
+               userName : String,
+               password :String,
+               accessType :OauthAccessType? = nil) {
         
         self.userName = userName
         
