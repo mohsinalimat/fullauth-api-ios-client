@@ -32,7 +32,7 @@ class TestFullAuthClient: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        revokeAccessToken()
+        requestTokenInfo()
     }
     
     

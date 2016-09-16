@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class GoogleTokenRequest: OAuthTokenRequest {
+open class GoogleTokenRequest: OAuthTokenRequest {
 
-    public let googleToken :String
+    open let googleToken :String
     
     public init(authDomain : String,clientId : String,clientSecret :String,scope : [String],googleToken : String,accessType : OauthAccessType? = nil){
     
@@ -21,11 +21,11 @@ public class GoogleTokenRequest: OAuthTokenRequest {
         self.accessType = accessType
     }
     
-    override public func getRequestParam() -> [String : AnyObject] {
+    override open func getRequestParam() -> [String : AnyObject] {
         
         var param = super.getRequestParam()
         
-        param[OauthParamName.GOOGLE_TOKEN] = self.googleToken
+        param[OauthParamName.GOOGLE_TOKEN] = self.googleToken as AnyObject?
         
         return param
     }

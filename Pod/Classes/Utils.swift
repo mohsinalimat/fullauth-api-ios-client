@@ -8,9 +8,9 @@
 
 import UIKit
 
-public class Utils {
+open class Utils {
     
-    public class func isNilOrEmptyStr(str: String?) -> Bool {
+    open class func isNilOrEmptyStr(_ str: String?) -> Bool {
         
         if (str == nil || str!.isEmpty){
             return true

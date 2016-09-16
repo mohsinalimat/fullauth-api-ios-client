@@ -29,9 +29,9 @@ public enum OauthAccessType : String {
      * @param accessType the access type
      * @return the type
      */
-    static func getType(accessType accessType : String) -> OauthAccessType{
+    static func getType(accessType : String) -> OauthAccessType{
         
-        switch accessType.uppercaseString{
+        switch accessType.uppercased(){
             
         case "ONLINE": return .ONLINE
         case "OFFLINE" : return .OFFLINE
@@ -71,7 +71,7 @@ public enum AccessTokenType: String {
     case DEFAULT = "access token"
     
     
-    static func getAccessTokenString(type: AccessTokenType) -> String{
+    static func getAccessTokenString(_ type: AccessTokenType) -> String{
     
         var tokenStr : String
         
