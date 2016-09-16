@@ -15,7 +15,11 @@ open class RefreshTokenRequest : OAuthTokenRequest{
     
    open var expiryType : OauthExpiryType?
     
-   public init(authDomain: String, clientId: String, clientSecret: String,refreshToken :String,expiryType : OauthExpiryType? = nil) {
+   public init(authDomain: String,
+               clientId: String,
+               clientSecret: String,
+               refreshToken :String,
+               expiryType : OauthExpiryType? = nil) {
         
         self.refreshToken = refreshToken
         self.expiryType = expiryType
@@ -30,7 +34,6 @@ open class RefreshTokenRequest : OAuthTokenRequest{
         param[OauthParamName.REFRESH_TOKEN] = self.refreshToken as AnyObject?
         
         if let expiryType = self.expiryType{
-            
             param[OauthParamName.EXPIRY_TYPE] = expiryType.rawValue as AnyObject?
         }
         

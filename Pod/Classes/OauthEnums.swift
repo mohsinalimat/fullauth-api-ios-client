@@ -8,27 +8,12 @@
 
 import UIKit
 
-/**
- * The enum Oauth access type.
- */
 public enum OauthAccessType : String {
     
-    /**
-     * The ONLINE.
-     */
     case ONLINE = "online"
     
-    /**
-     * The OFFLINE.
-     */
     case OFFLINE = "offline"
 
-    /**
-     * Gets type.
-     *
-     * @param accessType the access type
-     * @return the type
-     */
     static func getType(accessType : String) -> OauthAccessType{
         
         switch accessType.uppercased(){
@@ -79,10 +64,13 @@ public enum AccessTokenType: String {
             
         case .REFRESH:
             tokenStr = "refresh token"
+            
         case .GOOGLE:
             tokenStr = "google access token"
+            
         case .FACEBOOK:
             tokenStr = "facebook access token"
+            
         default:
             tokenStr = "access token"
         }

@@ -262,7 +262,6 @@ open class FullAuthOAuthService {
                 handler?(false, error, errorResp)
             }
 
-            
         }catch let error as NSError{
             handler?(false, error, nil)
         }
@@ -296,17 +295,14 @@ open class FullAuthOAuthService {
         
         if handler != nil{
             
-            if success {
-                
+            guard !success else {
                 handler?(nil,nil, OAuthAccessToken(data: respJson!))
-                
                 return
             }
             
             var errorResp : OAuthTokenErrorResponse?
             
             if respJson != nil {
-                
                 errorResp = OAuthTokenErrorResponse(data: respJson!)
             }
             

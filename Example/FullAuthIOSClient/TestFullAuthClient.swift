@@ -13,7 +13,6 @@ import FullAuthIOSClient
 
 struct OAuthParamHelper {
     
-    
     static let AuthDomain = "subdomain"
     
     static let ClientId = "yourClientId"

@@ -46,12 +46,10 @@ open class OAuthTokenRequest {
         param[OauthParamName.CLIENT_SECRET] = self.clientSecret as AnyObject?
         
         if let scope = self.scope{
-            
             param[OauthParamName.SCOPE] = scope.joined(separator: " ") as AnyObject?
         }
         
         if let accessType = self.accessType{
-            
             param[OauthParamName.ACCESS_TYPE] = accessType.rawValue as AnyObject?
         }
 
