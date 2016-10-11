@@ -194,7 +194,7 @@ open class FullAuthOAuthService {
         let parameter = tokenRequest.getRequestParam()
         
         do{
-            let urlRequest = try URLEncoding.queryString.encode(request, with: parameter)
+            let urlRequest = try URLEncoding.httpBody.encode(request, with: parameter)
             
             makeRequest(urlRequest) { (success, httpRequest, httpResponse, responseJson, error) -> Void in
                 
