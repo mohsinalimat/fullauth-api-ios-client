@@ -43,7 +43,7 @@ playground.xcworkspace
 # Packages/
 .build/
 
-Pods/
+#Pods/
 
 # Carthage
 #
