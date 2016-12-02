@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Pod/Classes/**/*'
   s.resource_bundles = {
-    'FullAuthIOSClient' => ['Pod/Assets/*.png']
+    'FullAuthIOSClient' => ['Pod/Classes/**/*.{storyboard,png}']
   }
   s.dependency 'Alamofire', '~> 4.0'
 end
