@@ -31,7 +31,17 @@ class TestFullAuthClient: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        requestTokenInfo()
+    }
+  
+
+    @IBAction func btnAction(_ sender: Any) {
+        
+        guard let vc = FullAuthVC.webViewController else{
+            return
+        }
+        
+        vc.delegate = self
+        self.present(vc, animated: true, completion: nil)
     }
     
     
@@ -75,6 +85,22 @@ class TestFullAuthClient: UIViewController {
             print("Error -- \(err?.description)")
         }
     }
-    
 }
+
+
+extension TestFullAuthClient: AuthCodeDelegate {
+    
+    func didStartLoad() {
+        
+    }
+    
+    func didFailLoad(withError error: Error?, receiver: UIViewController) {
+        
+    }
+    
+    func didFinishLoad(withCode code: String, receiver: UIViewController) {
+        
+    }
+}
+
 
