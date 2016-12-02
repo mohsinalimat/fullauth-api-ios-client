@@ -1,13 +1,13 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
-platform :ios, '9.0'
+platform :ios, '10.0'
 inhibit_all_warnings!
 
 use_frameworks!
 
 target 'FullAuthIOSClient_Example' do
   pod "FullAuthIOSClient", :path => "../"
-  pod 'Alamofire', '~> 4.0'
+  #pod 'Alamofire', '~> 4.0'
 end
 
 target 'FullAuthIOSClient_Tests' do
