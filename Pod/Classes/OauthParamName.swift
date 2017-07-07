@@ -15,31 +15,33 @@ struct OauthParamName {
     
      static let CLIENT_SECRET = "client_secret"
     
-     static let ACCESS_TOKEN = "access_token";
+     static let ACCESS_TOKEN = "access_token"
     
-     static let REDIRECT_URI = "redirect_uri";
+     static let REDIRECT_URI = "redirect_uri"
     
-     static let RESPONSE_TYPE = "response_type";
+     static let RESPONSE_TYPE = "response_type"
     
-     static let ACCESS_TYPE = "access_type";
+     static let ACCESS_TYPE = "access_type"
     
-     static let SCOPE = "scope";
+     static let SCOPE = "scope"
     
-     static let APPROVAL_PROMPT = "approval_prompt";
+     static let APPROVAL_PROMPT = "approval_prompt"
     
-     static let GRANT_TYPE = "grant_type";
+     static let GRANT_TYPE = "grant_type"
     
-     static let CODE = "code";
+     static let CODE = "code"
     
-     static let REFRESH_TOKEN = "refresh_token";
+     static let REFRESH_TOKEN = "refresh_token"
     
-     static let GOOGLE_TOKEN = "google_token";
+     static let GOOGLE_TOKEN = "google_token"
     
-     static let FACEBOOK_TOKEN = "facebook_token";
+     static let FACEBOOK_TOKEN = "facebook_token"
     
-     static let EXPIRY_TYPE = "expiry_type";
+     static let EXPIRY_TYPE = "expiry_type"
 
-     static let USERNAME = "username";
+     static let USERNAME = "username"
     
-     static let PASSWORD = "password";
+     static let PASSWORD = "password"
+    
+     static let JWT = "jwt"
 }

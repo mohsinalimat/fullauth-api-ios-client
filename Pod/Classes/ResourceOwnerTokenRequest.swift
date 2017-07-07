@@ -31,12 +31,12 @@ open class ResourceOwnerTokenRequest : OAuthTokenRequest{
         self.accessType = accessType
     }
     
-    override open func getRequestParam() -> [String : AnyObject] {
+    override open func getRequestParam() -> [String: Any] {
         
         var param = super.getRequestParam()
         
-        param[OauthParamName.USERNAME] = self.userName as AnyObject?
-        param[OauthParamName.PASSWORD] = self.password as AnyObject?
+        param[OauthParamName.USERNAME] = self.userName
+        param[OauthParamName.PASSWORD] = self.password 
         
         return param
     }

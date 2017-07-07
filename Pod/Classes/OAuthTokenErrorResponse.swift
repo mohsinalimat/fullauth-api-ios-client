@@ -26,7 +26,7 @@ public struct OAuthTokenErrorResponse {
         self.errorDesc = errorDesc
     }
     
-    public init(data : [String : AnyObject?]){
+    public init(data : [String : Any?]){
         
         if let err = data["error"] as? String{
             self.error = err

@@ -56,14 +56,14 @@ class TestFullAuthClient: UIViewController {
                     
                     let errResp  = errorResponse
                     
-                    print("error_dese --\(errResp?.errorDesc)")
+                    //print("error_dese --\(errResp?.errorDesc)")
                 }
                 
                 if accessToken != nil{
                     
                     print("Response -- \(accessToken!)")
                     
-                    print("AccessToken -- \(accessToken?.accessToken)")
+                    //print("AccessToken -- \(accessToken?.accessToken)")
                 }
                 
             })
@@ -72,9 +72,50 @@ class TestFullAuthClient: UIViewController {
             
             let err = error as? OAuthError
             
-            print("Error -- \(err?.description)")
+            //print("Error -- \(err?.description)")
         }
     }
     
+    
+    func requestServiceAccessToken() {
+        
+        let jwt: String = ""
+        
+        let auth = FullAuthOAuthService(authDomain: "")
+        
+        do {
+            
+            try auth.requestAccessToken(forJwt: jwt, handler: { (error, errorResponse, accessToken) in
+                
+                if error != nil{
+                    
+                    print("Error ---\(error!)")
+                }
+                
+                if errorResponse != nil{
+                    
+                    print("Error Response --\(errorResponse!)")
+                    
+                    let errResp  = errorResponse
+                    
+                    //print("error_dese --\(errResp?.errorDesc)")
+                }
+                
+                if accessToken != nil{
+                    
+                    print("Response -- \(accessToken!)")
+                    
+                    //print("AccessToken -- \(accessToken?.accessToken)")
+                }
+                
+            })
+            
+        } catch let error {
+            
+            let err = error as? OAuthError
+            
+            //print("Error -- \(err?.description)")
+        }
+    }
 }
 

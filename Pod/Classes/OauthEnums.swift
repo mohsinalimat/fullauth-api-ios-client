@@ -43,6 +43,8 @@ public enum OauthGrantType : String {
     case GOOGLE_TOKEN = "google_token"
     
     case FACEBOOK_TOKEN = "facebook_token"
+    
+    case JWT_BEARER = "urn:ietf:params:oauth:grant-type:jwt-bearer"
 }
 
 public enum AccessTokenType: String {

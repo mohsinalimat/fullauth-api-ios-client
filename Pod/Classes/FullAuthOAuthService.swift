@@ -13,7 +13,7 @@ open class FullAuthOAuthService {
     
     open var timeOutInterval : TimeInterval = 60
     
-    public typealias ApiResponseHandler = (_ success : Bool,_ httpRequest : URLRequest?,_ httpResponse :  HTTPURLResponse?,_ responseJson : [String : AnyObject?]?,_ error : NSError?) -> Void
+    public typealias ApiResponseHandler = (_ success : Bool,_ httpRequest : URLRequest?,_ httpResponse :  HTTPURLResponse?,_ responseJson : [String : Any?]?,_ error : NSError?) -> Void
     
     public typealias TokenInfoHandler = (_ error : NSError?,_ errorResponse : OAuthTokenErrorResponse?,_ accessToken : OAuthAccessToken?) -> Void
     
@@ -129,6 +129,17 @@ open class FullAuthOAuthService {
         makeTokenRequest(request, handler: handler)
     }
     
+    open func requestAccessToken(forJwt jwt: String, handler : TokenInfoHandler?) throws {
+        
+        try validateOauthDomain()
+        
+        try validateJwt(jwt)
+    
+        let request = JwtBearerTokenRequest(authDomain: self.authDomain, jwt: jwt)
+        
+        makeTokenRequest(request, handler: handler)
+    }
+    
     
     //MARK:REVOKE ACCESS TOKEN
     open func revokeAccessToken(accessToken: String, handler: revokeTokenHandler?) throws{
@@ -178,6 +189,13 @@ open class FullAuthOAuthService {
         
         guard !accessType.isEmpty else{
             throw OAuthError.illegalParameter("invalid accessType")
+        }
+    }
+    
+    func validateJwt(_ jwt: String) throws {
+        
+        guard !jwt.isEmpty else {
+            throw OAuthError.illegalParameter("invalid jwt")
         }
     }
     
@@ -284,14 +302,14 @@ open class FullAuthOAuthService {
                 
                 let success :Bool = (response.result.isSuccess && statusCode! >= 200 && statusCode! <= 299)
                 
-                let jsonDict = response.result.value as? [String: AnyObject]
+                let jsonDict = response.result.value as? [String: Any]
                 
                 handler?(success, response.request, response.response, jsonDict , error as? NSError)
             }
         }
     }
     
-    open func handleTokenResponse(_ success : Bool, respJson :[String : AnyObject?]?,error : NSError?, handler : TokenInfoHandler?){
+    open func handleTokenResponse(_ success : Bool, respJson :[String : Any?]?,error : NSError?, handler : TokenInfoHandler?){
         
         if handler != nil{
             

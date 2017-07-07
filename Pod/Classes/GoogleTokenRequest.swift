@@ -26,16 +26,12 @@ open class GoogleTokenRequest: OAuthTokenRequest {
         self.accessType = accessType
     }
     
-    override open func getRequestParam() -> [String : AnyObject] {
+    override open func getRequestParam() -> [String : Any] {
         
         var param = super.getRequestParam()
         
-        param[OauthParamName.GOOGLE_TOKEN] = self.googleToken as AnyObject?
+        param[OauthParamName.GOOGLE_TOKEN] = self.googleToken
         
         return param
     }
 }
-
-
-
-

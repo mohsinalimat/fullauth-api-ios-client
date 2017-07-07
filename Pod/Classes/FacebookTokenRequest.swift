@@ -26,13 +26,12 @@ open class FacebookTokenRequest : OAuthTokenRequest {
         self.accessType = accessType
     }
     
-    override open func getRequestParam() -> [String : AnyObject] {
+    override open func getRequestParam() -> [String : Any] {
        
         var param = super.getRequestParam()
 
-        param[OauthParamName.FACEBOOK_TOKEN] = self.facebookToken as AnyObject?
+        param[OauthParamName.FACEBOOK_TOKEN] = self.facebookToken
         
         return param
     }
 }
-
