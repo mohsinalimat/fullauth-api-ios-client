@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.0.0)
+  - Alamofire (4.5.0)
   - FullAuthIOSClient (0.6.0):
     - Alamofire (~> 4.0)
 
@@ -12,9 +12,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
-  FullAuthIOSClient: a8b1629f02481a8448d3bb1febe6b2bfb97ab83e
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  FullAuthIOSClient: c38e2469128068c5d5bf8eceb7cc83e8fbd915a1
 
 PODFILE CHECKSUM: efbd142e82d49f539cfeac349c2cea19c2eb0846
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.1
