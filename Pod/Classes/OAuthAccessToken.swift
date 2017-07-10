@@ -34,7 +34,7 @@ public struct OAuthAccessToken {
         
         self.tokenType = data["token_type"] as! String
         
-        self.userId = data["user_id"] as! String
+        self.userId = data["user_id"] as! String ?? ""
         
         if let issuedTo = data["issued_to"] as? String {
             self.issuedTo = issuedTo
