@@ -8,11 +8,16 @@
 
 import UIKit
 
-public class FacebookTokenRequest : OAuthTokenRequest {
+open class FacebookTokenRequest : OAuthTokenRequest {
     
-    public let facebookToken :String
+    open let facebookToken :String
     
-    public init(authDomain: String, clientId: String, clientSecret: String, scope: [String],facebookToken : String, accessType : OauthAccessType? = nil) {
+    public init(authDomain: String,
+                clientId: String,
+                clientSecret: String,
+                scope: [String],
+                facebookToken : String,
+                accessType : OauthAccessType? = nil) {
         
         self.facebookToken = facebookToken
         
@@ -21,8 +26,7 @@ public class FacebookTokenRequest : OAuthTokenRequest {
         self.accessType = accessType
     }
     
-    
-    override public func getRequestParam() -> [String : AnyObject] {
+    override open func getRequestParam() -> [String : Any] {
        
         var param = super.getRequestParam()
 
@@ -31,4 +35,3 @@ public class FacebookTokenRequest : OAuthTokenRequest {
         return param
     }
 }
-

@@ -8,11 +8,16 @@
 
 import UIKit
 
-public class GoogleTokenRequest: OAuthTokenRequest {
+open class GoogleTokenRequest: OAuthTokenRequest {
 
-    public let googleToken :String
+    open let googleToken :String
     
-    public init(authDomain : String,clientId : String,clientSecret :String,scope : [String],googleToken : String,accessType : OauthAccessType? = nil){
+    public init(authDomain : String,
+                clientId : String,
+                clientSecret :String,
+                scope : [String],
+                googleToken : String,
+                accessType : OauthAccessType? = nil){
     
         self.googleToken = googleToken
         
@@ -21,7 +26,7 @@ public class GoogleTokenRequest: OAuthTokenRequest {
         self.accessType = accessType
     }
     
-    override public func getRequestParam() -> [String : AnyObject] {
+    override open func getRequestParam() -> [String : Any] {
         
         var param = super.getRequestParam()
         
@@ -30,7 +35,3 @@ public class GoogleTokenRequest: OAuthTokenRequest {
         return param
     }
 }
-
-
-
-

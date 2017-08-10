@@ -8,13 +8,19 @@
 
 import UIKit
 
-public class ResourceOwnerTokenRequest : OAuthTokenRequest{
+open class ResourceOwnerTokenRequest : OAuthTokenRequest{
     
-   public let userName : String
+   open let userName : String
     
-   public let password : String
+   open let password : String
     
-   public init(authDomain: String, clientId: String, clientSecret: String, scope: [String],userName : String,password :String,accessType :OauthAccessType? = nil) {
+   public init(authDomain: String,
+               clientId: String,
+               clientSecret: String,
+               scope: [String],
+               userName : String,
+               password :String,
+               accessType :OauthAccessType? = nil) {
         
         self.userName = userName
         
@@ -25,12 +31,12 @@ public class ResourceOwnerTokenRequest : OAuthTokenRequest{
         self.accessType = accessType
     }
     
-    override public func getRequestParam() -> [String : AnyObject] {
+    override open func getRequestParam() -> [String: Any] {
         
         var param = super.getRequestParam()
         
         param[OauthParamName.USERNAME] = self.userName
-        param[OauthParamName.PASSWORD] = self.password
+        param[OauthParamName.PASSWORD] = self.password 
         
         return param
     }

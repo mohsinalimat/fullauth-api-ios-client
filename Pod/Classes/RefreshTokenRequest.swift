@@ -9,13 +9,17 @@
 import UIKit
 
 
-public class RefreshTokenRequest : OAuthTokenRequest{
+open class RefreshTokenRequest : OAuthTokenRequest{
     
-   public let refreshToken :String
+   open let refreshToken :String
     
-   public var expiryType : OauthExpiryType?
+   open var expiryType : OauthExpiryType?
     
-   public init(authDomain: String, clientId: String, clientSecret: String,refreshToken :String,expiryType : OauthExpiryType? = nil) {
+   public init(authDomain: String,
+               clientId: String,
+               clientSecret: String,
+               refreshToken :String,
+               expiryType : OauthExpiryType? = nil) {
         
         self.refreshToken = refreshToken
         self.expiryType = expiryType
@@ -23,15 +27,14 @@ public class RefreshTokenRequest : OAuthTokenRequest{
         super.init(authDomain: authDomain, grantType : OauthGrantType.REFRESH_TOKEN, clientId: clientId, clientSecret: clientSecret)
     }
     
-    override public func getRequestParam() -> [String : AnyObject] {
+    override open func getRequestParam() -> [String: Any] {
         
         var param = super.getRequestParam()
         
         param[OauthParamName.REFRESH_TOKEN] = self.refreshToken
         
         if let expiryType = self.expiryType{
-            
-            param[OauthParamName.EXPIRY_TYPE] = expiryType.rawValue
+            param[OauthParamName.EXPIRY_TYPE] = expiryType.rawValue 
         }
         
         return param

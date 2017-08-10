@@ -9,25 +9,25 @@
 import UIKit
 import Foundation
 
-public enum OAuthError : ErrorType,CustomStringConvertible {
+public enum OAuthError : Error,CustomStringConvertible {
     
-    case NSError(Foundation.NSError)
+    case nsError(Foundation.NSError)
     
-    case IllegalParameter(String)
+    case illegalParameter(String)
     
-    case ResponseError(error : Foundation.NSError?,errorResponce : OAuthTokenErrorResponse?)
+    case responseError(error : Foundation.NSError?,errorResponce : OAuthTokenErrorResponse?)
     
     public var description : String{
         
         switch self{
             
-        case .IllegalParameter(let error):
+        case .illegalParameter(let error):
             return error
             
-        case NSError(let error) :
+        case .nsError(let error) :
             return error.description
             
-        case .ResponseError(let error , let errorResp):
+        case .responseError(let error , let errorResp):
             
             if error != nil {
                 return error!.description

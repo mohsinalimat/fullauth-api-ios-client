@@ -3,7 +3,7 @@ import UIKit
 import Alamofire
 import Foundation
 
-public class FullAuthOAuthService {
+open class FullAuthOAuthService {
     
     let authDomain : String!
     
@@ -11,15 +11,13 @@ public class FullAuthOAuthService {
     
     var clientSecret : String?
     
-    public var timeOutInterval : NSTimeInterval = 60
+    open var timeOutInterval : TimeInterval = 60
     
+    public typealias ApiResponseHandler = (_ success : Bool,_ httpRequest : URLRequest?,_ httpResponse :  HTTPURLResponse?,_ responseJson : [String : Any?]?,_ error : NSError?) -> Void
     
-    public typealias ApiResponseHandler = (success : Bool, httpRequest : NSURLRequest?, httpResponse :  NSHTTPURLResponse?, responseJson : [String : AnyObject?]?, error : NSError?) -> Void
+    public typealias TokenInfoHandler = (_ error : NSError?,_ errorResponse : OAuthTokenErrorResponse?,_ accessToken : OAuthAccessToken?) -> Void
     
-    
-    public typealias TokenInfoHandler = (error : NSError?,errorResponse : OAuthTokenErrorResponse?,accessToken : OAuthAccessToken?) -> Void
-    
-    public typealias revokeTokenHandler = (success: Bool, error : NSError?,errorResponse : OAuthTokenErrorResponse?) -> Void
+    public typealias revokeTokenHandler = (_ success: Bool,_ error : NSError?,_ errorResponse : OAuthTokenErrorResponse?) -> Void
     
     
     public init(authDomain : String,clientId :String? = nil,clientSecret : String? = nil){
@@ -37,7 +35,7 @@ public class FullAuthOAuthService {
     
     
     //MARK: GET TOKEN INFO
-    public func getTokenInfo(accessToken : String, handler : TokenInfoHandler?) throws{
+    open func getTokenInfo(_ accessToken : String, handler : TokenInfoHandler?) throws{
         
         try validateOauthDomain()
         
@@ -48,7 +46,7 @@ public class FullAuthOAuthService {
     
     
     //MARK: REFRESH ACCESS TOKEN
-    public func refreshAccessToken(refreshToken  : String,expiryType : OauthExpiryType? = nil, handler : TokenInfoHandler?) throws{
+    open func refreshAccessToken(_ refreshToken  : String,expiryType : OauthExpiryType? = nil, handler : TokenInfoHandler?) throws{
         
         try validateOauthDomain()
         
@@ -62,7 +60,11 @@ public class FullAuthOAuthService {
     }
     
     //MARK:REQUEST ACCESS FOR USERNAME AND PASSWORD
-    public func requestAccessTokenForResourceCredentials(userName : String,password : String, scope :[String],accessType : OauthAccessType? = nil, handler : TokenInfoHandler?) throws{
+    open func requestAccessTokenForResourceCredentials(_ userName : String,
+                                                       password : String,
+                                                       scope :[String],
+                                                       accessType : OauthAccessType? = nil,
+                                                       handler : TokenInfoHandler?) throws{
         
         try self.validateOauthDomain()
         
@@ -71,21 +73,29 @@ public class FullAuthOAuthService {
         try self.validateScope(scope)
         
         guard !Utils.isNilOrEmptyStr(userName) else{
-            throw OAuthError.IllegalParameter("invalid userName")
+            throw OAuthError.illegalParameter("invalid userName")
         }
         
         guard !Utils.isNilOrEmptyStr(password) else{
-            throw OAuthError.IllegalParameter("invalid password")
+            throw OAuthError.illegalParameter("invalid password")
         }
         
-        let request = ResourceOwnerTokenRequest(authDomain: authDomain, clientId: self.clientId!, clientSecret: self.clientSecret!, scope: scope, userName: userName, password: password, accessType: accessType)
+        let request = ResourceOwnerTokenRequest(authDomain: authDomain,
+                                                clientId: self.clientId!,
+                                                clientSecret: self.clientSecret!,
+                                                scope: scope, userName: userName,
+                                                password: password,
+                                                accessType: accessType)
         
         makeTokenRequest(request, handler: handler)
     }
     
     
     //MARK:REQUEST ACCESS FOR GOOGLE TOKEN
-    public func requestAccessTokenForGoogleToken(googleAccessToken googleAccessToken : String, scope : [String],accessType : OauthAccessType? = nil, handler : TokenInfoHandler?) throws{
+    open func requestAccessTokenForGoogleToken(googleAccessToken : String,
+                                               scope : [String],
+                                               accessType : OauthAccessType? = nil,
+                                               handler : TokenInfoHandler?) throws{
         
         try validateOauthDomain()
         
@@ -101,7 +111,10 @@ public class FullAuthOAuthService {
     }
     
     //MARK:REQUEST ACCESS FOR FACEBOOK TOKEN
-    public func requestAccessTokenForFacebookToken(facebookAccessToken facebookAccessToken : String, scope : [String],accessType : OauthAccessType? = nil, handler : TokenInfoHandler?) throws{
+    open func requestAccessTokenForFacebookToken(facebookAccessToken : String,
+                                                 scope : [String],
+                                                 accessType : OauthAccessType? = nil,
+                                                 handler : TokenInfoHandler?) throws{
         
         try validateOauthDomain()
         
@@ -116,9 +129,20 @@ public class FullAuthOAuthService {
         makeTokenRequest(request, handler: handler)
     }
     
+    open func requestAccessToken(forJwt jwt: String, handler : TokenInfoHandler?) throws {
+        
+        try validateOauthDomain()
+        
+        try validateJwt(jwt)
+    
+        let request = JwtBearerTokenRequest(authDomain: self.authDomain, jwt: jwt)
+        
+        makeTokenRequest(request, handler: handler)
+    }
+    
     
     //MARK:REVOKE ACCESS TOKEN
-    public func revokeAccessToken(accessToken accessToken: String, handler: revokeTokenHandler?) throws{
+    open func revokeAccessToken(accessToken: String, handler: revokeTokenHandler?) throws{
         
         try validateOauthDomain()
         
@@ -129,121 +153,143 @@ public class FullAuthOAuthService {
     
     
     //MARK: VALIDATION UTILS
-    func validateAccessToken(accesstoken accesstoken: String, tokenType: AccessTokenType) throws {
+    func validateAccessToken(accesstoken: String, tokenType: AccessTokenType) throws {
         
         guard !accesstoken.isEmpty else{
-            throw OAuthError.IllegalParameter("invalid \(AccessTokenType.getAccessTokenString(tokenType))")
+            throw OAuthError.illegalParameter("invalid \(AccessTokenType.getAccessTokenString(tokenType))")
         }
     }
     
     func validateOauthClient() throws{
         
         guard !Utils.isNilOrEmptyStr(clientId) else{
-            throw OAuthError.IllegalParameter("invalid clientId")
+            throw OAuthError.illegalParameter("invalid clientId")
         }
         
         guard !Utils.isNilOrEmptyStr(clientSecret) else{
-            throw OAuthError.IllegalParameter("invalid clientSecret")
+            throw OAuthError.illegalParameter("invalid clientSecret")
         }
     }
     
     func validateOauthDomain() throws{
         
         guard !self.authDomain.isEmpty else{
-            throw OAuthError.IllegalParameter("invalid sub domain")
+            throw OAuthError.illegalParameter("invalid sub domain")
         }
     }
     
-    func validateScope(scope :[String]) throws{
+    func validateScope(_ scope :[String]) throws{
         
         guard !scope.isEmpty else{
-            throw OAuthError.IllegalParameter("invalid scope")
+            throw OAuthError.illegalParameter("invalid scope")
         }
     }
     
-    func validateAccessType(accessType :String) throws{
+    func validateAccessType(_ accessType :String) throws{
         
         guard !accessType.isEmpty else{
-            
-            throw OAuthError.IllegalParameter("invalid accessType")
-            
+            throw OAuthError.illegalParameter("invalid accessType")
+        }
+    }
+    
+    func validateJwt(_ jwt: String) throws {
+        
+        guard !jwt.isEmpty else {
+            throw OAuthError.illegalParameter("invalid jwt")
         }
     }
     
     
     //MARK: MAKE REQUESTS
-    public func makeTokenRequest(tokenRequest : OAuthTokenRequest,handler : TokenInfoHandler?){
+    open func makeTokenRequest(_ tokenRequest : OAuthTokenRequest,handler : TokenInfoHandler?){
         
-        let params = tokenRequest.getRequestParam()
+        //TODO: Check
+        let url = Foundation.URL(string: Constants.OAuth.getTokenUrl(tokenRequest.authDomain))
+        var request = URLRequest(url: url!)
+        request.httpMethod = HTTPMethod.post.rawValue
+        request.timeoutInterval = timeOutInterval
         
-        let URL = NSURL(string: Constants.OAuth.getTokenUrl(tokenRequest.authDomain))
+        let parameter = tokenRequest.getRequestParam()
         
-        let mutableURLRequest = NSMutableURLRequest(URL:URL!)
-        mutableURLRequest.HTTPMethod = Alamofire.Method.POST.rawValue
-        mutableURLRequest.timeoutInterval = timeOutInterval
-        
-        let urlRequest =  ParameterEncoding.URL.encode(mutableURLRequest, parameters: params).0
-        
-        makeRequest(urlRequest) { (success, httpRequest, httpResponse, responseJson, error) -> Void in
+        do{
+            let urlRequest = try URLEncoding.httpBody.encode(request, with: parameter)
             
-            self.handleTokenResponse(success, respJson: responseJson, error: error, handler: handler)
+            makeRequest(urlRequest) { (success, httpRequest, httpResponse, responseJson, error) -> Void in
+                
+                self.handleTokenResponse(success, respJson: responseJson, error: error, handler: handler)
+            }
+            
+        }catch let error as NSError{
+            self.handleTokenResponse(false, respJson: nil, error: error, handler: handler)
         }
     }
     
-    internal func fetchAccessTokenInfo(authDomain : String,accessToken:String,handler : TokenInfoHandler?){
+    internal func fetchAccessTokenInfo(_ authDomain : String,accessToken:String,handler : TokenInfoHandler?){
         
-        let URL = NSURL(string: Constants.OAuth.getTokenUrl(authDomain))
+        //TODO: Check
+        let url = Foundation.URL(string: Constants.OAuth.getTokenUrl(authDomain))
+        var request = URLRequest(url:url!)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.timeoutInterval = timeOutInterval
+        
+        let parameter = [OauthParamName.ACCESS_TOKEN:accessToken]
+        
+        do{
+            let urlRequest = try URLEncoding.queryString.encode(request, with: parameter)
             
-        let mutableURLRequest = NSMutableURLRequest(URL:URL!)
-        mutableURLRequest.HTTPMethod = Alamofire.Method.GET.rawValue
-        mutableURLRequest.timeoutInterval = timeOutInterval
-        
-        let param = [OauthParamName.ACCESS_TOKEN:accessToken]
-        
-        let urlRequest =  ParameterEncoding.URL.encode(mutableURLRequest, parameters: param).0
-        
-        makeRequest(urlRequest) { (success, httpRequest, httpResponse, responseJson, error) -> Void in
+            makeRequest(urlRequest) { (success, httpRequest, httpResponse, responseJson, error) -> Void in
+                
+                self.handleTokenResponse(success, respJson: responseJson, error: error, handler: handler)
+            }
             
-            self.handleTokenResponse(success, respJson: responseJson, error: error, handler: handler)
+        }catch let error as NSError{
+          self.handleTokenResponse(false, respJson: nil, error: error, handler: handler)
         }
     }
     
     
-    internal func revokeAccessToken(authDomain: String, accessToken: String,handler: revokeTokenHandler?){
+    internal func revokeAccessToken(_ authDomain: String, accessToken: String,handler: revokeTokenHandler?){
         
-        let URL = NSURL(string: Constants.OAuth.getRevokeTokenUrl(authDomain: authDomain))
+        //TODO: Check
+        let url = Foundation.URL(string: Constants.OAuth.getRevokeTokenUrl(authDomain: authDomain))
         
-        let mutableRequest = NSMutableURLRequest(URL: URL!)
-        mutableRequest.HTTPMethod = Alamofire.Method.GET.rawValue
-        mutableRequest.timeoutInterval = timeOutInterval
+        var request = URLRequest(url: url!)
+        request.httpMethod = HTTPMethod.get.rawValue
+        request.timeoutInterval = timeOutInterval
         
-        let param = ["token": accessToken]
+        let parameter = ["token": accessToken]
         
-        let urlRequest = ParameterEncoding.URL.encode(mutableRequest, parameters: param).0
-        
-        makeRequest(urlRequest) { (success, httpRequest, httpResponse, responseJson, error) in
-        
-            if success{
+        do{
+            
+            let urlRequest = try URLEncoding.queryString.encode(request, with: parameter)
+            
+            makeRequest(urlRequest) { (success, httpRequest, httpResponse, responseJson, error) in
                 
-                handler!(success: true, error:nil, errorResponse: nil)
-                return
-            }
-            
-            var errorResp : OAuthTokenErrorResponse?
-            
-            if responseJson != nil {
+                guard !success else{
+                    handler?(true, nil, nil)
+                    return
+                }
+        
+                var errorResp : OAuthTokenErrorResponse?
                 
-                errorResp = OAuthTokenErrorResponse(data: responseJson!)
+                if responseJson != nil {
+                    
+                    errorResp = OAuthTokenErrorResponse(data: responseJson!)
+                }
+                
+                handler?(false, error, errorResp)
             }
-            
-            handler!(success: false, error:error, errorResponse: errorResp)
+
+        }catch let error as NSError{
+            handler?(false, error, nil)
         }
     }
     
     
     //MARK: UTILS
-    public func makeRequest(urlRequest : URLRequestConvertible, handler : ApiResponseHandler?){
+    open func makeRequest(_ urlRequest : URLRequestConvertible, handler : ApiResponseHandler?){
         
+        //TODO: Check
         let request = Alamofire.request(urlRequest)
         
         request.responseJSON { (response) -> Void in
@@ -252,35 +298,33 @@ public class FullAuthOAuthService {
                 
                 let error = response.result.error
                 
-                let success :Bool = (response.result.isSuccess && response.response?.statusCode >= 200 && response.response?.statusCode <= 299)
+                let statusCode = response.response?.statusCode
                 
-                let jsonDict = response.result.value as? [String: AnyObject]
+                let success :Bool = (response.result.isSuccess && statusCode! >= 200 && statusCode! <= 299)
                 
-                handler!(success : success, httpRequest : response.request, httpResponse : response.response, responseJson :jsonDict , error : error)
+                let jsonDict = response.result.value as? [String: Any]
+                
+                handler?(success, response.request, response.response, jsonDict , error as? NSError)
             }
         }
     }
     
-    public func handleTokenResponse(success : Bool, respJson :[String : AnyObject?]?,error : NSError?, handler : TokenInfoHandler?){
+    open func handleTokenResponse(_ success : Bool, respJson :[String : Any?]?,error : NSError?, handler : TokenInfoHandler?){
         
         if handler != nil{
             
-            if success {
-                
-                handler!(error : nil,errorResponse: nil, accessToken : OAuthAccessToken(data: respJson!))
-                
+            guard !success else {
+                handler?(nil,nil, OAuthAccessToken(data: respJson!))
                 return
             }
             
             var errorResp : OAuthTokenErrorResponse?
             
             if respJson != nil {
-                
                 errorResp = OAuthTokenErrorResponse(data: respJson!)
             }
             
-            
-            handler!(error: error, errorResponse: errorResp, accessToken: nil)
+            handler?(error, errorResp, nil)
         }
     }
 }

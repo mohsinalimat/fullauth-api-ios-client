@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-public class OAuthTokenRequest {
+open class OAuthTokenRequest {
     
     let authDomain : String
 
@@ -37,21 +37,25 @@ public class OAuthTokenRequest {
         self.scope = scope
     }
     
-    public func getRequestParam() -> [String: AnyObject]{
+    open func getRequestParam() -> [String: Any]{
         
-        var param : [String : AnyObject] = [:]
+        var param : [String: Any] = [:]
         
         param[OauthParamName.GRANT_TYPE] = self.grantType.rawValue
-        param[OauthParamName.CLIENT_ID] = self.clientId
-        param[OauthParamName.CLIENT_SECRET] = self.clientSecret
         
-        if let scope = self.scope{
-            
-            param[OauthParamName.SCOPE] = scope.joinWithSeparator(" ")
+        if !self.clientId.isEmpty {
+            param[OauthParamName.CLIENT_ID] = self.clientId
         }
         
-        if let accessType = self.accessType{
-            
+        if !self.clientSecret.isEmpty {
+            param[OauthParamName.CLIENT_SECRET] = self.clientSecret
+        }
+        
+        if let scope = self.scope {
+            param[OauthParamName.SCOPE] = scope.joined(separator: " ")
+        }
+        
+        if let accessType = self.accessType {
             param[OauthParamName.ACCESS_TYPE] = accessType.rawValue
         }
 

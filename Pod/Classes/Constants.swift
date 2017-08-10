@@ -9,51 +9,29 @@
 import UIKit
 
 
-public class Constants {
-    /**
-     * The type Oauth.
-     */
-    public class OAuth {
+open class Constants {
+    
+    open class OAuth {
         
+        open static let FULLAUTH_BASE_URL = "https://%@.fullauth.com"
 
-        public static let FULLAUTH_BASE_URL = "https://%@.fullauth.com"
-        /**
-         * The constant FULLAUTH_OAUTH2_AUTH.
-         */
-        public static let FULLAUTH_OAUTH2_AUTH = "/o/oauth2/auth"
+        open static let FULLAUTH_OAUTH2_AUTH = "/o/oauth2/auth"
         
-        /**
-         * The constant FULLAUTH_OAUTH2_TOKEN.
-         */
-        public static let FULLAUTH_OAUTH2_TOKEN = "/o/oauth2/v1/token"
+        open static let FULLAUTH_OAUTH2_TOKEN = "/o/oauth2/v1/token"
         
-        public static let FULLAUTH_REVOKE_TOKEN = "/o/oauth2/revoke"
+        open static let FULLAUTH_REVOKE_TOKEN = "/o/oauth2/revoke"
         
-        /**
-         * Get auth url.
-         *
-         * @param authDomain the auth domain
-         * @return the string
-         */
-        public static func getAuthUrl(authDomain : String) -> String{
+        open static func getAuthUrl(_ authDomain : String) -> String{
             
             return String(format: FULLAUTH_BASE_URL,authDomain)
         }
         
-        /**
-         * Get token url.
-         *
-         * @param authDomain the auth domain
-         * @return the string
-         */
-        public static func getTokenUrl(authDomain : String) -> String{
-            
-            return getAuthUrl(authDomain) + FULLAUTH_OAUTH2_TOKEN
+        open static func getTokenUrl(_ authDomain : String) -> String{
 
+            return getAuthUrl(authDomain) + FULLAUTH_OAUTH2_TOKEN
         }
 
-
-        public static func getRevokeTokenUrl(authDomain authDomain: String) -> String{
+        open static func getRevokeTokenUrl(authDomain: String) -> String{
             
             return getAuthUrl(authDomain) + FULLAUTH_REVOKE_TOKEN
         }

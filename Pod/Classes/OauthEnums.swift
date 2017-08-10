@@ -8,30 +8,15 @@
 
 import UIKit
 
-/**
- * The enum Oauth access type.
- */
 public enum OauthAccessType : String {
     
-    /**
-     * The ONLINE.
-     */
     case ONLINE = "online"
     
-    /**
-     * The OFFLINE.
-     */
     case OFFLINE = "offline"
 
-    /**
-     * Gets type.
-     *
-     * @param accessType the access type
-     * @return the type
-     */
-    static func getType(accessType accessType : String) -> OauthAccessType{
+    static func getType(accessType : String) -> OauthAccessType{
         
-        switch accessType.uppercaseString{
+        switch accessType.uppercased(){
             
         case "ONLINE": return .ONLINE
         case "OFFLINE" : return .OFFLINE
@@ -58,6 +43,8 @@ public enum OauthGrantType : String {
     case GOOGLE_TOKEN = "google_token"
     
     case FACEBOOK_TOKEN = "facebook_token"
+    
+    case JWT_BEARER = "urn:ietf:params:oauth:grant-type:jwt-bearer"
 }
 
 public enum AccessTokenType: String {
@@ -71,7 +58,7 @@ public enum AccessTokenType: String {
     case DEFAULT = "access token"
     
     
-    static func getAccessTokenString(type: AccessTokenType) -> String{
+    static func getAccessTokenString(_ type: AccessTokenType) -> String{
     
         var tokenStr : String
         
@@ -79,10 +66,13 @@ public enum AccessTokenType: String {
             
         case .REFRESH:
             tokenStr = "refresh token"
+            
         case .GOOGLE:
             tokenStr = "google access token"
+            
         case .FACEBOOK:
             tokenStr = "facebook access token"
+            
         default:
             tokenStr = "access token"
         }
