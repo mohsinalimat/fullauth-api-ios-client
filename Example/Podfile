@@ -7,7 +7,7 @@ use_frameworks!
 
 target 'FullAuthIOSClient_Example' do
   pod "FullAuthIOSClient", :path => "../"
-  pod 'Alamofire', '~> 4.0'
+  
 end
 
 target 'FullAuthIOSClient_Tests' do
