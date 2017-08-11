@@ -112,10 +112,10 @@
 		195D73DD9EF275A3C56569E2B1CA8026 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
 		1A978A7CB8C1E4827237D7BA7ADFE2C2 /* Pods-FullAuthIOSClient_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FullAuthIOSClient_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		1E230A0448B394DE26E688DAC8E6201E /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
-		1EAB994F8788D33533E9D699F7A0C545 /* FullAuthIOSClient.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = FullAuthIOSClient.modulemap; sourceTree = "<group>"; };
+		1EAB994F8788D33533E9D699F7A0C545 /* FullAuthIOSClient.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = FullAuthIOSClient.modulemap; sourceTree = "<group>"; };
 		22C1C119BCE81C53F76CAC2BE27C38E0 /* Alamofire-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Alamofire-dummy.m"; sourceTree = "<group>"; };
-		267289E43F1E48D62ED1280B4C99384B /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		29A7AEFAADC97D95CAB5FF5E780328FD /* Pods-FullAuthIOSClient_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-FullAuthIOSClient_Example.modulemap"; sourceTree = "<group>"; };
+		267289E43F1E48D62ED1280B4C99384B /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		29A7AEFAADC97D95CAB5FF5E780328FD /* Pods-FullAuthIOSClient_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FullAuthIOSClient_Example.modulemap"; sourceTree = "<group>"; };
 		2BAE4ED0E0BA872F8151346FBDA1D564 /* RefreshTokenRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RefreshTokenRequest.swift; sourceTree = "<group>"; };
 		2C64204AE0296DD5A03A8A6473744DAD /* Pods-FullAuthIOSClient_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FullAuthIOSClient_Example-resources.sh"; sourceTree = "<group>"; };
 		2E650E32673A379AB5615D85DAB53C8D /* Pods-FullAuthIOSClient_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FullAuthIOSClient_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 		324336165B5C1FAD1936C514803937AB /* AccessTokenInfo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AccessTokenInfo.swift; sourceTree = "<group>"; };
 		32B030D27CAC730C5EB0F22390645310 /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustPolicy.swift; path = Source/ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		360E9EE1B8CDFCBA74838D9E89529D94 /* Pods-FullAuthIOSClient_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FullAuthIOSClient_Example-dummy.m"; sourceTree = "<group>"; };
-		374B0207B05B7C3B32BDEF6C31525EF8 /* Pods_FullAuthIOSClient_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FullAuthIOSClient_Tests.framework; path = "Pods-FullAuthIOSClient_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		374B0207B05B7C3B32BDEF6C31525EF8 /* Pods_FullAuthIOSClient_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FullAuthIOSClient_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D60BC9955B4F7FFA62D7440CB385C11 /* Result.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
 		461FEE41D61C394C25DD325883D6F394 /* OAuthTokenErrorResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = OAuthTokenErrorResponse.swift; sourceTree = "<group>"; };
 		46CDAC6C1187C5467E576980E1062C8B /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 		4838968659B1317F094CE851C77C433A /* FullAuthMakeRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = FullAuthMakeRequest.swift; sourceTree = "<group>"; };
 		4A5909CDA21FEA464656B05EEAE1C0EA /* Pods-FullAuthIOSClient_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FullAuthIOSClient_Tests-resources.sh"; sourceTree = "<group>"; };
 		4AF006B0AD5765D1BFA8253C2DCBB126 /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
-		5C0EAED9A7DDC743BCA6C2D36370EF74 /* Pods_FullAuthIOSClient_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_FullAuthIOSClient_Example.framework; path = "Pods-FullAuthIOSClient_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C0EAED9A7DDC743BCA6C2D36370EF74 /* Pods_FullAuthIOSClient_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FullAuthIOSClient_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		627724FA8C803BFB8F24F06B6E7C1A11 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6639346628280A0D0FAD35196BF56108 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		66A46F517F0AF7E85A16D723F6406896 /* Notifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notifications.swift; path = Source/Notifications.swift; sourceTree = "<group>"; };
@@ -139,16 +139,16 @@
 		706C7AFFE37BA158C3553250F4B5FAED /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		768B968979A19E5681340D270452EE38 /* FullAuthIOSClient-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FullAuthIOSClient-prefix.pch"; sourceTree = "<group>"; };
 		7CF2E6E36C558596968A7A37ED8AAA08 /* Pods-FullAuthIOSClient_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-FullAuthIOSClient_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		7D141D1953E5C6E67E362CE73090E48A /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		7D141D1953E5C6E67E362CE73090E48A /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		838AF6A6827E8B0B1CAF3B2A2BC0C235 /* Constants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		87882A1F5A92C8138D54545E51D51E6F /* Timeline.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Timeline.swift; path = Source/Timeline.swift; sourceTree = "<group>"; };
-		8A62C5C4B0403F971E20A0F27554F239 /* Pods-FullAuthIOSClient_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-FullAuthIOSClient_Tests.modulemap"; sourceTree = "<group>"; };
+		8A62C5C4B0403F971E20A0F27554F239 /* Pods-FullAuthIOSClient_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-FullAuthIOSClient_Tests.modulemap"; sourceTree = "<group>"; };
 		8B4640F9A54A502AFBF62A14F755B5E2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8E27E276A17AE8317F62230FF8C12FCB /* FullAuthIOSClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FullAuthIOSClient.framework; path = FullAuthIOSClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E27E276A17AE8317F62230FF8C12FCB /* FullAuthIOSClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FullAuthIOSClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92631F2E5A550F5A7E4CA65794B958EA /* Pods-FullAuthIOSClient_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FullAuthIOSClient_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		98721A4E0DCD4632DD3DA63214D74565 /* Pods-FullAuthIOSClient_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FullAuthIOSClient_Tests-umbrella.h"; sourceTree = "<group>"; };
-		98F8CA7A608DB84D5F7E87479B79E04F /* FullAuthIOSClient.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FullAuthIOSClient.bundle; path = FullAuthIOSClient.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		98F8CA7A608DB84D5F7E87479B79E04F /* FullAuthIOSClient.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FullAuthIOSClient.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CF5833C3762D5DE359763BC722A956F /* Pods-FullAuthIOSClient_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-FullAuthIOSClient_Example-frameworks.sh"; sourceTree = "<group>"; };
 		9E4291922425318E34A789695E6B644C /* ResourceOwnerTokenRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ResourceOwnerTokenRequest.swift; sourceTree = "<group>"; };
 		A00C76B09BF2028B3A08D543244A13AA /* Pods-FullAuthIOSClient_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FullAuthIOSClient_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -250,7 +250,6 @@
 				B029DBC43E49A740F12B5E4D2E6DD452 /* Validation.swift */,
 				55F14F994FE7AB51F028BFE66CEF3106 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -267,7 +266,6 @@
 			children = (
 				DCC0FAD6A86E2083C545B162D23C1CC1 /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -396,7 +394,6 @@
 				9E4291922425318E34A789695E6B644C /* ResourceOwnerTokenRequest.swift */,
 				E35BD451CD70F04D33E7A067D40049B1 /* RevokeAccessToken.swift */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -556,7 +553,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0830;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -864,9 +861,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
@@ -1002,7 +1001,9 @@
 				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
@@ -1016,6 +1017,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "${SRCROOT}/../build";
 				VALIDATE_PRODUCT = YES;
 			};

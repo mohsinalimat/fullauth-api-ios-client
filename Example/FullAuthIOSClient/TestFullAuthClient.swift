@@ -35,7 +35,6 @@ class TestFullAuthClient: UIViewController {
     
     
     //MARK: REQUEST TOKEN INFO
-    
     func requestTokenInfo(){
         
         let oauthObj = FullAuthOAuthService(authDomain: OAuthParamHelper.AuthDomain)
@@ -83,6 +82,14 @@ class TestFullAuthClient: UIViewController {
         try! oauth.revokeAccessToken(accessToken: "pass your access token here", handler: { (success, error, errorResp) in
     
         })
+    }
+    
+    
+    func getAuthCodeUrl() -> String {
+        
+        let oauth = FullAuthOAuthService(authDomain: OAuthParamHelper.AuthDomain)
+    
+        return try! oauth.getAuthCodeUrl(scopes: [])
     }
     
 }
