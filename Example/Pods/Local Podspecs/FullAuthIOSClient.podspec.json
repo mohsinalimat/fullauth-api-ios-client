@@ -18,7 +18,7 @@
   "source_files": "Pod/Classes/**/*",
   "resource_bundles": {
     "FullAuthIOSClient": [
-      "Pod/Assets/*.png"
+      "Pod/Classes/**/*.{storyboard,png}"
     ]
   },
   "dependencies": {

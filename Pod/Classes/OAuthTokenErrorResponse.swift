@@ -40,8 +40,6 @@ public struct OAuthTokenErrorResponse {
     }
     
     public var description : String {
-        
         return "error : \(self.error), error_description : \(self.errorDesc)"
     }
 }
-

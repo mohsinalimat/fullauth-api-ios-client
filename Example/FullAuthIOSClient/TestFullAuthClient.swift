@@ -30,7 +30,17 @@ class TestFullAuthClient: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        requestTokenInfo()
+    }
+  
+
+    @IBAction func btnAction(_ sender: Any) {
+        
+        guard let vc = FullAuthVC.webViewController else{
+            return
+        }
+        
+        vc.delegate = self
+        self.present(vc, animated: true, completion: nil)
     }
     
     
@@ -73,6 +83,10 @@ class TestFullAuthClient: UIViewController {
             print("Error -- \(String(describing: err?.description))")
         }
     }
+}
+
+
+extension TestFullAuthClient: AuthCodeDelegate {
     
     
     func revokeAccessToken() {
@@ -93,4 +107,5 @@ class TestFullAuthClient: UIViewController {
     }
     
 }
+
 

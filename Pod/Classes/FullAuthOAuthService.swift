@@ -11,6 +11,10 @@ open class FullAuthOAuthService {
     
     var clientSecret : String?
     
+
+    //For AuthCode
+    var queryString: String?
+    
     open var timeOutInterval : TimeInterval = 60
     
     public typealias ApiResponseHandler = (_ success : Bool, _ httpRequest: URLRequest?, _ httpResponse:  HTTPURLResponse?, _ responseJson: [String : Any?]?, _ error : Error?) -> Void
@@ -23,6 +27,11 @@ open class FullAuthOAuthService {
     public init(authDomain: String, clientId :String? = nil, clientSecret : String? = nil){
         
         self.authDomain = authDomain
+    }
+    
+    public convenience init (authDomain : String,clientId :String? = nil,clientSecret : String? = nil){
+        
+        self.init(authDomain: authDomain)
         
         if let clientId = clientId{
             self.clientId = clientId
