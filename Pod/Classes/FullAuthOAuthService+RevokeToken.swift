@@ -19,14 +19,13 @@ extension FullAuthOAuthService {
         
         try validateOauthDomain()
         
-        try validateAccessToken(accesstoken: accessToken, tokenType: .DEFAULT)
+        try validateAccessToken(accesstoken: accessToken, tokenType: .defaultToken)
         
-        revokeAccessToken(authDomain, accessToken: accessToken, handler: handler)
+        revokeToken(authDomain, accessToken: accessToken, handler: handler)
     }
     
     
-    internal func revokeAccessToken(_ authDomain: String, accessToken: String,handler: revokeTokenHandler?){
-        
+    internal func revokeToken(_ authDomain: String, accessToken: String,handler: revokeTokenHandler?){
         
         let url = Foundation.URL(string: Constants.OAuth.getRevokeTokenUrl(authDomain: authDomain))
         

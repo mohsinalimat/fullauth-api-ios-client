@@ -83,29 +83,39 @@ class TestFullAuthClient: UIViewController {
             print("Error -- \(String(describing: err?.description))")
         }
     }
-}
-
-
-extension TestFullAuthClient: AuthCodeDelegate {
-    
     
     func revokeAccessToken() {
         
         let oauth = FullAuthOAuthService(authDomain: OAuthParamHelper.AuthDomain)
-    
+        
         try! oauth.revokeAccessToken(accessToken: "pass your access token here", handler: { (success, error, errorResp) in
-    
+            
         })
     }
     
     
     func getAuthCodeUrl() -> String {
         
-        let oauth = FullAuthOAuthService(authDomain: OAuthParamHelper.AuthDomain)
+        //let oauth = FullAuthOAuthService(authDomain: OAuthParamHelper.AuthDomain)
+        
+        return ""
+    }
+}
+
+
+extension TestFullAuthClient: AuthCodeDelegate {
     
-        return try! oauth.getAuthCodeUrl(scopes: [])
+    func didStartLoad() {
+        
     }
     
+    func didFinishLoad(withCode code: String, receiver: UIViewController) {
+        
+    }
+    
+    func didFailLoad(withError error: Error?, receiver: UIViewController) {
+        
+    }
 }
 
 

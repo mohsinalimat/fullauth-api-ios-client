@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AEDBCD48065C81185C6CF37A018738E9"
+               BlueprintIdentifier = "AAC012B8CAADAFF999B36DAE382E33D2"
                BuildableName = "FullAuthIOSClient.framework"
                BlueprintName = "FullAuthIOSClient"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AEDBCD48065C81185C6CF37A018738E9"
+            BlueprintIdentifier = "AAC012B8CAADAFF999B36DAE382E33D2"
             BuildableName = "FullAuthIOSClient.framework"
             BlueprintName = "FullAuthIOSClient"
             ReferencedContainer = "container:Pods.xcodeproj">

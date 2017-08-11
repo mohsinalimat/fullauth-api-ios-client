@@ -13,11 +13,37 @@ import UIKit
 extension FullAuthOAuthService {
     
     
-    open func requestAccessTokenForResourceCredentials(_ userName : String,
-                                                       password : String,
-                                                       scope :[String],
-                                                       accessType : OauthAccessType? = nil,
-                                                       handler : TokenInfoHandler?) throws{
+//    open func requestAccessTokenForResourceCredentials(_ userName : String,
+//                                                       password : String,
+//                                                       scope :[String],
+//                                                       accessType : OauthAccessType? = nil,
+//                                                       handler : TokenInfoHandler?) throws{
+//        
+//        try self.validateOauthDomain()
+//        
+//        try self.validateOauthClient()
+//        
+//        try self.validateScope(scope)
+//        
+//        guard !Utils.isNilOrEmptyStr(userName) else{
+//            throw OAuthError.illegalParameter("invalid userName")
+//        }
+//        
+//        guard !Utils.isNilOrEmptyStr(password) else{
+//            throw OAuthError.illegalParameter("invalid password")
+//        }
+//        
+//        let request = ResourceOwnerTokenRequest(authDomain: authDomain,
+//                                                clientId: self.clientId!,
+//                                                clientSecret: self.clientSecret!,
+//                                                scope: scope, userName: userName,
+//                                                password: password,
+//                                                accessType: accessType)
+//        
+//        makeTokenRequest(request, handler: handler)
+//    }
+    
+    open func requestAccessTokenForResourceCredentials(_ userName: String, password: String,scope: [String], accessType : OauthAccessType? = nil, handler : TokenInfoHandler?) throws{
         
         try self.validateOauthDomain()
         
@@ -25,21 +51,16 @@ extension FullAuthOAuthService {
         
         try self.validateScope(scope)
         
-        guard !Utils.isNilOrEmptyStr(userName) else{
+        guard !userName.isEmpty else {
             throw OAuthError.illegalParameter("invalid userName")
         }
         
-        guard !Utils.isNilOrEmptyStr(password) else{
+        guard !password.isEmpty else {
             throw OAuthError.illegalParameter("invalid password")
         }
         
-        let request = ResourceOwnerTokenRequest(authDomain: authDomain,
-                                                clientId: self.clientId!,
-                                                clientSecret: self.clientSecret!,
-                                                scope: scope, userName: userName,
-                                                password: password,
-                                                accessType: accessType)
+        let request = ResourceOwnerTokenRequest(authDomain: authDomain, clientId: self.clientId!, clientSecret: self.clientSecret!, scope: scope, userName: userName, password: password, accessType: accessType)
         
-        makeTokenRequest(request, handler: handler)
+        try makeTokenRequest(request, handler: handler)
     }
 }
