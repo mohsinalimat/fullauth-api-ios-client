@@ -37,20 +37,20 @@ open class OAuthTokenRequest {
         self.scope = scope
     }
     
-    open func getRequestParam() -> [String: AnyObject]{
+    open func getRequestParam() -> [String: Any]{
         
-        var param : [String : AnyObject] = [:]
+        var param : [String : Any] = [:]
         
-        param[OauthParamName.GRANT_TYPE] = self.grantType.rawValue as AnyObject?
-        param[OauthParamName.CLIENT_ID] = self.clientId as AnyObject?
-        param[OauthParamName.CLIENT_SECRET] = self.clientSecret as AnyObject?
+        param[OauthParamName.grantType] = self.grantType.rawValue
+        param[OauthParamName.clientId] = self.clientId
+        param[OauthParamName.clientSecret] = self.clientSecret
         
         if let scope = self.scope{
-            param[OauthParamName.SCOPE] = scope.joined(separator: " ") as AnyObject?
+            param[OauthParamName.scope] = scope.joined(separator: " ")
         }
         
         if let accessType = self.accessType{
-            param[OauthParamName.ACCESS_TYPE] = accessType.rawValue as AnyObject?
+            param[OauthParamName.accessType] = accessType.rawValue
         }
 
         return param

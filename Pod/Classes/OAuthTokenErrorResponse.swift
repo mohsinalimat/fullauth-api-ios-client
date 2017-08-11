@@ -16,9 +16,7 @@ public struct OAuthTokenErrorResponse {
     
     public var errorUri : String?
     
-    public init(){
-        
-    }
+    public init(){ }
 
     public init(error : String, errorDesc : String){
 
@@ -26,7 +24,7 @@ public struct OAuthTokenErrorResponse {
         self.errorDesc = errorDesc
     }
     
-    public init(data : [String : AnyObject?]){
+    public init(data : [String : Any?]){
         
         if let err = data["error"] as? String{
             self.error = err

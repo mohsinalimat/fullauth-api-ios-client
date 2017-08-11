@@ -26,9 +26,9 @@ public struct OAuthAccessToken {
     
     public var accessType :OauthAccessType?
     
-    public init(data : [String : AnyObject?]){
+    public init(data : [String : Any?]){
         
-        self.accessToken = data[OauthParamName.ACCESS_TOKEN] as! String
+        self.accessToken = data[OauthParamName.accessToken] as! String
         
         self.expiresIn = data["expires_in"] as! Int
         
@@ -44,12 +44,12 @@ public struct OAuthAccessToken {
             self.scopes = scope
         }
         
-        if let refresh_token = data[OauthParamName.REFRESH_TOKEN] as? String{
+        if let refresh_token = data[OauthParamName.refreshToken] as? String{
             self.refreshToken = refresh_token
         }
         
-        if let accessTypeString = data[OauthParamName.ACCESS_TYPE] as? String{
-            self.accessType = OauthAccessType.getType(accessType: accessTypeString)
+        if let accessType = data[OauthParamName.accessType] as? String{
+            self.accessType = OauthAccessType.getType(accessType: accessType)
         }
     }
 }

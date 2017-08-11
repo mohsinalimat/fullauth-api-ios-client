@@ -9,13 +9,15 @@
 import UIKit
 import Foundation
 
-public enum OAuthError : Error,CustomStringConvertible {
+public enum OAuthError: Error, CustomStringConvertible {
     
-    case nsError(Foundation.NSError)
+    case error(Error)
+    
+    case errorCode(OAuthErrorCode)
     
     case illegalParameter(String)
     
-    case responseError(error : Foundation.NSError?,errorResponce : OAuthTokenErrorResponse?)
+    case responseError(error: Error?,errorResponce : OAuthTokenErrorResponse?)
     
     public var description : String{
         
@@ -24,16 +26,21 @@ public enum OAuthError : Error,CustomStringConvertible {
         case .illegalParameter(let error):
             return error
             
-        case .nsError(let error) :
-            return error.description
+        case .error(let error):
+            return error.localizedDescription
+            
+        case .errorCode(let errorCode):
+            return errorCode.description
             
         case .responseError(let error , let errorResp):
             
-            if error != nil {
-                return error!.description
-            }else if errorResp != nil {
-                return errorResp!.description
+            if let err = error {
+                return err.localizedDescription
+                
+            }else if let errResp = errorResp {
+                return errResp.description
             }
+            
             return ""
         }
     }
@@ -42,27 +49,35 @@ public enum OAuthError : Error,CustomStringConvertible {
 
 public enum OAuthErrorCode : String{
     
-    case INVALID_CREDENTIALS = "invalid_credentials"
-
-    case INVALID_REQUEST = "invalid_request"
+    case invalidCredentials = "invalid_credentials"
     
-    case INVALID_CLIENT = "invalid_client"
+    case invalidRequest = "invalid_request"
     
-    case INVALID_CODE = "invalid_code"
+    case invalidClient = "invalid_client"
     
-    case INVALID_SCOPE = "invalid_scope"
+    case invalidClientSecret = "invalid_client_secret"
     
-    case INTERNAL_SERVER_ERROR = "internal_server_error"
+    case invalidCode = "invalid_code"
     
-    case INVALID_GRANT = "invalid_grant"
+    case invalidScope = "invalid_scope"
     
-    case INVALID_TOKEN = "invalid_token"
+    case internalServerError = "internal_server_error"
     
-    case REQUEST_FAILED = "request_failed"
+    case invalidGrant = "invalid_grant"
     
-    case INVALID_DOMAIN = "invalid_domain"
+    case invalidToken = "invalid_token"
     
-    case UNAUTHORIZED_CLIENT = "unauthorized_client"
+    case requestFailed = "request_failed"
     
-    case INVALID_SUBJECT = "invalid_subject"
+    case invalidDomain = "invalid_domain"
+    
+    case unAuthorizedClient = "unauthorized_client"
+    
+    case invalidSubject = "invalid_subject"
+    
+    case invalidAccessType = "invalid_access_type"
+    
+    var description: String {
+        return self.rawValue
+    }
 }

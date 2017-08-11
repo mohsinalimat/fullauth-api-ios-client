@@ -10,71 +10,71 @@ import UIKit
 
 public enum OauthAccessType : String {
     
-    case ONLINE = "online"
+    case online = "online"
     
-    case OFFLINE = "offline"
+    case offline = "offline"
 
     static func getType(accessType : String) -> OauthAccessType{
         
         switch accessType.uppercased(){
             
-        case "ONLINE": return .ONLINE
-        case "OFFLINE" : return .OFFLINE
-        default :return .OFFLINE
+        case "ONLINE":
+            return .online
             
+        case "OFFLINE":
+            return .offline
+            
+        default:
+            return .offline
         }
     }
 }
 
 public enum OauthExpiryType : String {
     
-    case SHORT = "short"
+    case short = "short"
 
-    case LONG = "long"
+    case long = "long"
 }
 
 
 public enum OauthGrantType : String {
     
-    case REFRESH_TOKEN = "refresh_token"
+    case refreshToken = "refresh_token"
+
+    case password = "password"
     
-    case PASSWORD = "password"
+    case googleToken = "google_token"
     
-    case GOOGLE_TOKEN = "google_token"
-    
-    case FACEBOOK_TOKEN = "facebook_token"
+    case facebookToken = "facebook_token"
 }
+
 
 public enum AccessTokenType: String {
     
-    case REFRESH = "refresh"
+    case refreshToken = "refresh"
     
-    case GOOGLE = "google"
+    case googleToken = "google"
     
-    case FACEBOOK = "facebook"
+    case facebookToken = "facebook"
     
-    case DEFAULT = "access token"
+    case defaultToken = "access token"
     
-    
-    static func getAccessTokenString(_ type: AccessTokenType) -> String{
-    
-        var tokenStr : String
+    static func getAccessToken(forType type: AccessTokenType) -> String{
         
         switch type {
             
-        case .REFRESH:
-            tokenStr = "refresh token"
+        case .refreshToken:
+            return "refresh token"
+    
+        case .googleToken:
+            return "google access token"
             
-        case .GOOGLE:
-            tokenStr = "google access token"
-            
-        case .FACEBOOK:
-            tokenStr = "facebook access token"
+        case .facebookToken:
+            return "facebook access token"
             
         default:
-            tokenStr = "access token"
+            return "access token"
         }
-        
-        return tokenStr
     }
 }

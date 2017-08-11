@@ -12,25 +12,20 @@ open class FacebookTokenRequest : OAuthTokenRequest {
     
     open let facebookToken :String
     
-    public init(authDomain: String,
-                clientId: String,
-                clientSecret: String,
-                scope: [String],
-                facebookToken : String,
-                accessType : OauthAccessType? = nil) {
+    public init(authDomain: String, clientId: String, clientSecret: String, scope: [String], facebookToken : String, accessType : OauthAccessType? = nil) {
         
         self.facebookToken = facebookToken
         
-        super.init(authDomain: authDomain, grantType: OauthGrantType.FACEBOOK_TOKEN, clientId: clientId, clientSecret: clientSecret, scope: scope)
+        super.init(authDomain: authDomain, grantType: .facebookToken, clientId: clientId, clientSecret: clientSecret, scope: scope)
         
         self.accessType = accessType
     }
     
-    override open func getRequestParam() -> [String : AnyObject] {
+    override open func getRequestParam() -> [String : Any] {
        
         var param = super.getRequestParam()
 
-        param[OauthParamName.FACEBOOK_TOKEN] = self.facebookToken as AnyObject?
+        param[OauthParamName.facebookToken] = self.facebookToken
         
         return param
     }

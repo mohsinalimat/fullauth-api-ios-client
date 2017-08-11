@@ -14,29 +14,23 @@ open class ResourceOwnerTokenRequest : OAuthTokenRequest{
     
    open let password : String
     
-   public init(authDomain: String,
-               clientId: String,
-               clientSecret: String,
-               scope: [String],
-               userName : String,
-               password :String,
-               accessType :OauthAccessType? = nil) {
+   public init(authDomain: String, clientId: String, clientSecret: String, scope: [String], userName : String, password :String, accessType :OauthAccessType? = nil) {
         
         self.userName = userName
         
         self.password = password
     
-        super.init(authDomain: authDomain, grantType: OauthGrantType.PASSWORD, clientId: clientId, clientSecret: clientSecret, scope: scope)
+        super.init(authDomain: authDomain, grantType: .password, clientId: clientId, clientSecret: clientSecret, scope: scope)
         
         self.accessType = accessType
     }
     
-    override open func getRequestParam() -> [String : AnyObject] {
+    override open func getRequestParam() -> [String : Any] {
         
         var param = super.getRequestParam()
         
-        param[OauthParamName.USERNAME] = self.userName as AnyObject?
-        param[OauthParamName.PASSWORD] = self.password as AnyObject?
+        param[OauthParamName.username] = self.userName
+        param[OauthParamName.password] = self.password
         
         return param
     }

@@ -21,8 +21,7 @@ struct OAuthParamHelper {
     
     static let Scope = ["yourScopes"]
     
-    static let AccessToken = "yourAccessToken"
-    
+    static let AccessToken = "yourAccessToken"    
 }
 
 
@@ -56,14 +55,14 @@ class TestFullAuthClient: UIViewController {
                     
                     let errResp  = errorResponse
                     
-                    print("error_dese --\(errResp?.errorDesc)")
+                    print("error_dese --\(String(describing: errResp?.errorDesc))")
                 }
                 
                 if accessToken != nil{
                     
                     print("Response -- \(accessToken!)")
                     
-                    print("AccessToken -- \(accessToken?.accessToken)")
+                    print("AccessToken -- \(String(describing: accessToken?.accessToken))")
                 }
                 
             })
@@ -72,8 +71,18 @@ class TestFullAuthClient: UIViewController {
             
             let err = error as? OAuthError
             
-            print("Error -- \(err?.description)")
+            print("Error -- \(String(describing: err?.description))")
         }
+    }
+    
+    
+    func revokeAccessToken() {
+        
+        let oauth = FullAuthOAuthService(authDomain: OAuthParamHelper.AuthDomain)
+    
+        try! oauth.revokeAccessToken(accessToken: "pass your access token here", handler: { (success, error, errorResp) in
+    
+        })
     }
     
 }

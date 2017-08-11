@@ -11,35 +11,35 @@ import Foundation
 
 struct OauthParamName {
     
-     static let CLIENT_ID = "client_id"
+     static let clientId = "client_id"
     
-     static let CLIENT_SECRET = "client_secret"
+     static let clientSecret = "client_secret"
     
-     static let ACCESS_TOKEN = "access_token";
+     static let accessToken = "access_token"
     
-     static let REDIRECT_URI = "redirect_uri";
+     static let redirectUrl = "redirect_uri"
     
-     static let RESPONSE_TYPE = "response_type";
+     static let responseType = "response_type"
     
-     static let ACCESS_TYPE = "access_type";
+     static let accessType = "access_type"
     
-     static let SCOPE = "scope";
+     static let scope = "scope"
     
-     static let APPROVAL_PROMPT = "approval_prompt";
+     static let approvalPrompt = "approval_prompt"
     
-     static let GRANT_TYPE = "grant_type";
+     static let grantType = "grant_type"
     
-     static let CODE = "code";
+     static let code = "code"
     
-     static let REFRESH_TOKEN = "refresh_token";
+     static let refreshToken = "refresh_token"
     
-     static let GOOGLE_TOKEN = "google_token";
+     static let googleToken = "google_token"
     
-     static let FACEBOOK_TOKEN = "facebook_token";
+     static let facebookToken = "facebook_token"
     
-     static let EXPIRY_TYPE = "expiry_type";
+     static let expiryType = "expiry_type"
 
-     static let USERNAME = "username";
+     static let username = "username"
     
-     static let PASSWORD = "password";
+     static let password = "password"
 }
