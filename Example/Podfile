@@ -9,9 +9,3 @@ target 'FullAuthIOSClient_Example' do
   pod "FullAuthIOSClient", :path => "../"
   
 end
-
-target 'FullAuthIOSClient_Tests' do
-  pod "FullAuthIOSClient", :path => "../"
-
-  
-end
