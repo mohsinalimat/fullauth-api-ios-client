@@ -16,7 +16,7 @@ public struct OAuthAccessToken {
     
     public var expiresIn : Int
     
-    public var userId :String
+    public var userId :String?
     
     public var issuedTo : String?
     
@@ -34,7 +34,9 @@ public struct OAuthAccessToken {
         
         self.tokenType = data["token_type"] as! String
         
-        self.userId = data["user_id"] as! String ?? ""
+        if let id = data["user_id"] as? String {
+            self.userId = id
+        }
         
         if let issuedTo = data["issued_to"] as? String {
             self.issuedTo = issuedTo
