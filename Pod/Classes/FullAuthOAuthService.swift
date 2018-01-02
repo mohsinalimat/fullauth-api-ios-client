@@ -42,7 +42,7 @@ open class FullAuthOAuthService {
         
         try validateOauthDomain()
         
-        try validateOauthClient()
+        try validateOauthClientId()
         
         try validateScope(scopes)
         

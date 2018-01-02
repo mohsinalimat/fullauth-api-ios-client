@@ -18,6 +18,13 @@ extension FullAuthOAuthService {
         }
     }
     
+    func validateOauthClientId() throws {
+        
+        guard let clientid = clientId, !clientid.isEmpty else {
+            throw OAuthError.errorCode(.invalidClient)
+        }
+    }
+
     func validateOauthClient() throws{
         
         guard let clientid = clientId, !clientid.isEmpty else {

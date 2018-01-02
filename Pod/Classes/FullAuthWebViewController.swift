@@ -8,7 +8,7 @@
 
 import UIKit
 import Foundation
-
+import SafariServices
 
 public protocol AuthCodeDelegate {
     
@@ -18,14 +18,16 @@ public protocol AuthCodeDelegate {
 }
 
 
-public class FullAuthWebViewController: UIViewController {
+public class FullAuthWebViewController: UIViewController, SFSafariViewControllerDelegate {
 
     @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var navigationBar: UINavigationBar!
     
-    public var delegate: AuthCodeDelegate?
-    public var authCodeReq: AuthCodeRequest?
+    var safariViewController: SFSafariViewController?
     
+    public var delegate: AuthCodeDelegate?
+    public var authCodeReq: AuthCodeRequest? // authcode must be setted
+    public var authObj: FullAuthOAuthService?
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -40,23 +42,29 @@ public class FullAuthWebViewController: UIViewController {
             print("Error: AuthCode Request not found")
             return
         }
-
-        let urlString = "https://access.anywhereworks.com/o/oauth2/auth"
         
-        let scopes = authCodeModel.scopes.joined(separator: " ")
-        
-        let query = "response_type=code&client_id=\(authCodeModel.clientId)&scope=\(scopes)&redirect_uri=urn:ietf:wg:oauth:2.0:oob:auto&approval_prompt=force&access_type=\(authCodeModel.accessType.rawValue)"
-        
-        print("query str : \(query)")
-
-        guard var components = URLComponents(string: urlString) else{
-            print("Error: Can't construct url components")
-            return
+        let oauthObj = FullAuthOAuthService(authDomain: authCodeModel.authDomain)
+        oauthObj.clientId = authCodeModel.clientId
+    
+        do {
+            
+            let urlStr = try oauthObj.getAuthCodeUrl(scopes: authCodeModel.scopes)
+            
+            //print("query str : \(urlStr)")
+            
+            guard var url = URL(string: urlStr) else {
+                print("Error: Can't construct url components")
+                return
+            }
+            
+            let safariVc = SFSafariViewController(url: url)
+            safariVc.delegate = self
+            safariViewController = safariVc
+            self.present(safariVc, animated: true, completion: nil)
+            
+        } catch let err {
+            print("Error: \(err.localizedDescription)")
         }
-        
-        components.query = query
-        
-        webView.loadRequest(URLRequest(url : components.url!))
     }
     
     @IBAction func cancelBtnAction(_ sender: Any) {
@@ -68,6 +76,21 @@ public class FullAuthWebViewController: UIViewController {
     }
 }
 
+
+extension FullAuthWebViewController {
+    
+    public func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        print("safari did finish")
+    }
+    
+    public func safariViewController(_ controller: SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Bool) {
+        print("safari did comleted load")
+    }
+    
+    public func safariViewController(_ controller: SFSafariViewController, activityItemsFor URL: URL, title: String?) -> [UIActivity] {
+        return []
+    }
+}
 
 public class FullAuthVC: UIViewController {
     

@@ -19,7 +19,7 @@ public struct AuthCodeRequest {
     
     public let accessType : OauthAccessType
     
-    public init(authDomain: String, clientId: String, scopes: [String], accessType: OauthAccessType) {
+    public init(authDomain: String, clientId: String, scopes: [String], accessType: OauthAccessType = .offline) {
         
         self.authDomain = authDomain
         self.clientId = clientId
