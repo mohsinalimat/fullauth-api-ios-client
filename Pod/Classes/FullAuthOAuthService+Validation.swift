@@ -25,7 +25,7 @@ extension FullAuthOAuthService {
         }
     }
 
-    func validateOauthClient() throws{
+    func validateOauthClient() throws {
         
         guard let clientid = clientId, !clientid.isEmpty else {
             throw OAuthError.errorCode(.invalidClient)
@@ -36,21 +36,21 @@ extension FullAuthOAuthService {
         }
     }
     
-    func validateOauthDomain() throws{
+    func validateOauthDomain() throws {
         
         guard !self.authDomain.isEmpty else{
             throw OAuthError.errorCode(.invalidDomain)
         }
     }
     
-    func validateScope(_ scope :[String]) throws{
+    func validateScope(_ scope :[String]) throws {
         
         guard !scope.isEmpty else{
             throw OAuthError.errorCode(.invalidScope)
         }
     }
     
-    func validateAccessType(_ accessType :String) throws{
+    func validateAccessType(_ accessType :String) throws {
         
         guard !accessType.isEmpty else{
             throw OAuthError.errorCode(.invalidAccessType)

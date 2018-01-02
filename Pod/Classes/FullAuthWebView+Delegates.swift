@@ -9,8 +9,6 @@
 import UIKit
 import Foundation
 
-
-
 extension FullAuthWebViewController: UIWebViewDelegate {
     
     public func webViewDidStartLoad(_ webView: UIWebView) {

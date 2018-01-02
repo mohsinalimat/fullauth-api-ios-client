@@ -17,7 +17,6 @@ public protocol AuthCodeDelegate {
     func didFailLoad(withError error: Error?, receiver: UIViewController)
 }
 
-
 public class FullAuthWebViewController: UIViewController, SFSafariViewControllerDelegate {
 
     @IBOutlet weak var webView: UIWebView!

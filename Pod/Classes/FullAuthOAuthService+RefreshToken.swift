@@ -8,23 +8,8 @@
 
 import UIKit
 
-
+//MARK: REFRESH ACCESS TOKEN
 extension FullAuthOAuthService {
-    
-    
-    //MARK: REFRESH ACCESS TOKEN
-//    open func refreshAccessToken(_ refreshToken  : String,expiryType : OauthExpiryType? = nil, handler : TokenInfoHandler?) throws{
-//        
-//        try validateOauthDomain()
-//        
-//        try validateOauthClient()
-//        
-//        try validateAccessToken(accesstoken: refreshToken, tokenType: .REFRESH)
-//        
-//        let request = RefreshTokenRequest(authDomain: self.authDomain, clientId: self.clientId!, clientSecret: self.clientSecret!, refreshToken: refreshToken, expiryType: expiryType)
-//        
-//        makeTokenRequest(request, handler: handler)
-//    }
     
     open func refreshAccessToken(_ refreshToken: String, expiryType : OauthExpiryType? = nil, handler : TokenInfoHandler?) throws{
         

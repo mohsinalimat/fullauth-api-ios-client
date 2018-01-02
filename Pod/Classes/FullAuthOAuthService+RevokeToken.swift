@@ -9,11 +9,8 @@
 import UIKit
 import Alamofire
 
-
-
 //MARK:REVOKE ACCESS TOKEN
 extension FullAuthOAuthService {
-
     
     open func revokeAccessToken(accessToken: String, handler: revokeTokenHandler?) throws{
         
