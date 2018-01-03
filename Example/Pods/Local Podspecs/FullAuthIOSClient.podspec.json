@@ -16,11 +16,6 @@
   },
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*.{swift}",
-  "resource_bundles": {
-    "FullAuthIOSClient": [
-      "Pod/Classes/**/*.{storyboard,png}"
-    ]
-  },
   "dependencies": {
     "Alamofire": [
       "~> 4.4"

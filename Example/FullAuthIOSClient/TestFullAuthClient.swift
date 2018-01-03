@@ -92,10 +92,14 @@ class TestFullAuthClient: UIViewController, SFSafariViewControllerDelegate {
         
         let authCodeObj = AuthCodeRequest(authDomain: "", clientId: "", scopes: [], accessType: .offline)
         
-        guard _ = authCodeObj.getAuthCodeUrl() else {
-            return
+        do {
+            
+            let url = try authCodeObj.getAuthCodeUrl()
+            
+            print("url: \(url)")
+            
+        } catch let err {
+            print("error: \(err.localizedDescription)")
         }
-        
-        // use this url to present
     }
 }

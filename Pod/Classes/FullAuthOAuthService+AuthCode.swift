@@ -28,7 +28,7 @@ public struct AuthCodeRequest {
         self.accessType = accessType
     }
     
-    public func getAuthCodeUrl() -> URL throws {
+    public func getAuthCodeUrl() throws -> URL {
         
         let oauthObj = FullAuthOAuthService(authDomain: self.authDomain)
         oauthObj.clientId = self.clientId
