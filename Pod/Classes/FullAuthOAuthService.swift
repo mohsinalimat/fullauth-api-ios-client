@@ -38,7 +38,7 @@ open class FullAuthOAuthService {
     }
     
     //MARK:FetchAuthUrl
-    open func getAuthCodeUrl(scopes: [String], accessType : OauthAccessType? = .offline, approval_prompt: String? = "force") throws -> String {
+    open func getAuthCodeUrl(scopes: [String], accessType : OauthAccessType? = .offline, approval_prompt: String? = "force", redirectUrl: String) throws -> String {
         
         try validateOauthDomain()
         
@@ -46,10 +46,10 @@ open class FullAuthOAuthService {
         
         try validateScope(scopes)
         
-        return generateAuthCodeUrl(scopes: scopes, access_type: accessType, approval_prompt: approval_prompt)
+        return generateAuthCodeUrl(scopes: scopes, access_type: accessType, approval_prompt: approval_prompt, redirectUrl: redirectUrl)
     }
     
-    private func generateAuthCodeUrl(scopes: [String], access_type: OauthAccessType?, approval_prompt: String?) -> String {
+    private func generateAuthCodeUrl(scopes: [String], access_type: OauthAccessType?, approval_prompt: String?, redirectUrl: String) -> String {
         
         var baseUrl: String = Constants.OAuth.getAuthUrl(self.authDomain)
         
@@ -57,7 +57,7 @@ open class FullAuthOAuthService {
         
         let scope = scopes.joined(separator: "%20")
         
-        let redirect_uri = "urn:ietf:wg:oauth:2.0:oob:auto"
+        //let redirect_uri = "urn:ietf:wg:oauth:2.0:oob:auto"
         
         var urlParams: [String: Any] = [:]
         
@@ -71,7 +71,7 @@ open class FullAuthOAuthService {
         
         let path = Constants.OAuth.FULLAUTH_OAUTH2_AUTH
         
-        var url = "\(baseUrl)\(path)?response_type=code&client_id=\(clientId)&scope=\(scope)&redirect_uri=\(redirect_uri)"
+        var url = "\(baseUrl)\(path)?response_type=code&client_id=\(clientId)&scope=\(scope)&redirect_uri=\(redirectUrl)"
         
         for (key,value) in urlParams {
             url.append("&\(key)=\(value)")

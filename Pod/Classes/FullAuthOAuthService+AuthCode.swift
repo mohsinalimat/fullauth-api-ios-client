@@ -28,14 +28,14 @@ public struct AuthCodeRequest {
         self.accessType = accessType
     }
     
-    public func getAuthCodeUrl() throws -> URL {
+    public func getAuthCodeUrl(withRedirectUrl redirectUrl: String) throws -> URL {
         
         let oauthObj = FullAuthOAuthService(authDomain: self.authDomain)
         oauthObj.clientId = self.clientId
         
         do {
             
-            let urlStr = try oauthObj.getAuthCodeUrl(scopes: self.scopes)
+            let urlStr = try oauthObj.getAuthCodeUrl(scopes: self.scopes, redirectUrl: redirectUrl)
             
             guard var url = URL(string: urlStr) else {
                 throw OAuthError.errorCode(.requestFailed)

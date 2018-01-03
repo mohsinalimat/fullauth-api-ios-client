@@ -94,7 +94,10 @@ class TestFullAuthClient: UIViewController, SFSafariViewControllerDelegate {
         
         do {
             
-            let url = try authCodeObj.getAuthCodeUrl()
+            // Register the redirect url in the console and add it here
+            let appBundleId: String = ""
+            
+            let url = try authCodeObj.getAuthCodeUrl(withRedirectUrl: "\(appBundleId):/oauth2callback")
             
             print("url: \(url)")
             
