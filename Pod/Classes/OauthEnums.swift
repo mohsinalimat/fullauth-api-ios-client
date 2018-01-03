@@ -18,10 +18,12 @@ public enum OauthAccessType : String {
         
         switch accessType.uppercased(){
             
-        case "ONLINE": return .ONLINE
-        case "OFFLINE" : return .OFFLINE
-        default :return .OFFLINE
-            
+        case "ONLINE":
+            return .ONLINE
+        case "OFFLINE" :
+            return .OFFLINE
+        default:
+            return .OFFLINE
         }
     }
 }

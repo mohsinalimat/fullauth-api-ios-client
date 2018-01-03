@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 karthik-dev. All rights reserved.
 //
 
-
 import UIKit
 import Foundation
 import FullAuthIOSClient
@@ -22,100 +21,64 @@ struct OAuthParamHelper {
     static let Scope = ["yourScopes"]
     
     static let AccessToken = "yourAccessToken"
-    
 }
-
 
 class TestFullAuthClient: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        requestTokenInfo()
     }
     
-    
     //MARK: REQUEST TOKEN INFO
-    
     func requestTokenInfo(){
         
         let oauthObj = FullAuthOAuthService(authDomain: OAuthParamHelper.AuthDomain)
     
         do{
-            
             try oauthObj.getTokenInfo("", handler: { (error, errorResponse, accessToken) -> Void in
                 
-                if error != nil{
-                    
+                if error != nil {
                     print("Error ---\(error!)")
                 }
                 
-                if errorResponse != nil{
-                    
+                if errorResponse != nil {
                     print("Error Response --\(errorResponse!)")
-                    
-                    let errResp  = errorResponse
-                    
-                    //print("error_dese --\(errResp?.errorDesc)")
                 }
                 
-                if accessToken != nil{
-                    
+                if accessToken != nil {
                     print("Response -- \(accessToken!)")
-                    
-                    //print("AccessToken -- \(accessToken?.accessToken)")
                 }
-                
             })
             
-        }catch let error {
-            
-            let err = error as? OAuthError
-            
-            //print("Error -- \(err?.description)")
+        } catch let error {
+            print("Error -- \(error)")
         }
     }
     
-    
     func requestServiceAccessToken() {
-        
-        let jwt: String = ""
         
         let auth = FullAuthOAuthService(authDomain: "")
         
         do {
             
-            try auth.requestAccessToken(forJwt: jwt, handler: { (error, errorResponse, accessToken) in
+            try auth.requestAccessToken(forJwt: "", handler: { (error, errorResponse, accessToken) in
                 
-                if error != nil{
-                    
+                if error != nil {
                     print("Error ---\(error!)")
                 }
                 
-                if errorResponse != nil{
-                    
-                    print("Error Response --\(errorResponse!)")
-                    
-                    let errResp  = errorResponse
-                    
-                    //print("error_dese --\(errResp?.errorDesc)")
+                if errorResponse != nil {
+                    print("error_dese --\(String(describing: errorResponse?.description))")
                 }
                 
-                if accessToken != nil{
-                    
+                if accessToken != nil {
                     print("Response -- \(accessToken!)")
-                    
-                    //print("AccessToken -- \(accessToken?.accessToken)")
                 }
-                
             })
             
-        } catch let error {
-            
-            let err = error as? OAuthError
-            
-            //print("Error -- \(err?.description)")
+        } catch let error {        
+            print("Error -- \(error)")
         }
     }
 }
-

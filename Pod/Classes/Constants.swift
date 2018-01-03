@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 open class Constants {
     
     open class OAuth {

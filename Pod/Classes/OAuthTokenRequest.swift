@@ -22,8 +22,7 @@ open class OAuthTokenRequest {
     var scope : [String]?
     
     var accessType : OauthAccessType?
-    
-    
+        
     public init(authDomain : String, grantType : OauthGrantType, clientId : String, clientSecret :String,scope : [String]? = nil){
         
         self.authDomain = authDomain
