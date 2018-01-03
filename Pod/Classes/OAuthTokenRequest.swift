@@ -45,7 +45,7 @@ open class OAuthTokenRequest {
         param[OauthParamName.clientId] = self.clientId
         param[OauthParamName.clientSecret] = self.clientSecret
         
-        if let scope = self.scope{
+        if let scope = self.scope {
             param[OauthParamName.scope] = scope.joined(separator: " ")
         }
         

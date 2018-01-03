@@ -90,7 +90,7 @@ class TestFullAuthClient: UIViewController, SFSafariViewControllerDelegate {
     //To present a view and get the code with this url
     func getAuthCodeUrl() {
         
-        let authCodeObj = AuthCodeRequest(authDomain: "", clientId: "", scopes: [], accessType: .offline)
+        let authCodeObj = AuthCodeRequest(authDomain: "", clientId: "", scopes: [], accessType: .offline)    
         
         do {
             

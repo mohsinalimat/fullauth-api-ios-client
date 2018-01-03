@@ -47,6 +47,8 @@ public enum OauthGrantType : String {
     case googleToken = "google_token"
     
     case facebookToken = "facebook_token"
+    
+    case code = "authorization_code"
 }
 
 
