@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "FullAuthIOSClient"
-  s.version          = "0.6.0"
+  s.version          = "0.7.0"
   s.summary          = "A IOS client library to communicate with the FullAuth Apis for authentication, token exchange, retrieve access token, etc"
 
   s.homepage         = "https://github.com/FullCreative/fullauth-api-ios-client.git"
@@ -14,8 +14,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'FullAuthIOSClient' => ['Pod/Assets/*.png']
-  }
+ 
   s.dependency 'Alamofire', '~> 4.0'
 end

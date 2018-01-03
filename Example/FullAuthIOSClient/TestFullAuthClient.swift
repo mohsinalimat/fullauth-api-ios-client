@@ -54,7 +54,7 @@ class TestFullAuthClient: UIViewController {
                     
                     print("Error Response --\(errorResponse!)")
                     
-                    let errResp  = errorResponse
+                    //let errResp  = errorResponse
                     
                     //print("error_dese --\(errResp?.errorDesc)")
                 }
@@ -70,7 +70,7 @@ class TestFullAuthClient: UIViewController {
             
         }catch let error {
             
-            let err = error as? OAuthError
+            //let err = error as? OAuthError
             
             //print("Error -- \(err?.description)")
         }
@@ -96,7 +96,7 @@ class TestFullAuthClient: UIViewController {
                     
                     print("Error Response --\(errorResponse!)")
                     
-                    let errResp  = errorResponse
+                    //let errResp  = errorResponse
                     
                     //print("error_dese --\(errResp?.errorDesc)")
                 }
@@ -112,7 +112,7 @@ class TestFullAuthClient: UIViewController {
             
         } catch let error {
             
-            let err = error as? OAuthError
+            //let err = error as? OAuthError
             
             //print("Error -- \(err?.description)")
         }
