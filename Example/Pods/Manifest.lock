@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (4.5.0)
+  - Alamofire (4.6.0)
   - FullAuthIOSClient (0.6.0):
     - Alamofire (~> 4.4)
 
@@ -8,11 +8,11 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   FullAuthIOSClient:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
-  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
-  FullAuthIOSClient: 8f9da83d7e4aa78db222ecc32f213d93845ca3f5
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  FullAuthIOSClient: 6bb0a1e78981b2368279b4f083645b0c4ffd1701
 
 PODFILE CHECKSUM: ca6ff2ddc1be4256a6f90d3f4a7397a19bacfa1c
 

@@ -8,7 +8,8 @@
 
 import UIKit
 
-
+/* To present Auth page in view controller, user this url
+ */
 public struct AuthCodeRequest {
     
     public let authDomain: String
@@ -26,5 +27,25 @@ public struct AuthCodeRequest {
         self.scopes = scopes
         self.accessType = accessType
     }
-}
+    
+    public func getAuthCodeUrl() -> URL throws {
+        
+        let oauthObj = FullAuthOAuthService(authDomain: self.authDomain)
+        oauthObj.clientId = self.clientId
+        
+        do {
+            
+            let urlStr = try oauthObj.getAuthCodeUrl(scopes: self.scopes)
+            
+            guard var url = URL(string: urlStr) else {
+                throw OAuthError.errorCode(.requestFailed)
+            }
+            
+            return url
+            
+        } catch let err {
+            throw OAuthError.error(err)
+        }
+    }
+} 
 

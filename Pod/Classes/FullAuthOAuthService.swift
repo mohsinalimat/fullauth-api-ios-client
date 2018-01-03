@@ -28,11 +28,11 @@ open class FullAuthOAuthService {
         
         self.authDomain = authDomain
         
-        if let clientId = clientId{
+        if let clientId = clientId {
             self.clientId = clientId
         }
         
-        if let clientSecret = clientSecret{
+        if let clientSecret = clientSecret {
             self.clientSecret = clientSecret
         }
     }
@@ -55,7 +55,7 @@ open class FullAuthOAuthService {
         
         let clientId = self.clientId ?? ""
         
-        let scope = scopes.joined(separator: " ")
+        let scope = scopes.joined(separator: "%20")
         
         let redirect_uri = "urn:ietf:wg:oauth:2.0:oob:auto"
         

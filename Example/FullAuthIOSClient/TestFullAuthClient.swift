@@ -10,37 +10,32 @@
 import UIKit
 import Foundation
 import FullAuthIOSClient
+import SafariServices
 
 struct OAuthParamHelper {
     
-    static let AuthDomain = "YoCoBoard"
+    static let AuthDomain = ""
     
-    static let ClientId = "29354-e671abd9f0d9d1d18c3860d259db1222"
+    static let ClientId = ""
     
-    static let ClientSecret = "pc_S9_GWWYzkxjdjVBwh4TQa2oROYEWm3hwLyiNu"
+    static let ClientSecret = ""
     
-    static let Scope = ["awapis.fullaccess"]
+    static let Scope = [""]
     
-    static let AccessToken = "yourAccessToken"    
+    static let AccessToken = ""
 }
 
 
-class TestFullAuthClient: UIViewController {
+class TestFullAuthClient: UIViewController, SFSafariViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        requestTokenInfo()
+    
     }
   
-
     @IBAction func btnAction(_ sender: Any) {
     
-        let temp = FullAuthVC.webViewController!
-        self.present(temp, animated: true, completion: nil)
-        
     }
-    
     
     //MARK: REQUEST TOKEN INFO
     func requestTokenInfo(){
@@ -49,14 +44,14 @@ class TestFullAuthClient: UIViewController {
     
         do{
             
-            try oauthObj.getTokenInfo("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdGFnaW5nLWZ1bGxjcmVhdGl2ZS5mdWxsYXV0aC5jb20iLCJpYXQiOjE1MDQyNTg4MjQsInVzZXJfaWQiOiI0OWQwMzk4OC0zYjZjLTRlNDktOTBjNS03ZjUyNDc4OTdjMTEiLCJleHAiOjE1MDQyNjYwMjQsImp0aSI6ImQ5OTMwLkJIc2hHTVA3YVAifQ.as-CGXPxefXHigBmrMTRcEaHbYFyBrO6ZY8jHzytVCc", handler: { (error, errorResponse, accessToken) -> Void in
+            try oauthObj.getTokenInfo("Pass your access token here", handler: { (error, errorResponse, accessToken) -> Void in
                 
                 if error != nil{
                     
                     print("Error ---\(error!)")
                 }
                 
-                if errorResponse != nil{
+                if errorResponse != nil {
                     
                     print("Error Response --\(errorResponse!)")
                     
@@ -65,13 +60,12 @@ class TestFullAuthClient: UIViewController {
                     print("error_dese --\(String(describing: errResp?.errorDesc))")
                 }
                 
-                if accessToken != nil{
+                if accessToken != nil {
                     
                     print("Response -- \(accessToken!)")
                     
                     print("AccessToken -- \(String(describing: accessToken?.accessToken))")
                 }
-                
             })
             
         }catch let error {
@@ -81,6 +75,7 @@ class TestFullAuthClient: UIViewController {
             print("Error -- \(String(describing: err?.description))")
         }
     }
+    
     
     func revokeAccessToken() {
         
@@ -92,28 +87,15 @@ class TestFullAuthClient: UIViewController {
     }
     
     
-    func getAuthCodeUrl() -> String {
+    //To present a view and get the code with this url
+    func getAuthCodeUrl() {
         
-        let oauth = FullAuthOAuthService(authDomain: OAuthParamHelper.AuthDomain)
+        let authCodeObj = AuthCodeRequest(authDomain: "", clientId: "", scopes: [], accessType: .offline)
         
-        return ""
+        guard _ = authCodeObj.getAuthCodeUrl() else {
+            return
+        }
+        
+        // use this url to present
     }
 }
-
-
-extension TestFullAuthClient: AuthCodeDelegate {
-    
-    func didStartLoad() {
-        print("Started loading")
-    }
-    
-    func didFinishLoad(withCode code: String, receiver: UIViewController) {
-        print("finished loading")
-    }
-    
-    func didFailLoad(withError error: Error?, receiver: UIViewController) {
-        print("failed to load")
-    }
-}
-
-
