@@ -49,7 +49,7 @@ There are few supported flows in the fullAuth specification to request access to
 
 Create an `authService` by providing the necessary inputs.
 ```swift
-let authService =  FullAuthOAuthService(authDomain: "YOur auth domain":, clientId: "client-id", clientSecret: "client-secret")
+let authService =  FullAuthOAuthService(authDomain: "your auth domain":, clientId: "client-id", clientSecret: "client-secret")
 ```
 
  ### Using Resource Owner Credentials
@@ -62,7 +62,7 @@ let authService =  FullAuthOAuthService(authDomain: "YOur auth domain":, clientI
           })
      } catch let err {
               // handle error 
-            }
+     }
 ```
  
  ### Using Google Access Token
@@ -70,12 +70,12 @@ let authService =  FullAuthOAuthService(authDomain: "YOur auth domain":, clientI
  
  ```swift
   do {
-                try authService.requestAccessTokenForGoogleToken(googleAccessToken: "googleToken", scope: ["scope1", "scope2"], accessType: .OFFLINE, handler: { (error, errorResponse, accessToken) in
+      try authService.requestAccessTokenForGoogleToken(googleAccessToken: "googleToken", scope: ["scope1", "scope2"], accessType: .OFFLINE, handler: { (error, errorResponse, accessToken) in
                     // process the response
                 })
-            } catch let err {
+     } catch let err {
               // handle the error 
-            }
+     }
  ```
  ### Using Facebook Access Token
  Request AccessToken by passing valid facebook access token.
@@ -87,7 +87,7 @@ let authService =  FullAuthOAuthService(authDomain: "YOur auth domain":, clientI
                 })
      } catch let err {
               // handle the error 
-            }
+     }
  ```
 
 ## Fetch access token information
@@ -100,7 +100,7 @@ do {
         }
     } catch {
             // handle the error
-        }
+    }
  ```
  
 ## Refresh Access Token
@@ -112,7 +112,7 @@ You can submit a refresh token and receive a new access token if the access toke
             // Save the access token
     } catch let error {
             // print("error: \(error)")
-        }
+    }
 ```
 
 ## Revoke Access Token
@@ -130,7 +130,8 @@ Revoke a valid AccessToken.
  
 ## Author
 
-karthik-dev,karthik.samy@a-cti.com
+karthik-dev, karthik.samy@a-cti.com
+Monica Raja, monica.raja@anywhere.co
 
 ## License
 
