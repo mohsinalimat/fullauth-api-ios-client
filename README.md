@@ -130,7 +130,7 @@ Revoke a valid AccessToken.
  
 ## Author
 
-karthik-dev, karthik.samy@a-cti.com
+karthik-dev, karthik.samy@a-cti.com 
 Monica Raja, monica.raja@anywhere.co
 
 ## License
