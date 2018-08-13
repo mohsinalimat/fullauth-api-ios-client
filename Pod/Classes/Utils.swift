@@ -12,7 +12,7 @@ open class Utils {
     
     open class func isNilOrEmptyStr(_ str: String?) -> Bool {
         
-        if (str == nil || str!.isEmpty){
+        if (str == nil || str!.isEmpty) {
             return true
         }
         return false
