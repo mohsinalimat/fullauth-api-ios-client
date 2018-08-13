@@ -76,7 +76,7 @@ class TestFullAuthClient: UIViewController {
                     print("Response -- \(accessToken!)")
                 }
             })
-            
+          
         } catch let error {        
             print("Error -- \(error)")
         }
