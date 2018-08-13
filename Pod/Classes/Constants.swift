@@ -20,7 +20,7 @@ open class Constants {
         
         open static let FULLAUTH_OAUTH2_TOKEN = "/o/oauth2/v1/token"
         
-        open static let FULLAUTH_REVOKE_TOKEN = "/o/oauth2/revoke"
+        open static let FULLAUTH_REVOKE_TOKEN = "/o/oauth2/revoke"  
         
         open static func getAuthUrl(_ liveMode: Bool, _ authDomain : String) -> String{
             

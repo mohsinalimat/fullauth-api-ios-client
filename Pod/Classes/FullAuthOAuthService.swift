@@ -23,7 +23,7 @@ open class FullAuthOAuthService {
     
     
     public init(liveMode: Bool = true, authDomain : String, clientId :String? = nil, clientSecret : String? = nil){
-        
+           
         self.authDomain = authDomain
         self.liveMode = liveMode
         
