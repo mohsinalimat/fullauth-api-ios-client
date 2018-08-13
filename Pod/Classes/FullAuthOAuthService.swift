@@ -11,6 +11,8 @@ open class FullAuthOAuthService {
     
     var clientSecret : String?
     
+    var liveMode: Bool
+    
     open var timeOutInterval : TimeInterval = 60
     
     public typealias ApiResponseHandler = (_ success : Bool,_ httpRequest : URLRequest?,_ httpResponse :  HTTPURLResponse?,_ responseJson : [String : Any?]?,_ error : NSError?) -> Void
@@ -20,9 +22,10 @@ open class FullAuthOAuthService {
     public typealias revokeTokenHandler = (_ success: Bool,_ error : NSError?,_ errorResponse : OAuthTokenErrorResponse?) -> Void
     
     
-    public init(authDomain : String,clientId :String? = nil,clientSecret : String? = nil){
+    public init(liveMode: Bool = true, authDomain : String, clientId :String? = nil, clientSecret : String? = nil){
         
         self.authDomain = authDomain
+        self.liveMode = liveMode
         
         if let clientId = clientId{
             self.clientId = clientId
@@ -31,6 +34,10 @@ open class FullAuthOAuthService {
         if let clientSecret = clientSecret{
             self.clientSecret = clientSecret
         }
+    }
+    
+    public convenience init (authDomain : String, clientId :String? = nil, clientSecret : String? = nil) {
+        self.init(liveMode: true, authDomain: authDomain, clientId: clientId, clientSecret: clientSecret)
     }
     
     
@@ -204,7 +211,7 @@ open class FullAuthOAuthService {
     open func makeTokenRequest(_ tokenRequest : OAuthTokenRequest,handler : TokenInfoHandler?){
         
         //TODO: Check
-        let url = Foundation.URL(string: Constants.OAuth.getTokenUrl(tokenRequest.authDomain))
+        let url = Foundation.URL(string: Constants.OAuth.getTokenUrl(liveMode, tokenRequest.authDomain))
         var request = URLRequest(url: url!)
         request.httpMethod = HTTPMethod.post.rawValue
         request.timeoutInterval = timeOutInterval
@@ -227,7 +234,7 @@ open class FullAuthOAuthService {
     internal func fetchAccessTokenInfo(_ authDomain : String,accessToken:String,handler : TokenInfoHandler?){
         
         //TODO: Check
-        let url = Foundation.URL(string: Constants.OAuth.getTokenUrl(authDomain))
+        let url = Foundation.URL(string: Constants.OAuth.getTokenUrl(liveMode, authDomain))
         var request = URLRequest(url:url!)
         request.httpMethod = HTTPMethod.get.rawValue
         request.timeoutInterval = timeOutInterval
@@ -251,7 +258,7 @@ open class FullAuthOAuthService {
     internal func revokeAccessToken(_ authDomain: String, accessToken: String,handler: revokeTokenHandler?){
         
         //TODO: Check
-        let url = Foundation.URL(string: Constants.OAuth.getRevokeTokenUrl(authDomain: authDomain))
+        let url = Foundation.URL(string: Constants.OAuth.getRevokeTokenUrl(liveMode, authDomain: authDomain))
         
         var request = URLRequest(url: url!)
         request.httpMethod = HTTPMethod.get.rawValue
