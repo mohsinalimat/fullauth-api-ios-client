@@ -26,7 +26,7 @@ public struct OAuthAccessToken {
     
     public var accessType :OauthAccessType?
     
-    public init(data : [String : Any?]){
+    public init(data : [String : Any?]) {
         
         self.accessToken = data[OauthParamName.ACCESS_TOKEN] as! String
         
@@ -42,7 +42,7 @@ public struct OAuthAccessToken {
             self.issuedTo = issuedTo
         }
         
-        if let scope = data["scopes"] as? [String]{
+        if let scope = data["scopes"] as? [String] {
             self.scopes = scope
         }
         

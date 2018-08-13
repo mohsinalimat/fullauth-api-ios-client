@@ -36,7 +36,7 @@ public struct OAuthTokenErrorResponse {
             self.errorDesc = errorDesc
         }
         
-        if let errorUri = data["error_uri"] as? String{
+        if let errorUri = data["error_uri"] as? String {
             self.errorUri = errorUri
         }
     }
