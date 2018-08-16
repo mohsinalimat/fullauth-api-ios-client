@@ -231,7 +231,7 @@ open class FullAuthOAuthService {
         }
     }
     
-    internal func fetchAccessTokenInfo(_ authDomain : String,accessToken:String,handler : TokenInfoHandler?){
+    internal func fetchAccessTokenInfo(_ authDomain : String,accessToken:String,handler : TokenInfoHandler?) {
         
         //TODO: Check
         let url = Foundation.URL(string: Constants.OAuth.getTokenUrl(liveMode, authDomain))
@@ -255,7 +255,7 @@ open class FullAuthOAuthService {
     }
     
     
-    internal func revokeAccessToken(_ authDomain: String, accessToken: String,handler: revokeTokenHandler?){
+    internal func revokeAccessToken(_ authDomain: String, accessToken: String,handler: revokeTokenHandler?) {
         
         //TODO: Check
         let url = Foundation.URL(string: Constants.OAuth.getRevokeTokenUrl(liveMode, authDomain: authDomain))
@@ -294,7 +294,7 @@ open class FullAuthOAuthService {
     
     
     //MARK: UTILS
-    open func makeRequest(_ urlRequest : URLRequestConvertible, handler : ApiResponseHandler?){
+    open func makeRequest(_ urlRequest : URLRequestConvertible, handler : ApiResponseHandler?) {
         
         //TODO: Check
         let request = Alamofire.request(urlRequest)
@@ -316,9 +316,9 @@ open class FullAuthOAuthService {
         }
     }
     
-    open func handleTokenResponse(_ success : Bool, respJson :[String : Any?]?,error : NSError?, handler : TokenInfoHandler?){
+    open func handleTokenResponse(_ success : Bool, respJson :[String : Any?]?,error : NSError?, handler : TokenInfoHandler?) {
         
-        if handler != nil{
+        if handler != nil {
             
             guard !success else {
                 handler?(nil,nil, OAuthAccessToken(data: respJson!))
