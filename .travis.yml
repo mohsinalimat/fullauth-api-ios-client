@@ -14,7 +14,11 @@ env:
 
 branches:
   only:
-    - swift4
+    - master
+
+notifications:
+  email:
+    - monica.raja@anywhere.co
 
 script:
 - set -o pipefail && xcodebuild test -workspace Example/FullAuthIOSClient.xcworkspace -scheme FullAuthIOSClient-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
