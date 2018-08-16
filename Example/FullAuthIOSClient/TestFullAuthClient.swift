@@ -52,7 +52,7 @@ class TestFullAuthClient: UIViewController {
             })
             
         } catch let error {
-            print("Error -- \(error)")
+            print("Error -- \(error.localizedDescription)")
         }
     }
     
@@ -78,7 +78,7 @@ class TestFullAuthClient: UIViewController {
             })
           
         } catch let error {        
-            print("Error -- \(error)")
+            print("Error -- \(error.localizedDescription)")
         }
     }
 }
