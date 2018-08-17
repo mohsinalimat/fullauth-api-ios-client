@@ -11,6 +11,11 @@ branches:
   only:
     - master
     - swift4 
+    
+podfile: Example/Podfile
+
+before_install:
+  - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
 
 notifications:
   email:
