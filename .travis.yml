@@ -10,7 +10,7 @@ osx_image: xcode9.4
 branches:
   only:
     - master
-    - swift 
+    - swift4
     
 cache:
   - cocoapods
