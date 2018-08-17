@@ -9,16 +9,14 @@ osx_image: xcode9.4
 branches:
   only:
     - master
-#cache:
- # - cocoapods
+cache:
+  - cocoapods
 
-#podfile: FullAuthIOSClient/Podfile
+podfile: Example/Podfile
 
-#before_install:
- # - rvm use system
-  #- gem install cocoapods -v '1.5.3'
-  #- pod install --project-directory=FullAuthIOSClient-Example
-  #- gem install xcpretty -N
+ before_install:
+   - gem install cocoapods # Since Travis is not always on latest version
+   - pod install --project-directory=Example
 
 #install: ./install-dependencies.sh
 
