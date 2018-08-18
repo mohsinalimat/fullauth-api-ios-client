@@ -1,5 +1,5 @@
 # FullAuthIOSClient
-
+[![Build Status](https://travis-ci.com/FullCreative/fullauth-api-ios-client.svg?branch=master)](https://travis-ci.com/FullCreative/fullauth-api-ios-client)
 [![CI Status](http://img.shields.io/travis/karthik-dev/FullAuthIOSClient.svg?style=flat)](https://travis-ci.org/karthik-dev/FullAuthIOSClient)
 [![Version](https://img.shields.io/cocoapods/v/FullAuthIOSClient.svg?style=flat)](http://cocoapods.org/pods/FullAuthIOSClient)
 [![License](https://img.shields.io/cocoapods/l/FullAuthIOSClient.svg?style=flat)](http://cocoapods.org/pods/FullAuthIOSClient)
