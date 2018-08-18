@@ -10,7 +10,6 @@ osx_image: xcode9.4
 branches:
   only:
     - master
-    - Swift4
     
 podfile: Example/Podfile
 
@@ -23,6 +22,5 @@ notifications:
 
 script:
 
-- set -o pipefail && xcodebuild -destination 'platform=iOS Simulator,name=iPhone 6s' -workspace Example/FullAuthIOSClient.xcworkspace -scheme FullAuthIOSClient-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
 - set -o pipefail && xcodebuild test -destination 'platform=iOS Simulator,name=iPhone 6s' -workspace Example/FullAuthIOSClient.xcworkspace -scheme FullAuthIOSClient-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint --allow-warnings
