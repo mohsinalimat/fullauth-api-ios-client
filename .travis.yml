@@ -17,6 +17,7 @@ podfile: Example/Podfile
 
 before_install:
   - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
+  - pod install --project-directory=Example
 
 notifications:
   email:
