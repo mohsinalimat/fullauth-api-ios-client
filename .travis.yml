@@ -21,6 +21,10 @@ before_install:
 notifications:
   email:
     - monica.raja@anywhere.co
+    - ramesh@anywhere.co
+    - karthik.samy@anywhere.co
+    - sathish.gurunathan@anywhere.co
+    - gupta@anywhere.co
 
 script:
 
