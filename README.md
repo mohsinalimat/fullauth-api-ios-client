@@ -130,8 +130,8 @@ Revoke a valid AccessToken.
  
 ## Author
 
-karthik-dev, karthik.samy@a-cti.com 
-Monica Raja, monica.raja@anywhere.co
+[karthik-dev](https://github.com/karthikAdaptavant)
+[Monica Raja](https://github.com/monicarajendran)
 
 ## License
 
