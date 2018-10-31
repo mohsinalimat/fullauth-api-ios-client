@@ -22,7 +22,7 @@ public struct AuthCodeRequest {
     
     public let liveMode: Bool
     
-    public init(liveMode: Bool = false, authDomain: String, clientId: String, scopes: [String], accessType: OauthAccessType = .offline) {
+    public init(liveMode: Bool = true, authDomain: String, clientId: String, scopes: [String], accessType: OauthAccessType = .offline) {
         
         self.liveMode = liveMode
         self.authDomain = authDomain
