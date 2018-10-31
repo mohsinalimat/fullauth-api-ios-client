@@ -12,17 +12,13 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		63E074799A4FBBD9BD081901 /* Pods_FullAuthIOSClient_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BAC359230FD0A1131123452 /* Pods_FullAuthIOSClient_Example.framework */; };
+		9BF2F3558423C6ADBB43589D /* Pods_FullAuthIOSClient_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7D46CE4112C7C2E63904A55 /* Pods_FullAuthIOSClient_Example.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0BAC359230FD0A1131123452 /* Pods_FullAuthIOSClient_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FullAuthIOSClient_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F7578E300A8F817D5051A2E /* Pods-FullAuthIOSClient_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FullAuthIOSClient_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FullAuthIOSClient_Tests/Pods-FullAuthIOSClient_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		1409E6F0633788C624CB7F68 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		1B0DCA89A3CB856ABC75C55F /* FullAuthIOSClient.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FullAuthIOSClient.podspec; path = ../FullAuthIOSClient.podspec; sourceTree = "<group>"; };
 		2553472A1C2AD0D200E61CD3 /* TestFullAuthClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestFullAuthClient.swift; sourceTree = "<group>"; };
-		5D591A8C0800873CF99632A1 /* Pods-FullAuthIOSClient_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FullAuthIOSClient_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FullAuthIOSClient_Tests/Pods-FullAuthIOSClient_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		5E0819E052B88283169051DB /* Pods_FullAuthIOSClient_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FullAuthIOSClient_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD01AFB9204008FA782 /* FullAuthIOSClient_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FullAuthIOSClient_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,8 +28,9 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		87F6ABCAD1B5CDC7B0CD011D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		BF88602F5595FC2A510E4FDC /* Pods-FullAuthIOSClient_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FullAuthIOSClient_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FullAuthIOSClient_Example/Pods-FullAuthIOSClient_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		CE7E5E5F424D9C5150D64EB3 /* Pods-FullAuthIOSClient_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FullAuthIOSClient_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-FullAuthIOSClient_Example/Pods-FullAuthIOSClient_Example.release.xcconfig"; sourceTree = "<group>"; };
+		8CAF8A844E56DC430F63C4DA /* Pods-FullAuthIOSClient_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FullAuthIOSClient_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FullAuthIOSClient_Example/Pods-FullAuthIOSClient_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		D7D46CE4112C7C2E63904A55 /* Pods_FullAuthIOSClient_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FullAuthIOSClient_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF108953A2B10B17F0E43CA6 /* Pods-FullAuthIOSClient_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FullAuthIOSClient_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-FullAuthIOSClient_Example/Pods-FullAuthIOSClient_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,24 +38,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63E074799A4FBBD9BD081901 /* Pods_FullAuthIOSClient_Example.framework in Frameworks */,
+				9BF2F3558423C6ADBB43589D /* Pods_FullAuthIOSClient_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4D7F1DA63587D08B58DA95DC /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				BF88602F5595FC2A510E4FDC /* Pods-FullAuthIOSClient_Example.debug.xcconfig */,
-				CE7E5E5F424D9C5150D64EB3 /* Pods-FullAuthIOSClient_Example.release.xcconfig */,
-				0F7578E300A8F817D5051A2E /* Pods-FullAuthIOSClient_Tests.debug.xcconfig */,
-				5D591A8C0800873CF99632A1 /* Pods-FullAuthIOSClient_Tests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -66,8 +52,8 @@
 				607FACD21AFB9204008FA782 /* Example for FullAuthIOSClient */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				4D7F1DA63587D08B58DA95DC /* Pods */,
-				D38FD0C09786F5D7FA01074D /* Frameworks */,
+				E6683C8A098C67A588127F20 /* Pods */,
+				D542FB09EB3F55433EB0A781 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,13 +114,21 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		D38FD0C09786F5D7FA01074D /* Frameworks */ = {
+		D542FB09EB3F55433EB0A781 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0BAC359230FD0A1131123452 /* Pods_FullAuthIOSClient_Example.framework */,
-				5E0819E052B88283169051DB /* Pods_FullAuthIOSClient_Tests.framework */,
+				D7D46CE4112C7C2E63904A55 /* Pods_FullAuthIOSClient_Example.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6683C8A098C67A588127F20 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8CAF8A844E56DC430F63C4DA /* Pods-FullAuthIOSClient_Example.debug.xcconfig */,
+				DF108953A2B10B17F0E43CA6 /* Pods-FullAuthIOSClient_Example.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,12 +138,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "FullAuthIOSClient_Example" */;
 			buildPhases = (
-				8699091EA12A2ABC343E30A4 /* [CP] Check Pods Manifest.lock */,
+				81AAF313A8175AF5B7171065 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				D7D707B592DF1ACB3A4CD134 /* [CP] Embed Pods Frameworks */,
-				7E79AF93E41C1FB3DE89C0A3 /* [CP] Copy Pods Resources */,
+				7560D9711A59D1F9FFC9C77C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -210,43 +203,12 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		7E79AF93E41C1FB3DE89C0A3 /* [CP] Copy Pods Resources */ = {
+		7560D9711A59D1F9FFC9C77C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FullAuthIOSClient_Example/Pods-FullAuthIOSClient_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8699091EA12A2ABC343E30A4 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FullAuthIOSClient_Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D7D707B592DF1ACB3A4CD134 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FullAuthIOSClient_Example/Pods-FullAuthIOSClient_Example-frameworks.sh",
@@ -254,6 +216,8 @@
 				"${BUILT_PRODUCTS_DIR}/FullAuthIOSClient/FullAuthIOSClient.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FullAuthIOSClient.framework",
@@ -261,6 +225,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FullAuthIOSClient_Example/Pods-FullAuthIOSClient_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81AAF313A8175AF5B7171065 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FullAuthIOSClient_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -388,7 +374,7 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BF88602F5595FC2A510E4FDC /* Pods-FullAuthIOSClient_Example.debug.xcconfig */;
+			baseConfigurationReference = 8CAF8A844E56DC430F63C4DA /* Pods-FullAuthIOSClient_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -410,7 +396,7 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE7E5E5F424D9C5150D64EB3 /* Pods-FullAuthIOSClient_Example.release.xcconfig */;
+			baseConfigurationReference = DF108953A2B10B17F0E43CA6 /* Pods-FullAuthIOSClient_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

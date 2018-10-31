@@ -24,7 +24,7 @@ extension FullAuthOAuthService {
     
     internal func revokeToken(_ authDomain: String, accessToken: String,handler: revokeTokenHandler?){
         
-        let url = Foundation.URL(string: Constants.OAuth.getRevokeTokenUrl(authDomain: authDomain))
+        let url = Foundation.URL(string: Constants.OAuth.getRevokeTokenUrl(self.liveMode, authDomain: authDomain))
         
         var request = URLRequest(url: url!)
         request.httpMethod = HTTPMethod.get.rawValue

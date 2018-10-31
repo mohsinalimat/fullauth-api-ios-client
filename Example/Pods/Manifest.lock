@@ -6,14 +6,18 @@ PODS:
 DEPENDENCIES:
   - FullAuthIOSClient (from `../`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+
 EXTERNAL SOURCES:
   FullAuthIOSClient:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  FullAuthIOSClient: 5e564674c875ce7fe610691771b72ded31ae6830
+  FullAuthIOSClient: efe57091203783adf4075704647dc8f3fc084e3e
 
 PODFILE CHECKSUM: ca6ff2ddc1be4256a6f90d3f4a7397a19bacfa1c
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

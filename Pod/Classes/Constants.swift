@@ -14,6 +14,8 @@ open class Constants {
     open class OAuth {
         
         open static let FULLAUTH_BASE_URL = "https://%@.fullauth.com"
+        
+        open static let STAGING_FULLAUTH_BASE_URL = "https://%@.staging.anywhereauth.com"
 
         open static let FULLAUTH_OAUTH2_AUTH = "/o/oauth2/auth"
         
@@ -21,19 +23,20 @@ open class Constants {
         
         open static let FULLAUTH_REVOKE_TOKEN = "/o/oauth2/revoke"
         
-        open static func getAuthUrl(_ authDomain : String) -> String{
+        open static func getAuthUrl(_ liveMode: Bool, _ authDomain : String) -> String{
             
+            let BASE_URL = liveMode ? FULLAUTH_BASE_URL : STAGING_FULLAUTH_BASE_URL
             return String(format: FULLAUTH_BASE_URL,authDomain)
         }
         
-        open static func getTokenUrl(_ authDomain : String) -> String{
+        open static func getTokenUrl(_ liveMode: Bool,  _ authDomain : String) -> String{
 
-            return getAuthUrl(authDomain) + FULLAUTH_OAUTH2_TOKEN
+            return getAuthUrl(liveMode, authDomain) + FULLAUTH_OAUTH2_TOKEN
         }
 
-        open static func getRevokeTokenUrl(authDomain: String) -> String{
+        open static func getRevokeTokenUrl(_ liveMode: Bool, authDomain: String) -> String{
             
-            return getAuthUrl(authDomain) + FULLAUTH_REVOKE_TOKEN
+            return getAuthUrl(liveMode, authDomain) + FULLAUTH_REVOKE_TOKEN
         }
     }
 }

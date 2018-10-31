@@ -22,7 +22,7 @@ extension FullAuthOAuthService {
     
     internal func fetchAccessTokenInfo(_ authDomain : String, accessToken: String, handler : TokenInfoHandler?) throws{
         
-        guard let url = URL(string: Constants.OAuth.getTokenUrl(authDomain)) else {
+        guard let url = URL(string: Constants.OAuth.getTokenUrl(self.liveMode, authDomain)) else {
             throw OAuthError.illegalParameter("Invalid url")
         }
         

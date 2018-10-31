@@ -13,7 +13,7 @@ extension FullAuthOAuthService {
     
     open func makeTokenRequest(_ tokenRequest: OAuthTokenRequest, handler: TokenInfoHandler?) throws{
         
-        guard let url = URL(string: Constants.OAuth.getTokenUrl(tokenRequest.authDomain)) else {
+        guard let url = URL(string: Constants.OAuth.getTokenUrl(self.liveMode, tokenRequest.authDomain)) else {
             throw OAuthError.illegalParameter("invalid url to make request")
         }
         

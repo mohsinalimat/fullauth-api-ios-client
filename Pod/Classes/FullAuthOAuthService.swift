@@ -11,6 +11,7 @@ open class FullAuthOAuthService {
     
     var clientSecret : String?
     
+    var liveMode: Bool
 
     //For AuthCode
     var queryString: String?
@@ -24,9 +25,10 @@ open class FullAuthOAuthService {
     public typealias revokeTokenHandler = (_ success: Bool,_ error : Error?,_ errorResponse : OAuthTokenErrorResponse?) -> Void
     
     
-    public init(authDomain: String, clientId :String? = nil, clientSecret : String? = nil){
+    public init(liveMode: Bool = true, authDomain: String, clientId :String? = nil, clientSecret : String? = nil){
         
         self.authDomain = authDomain
+        self.liveMode = liveMode
         
         if let clientId = clientId {
             self.clientId = clientId
@@ -51,7 +53,7 @@ open class FullAuthOAuthService {
     
     private func generateAuthCodeUrl(scopes: [String], access_type: OauthAccessType?, approval_prompt: String?, redirectUrl: String) -> String {
         
-        var baseUrl: String = Constants.OAuth.getAuthUrl(self.authDomain)
+        var baseUrl: String = Constants.OAuth.getAuthUrl(liveMode, self.authDomain)
         
         let clientId = self.clientId ?? ""
         
