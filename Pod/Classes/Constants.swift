@@ -26,7 +26,7 @@ open class Constants {
         open static func getAuthUrl(_ liveMode: Bool, _ authDomain : String) -> String{
             
             let BASE_URL = liveMode ? FULLAUTH_BASE_URL : STAGING_FULLAUTH_BASE_URL
-            return String(format: FULLAUTH_BASE_URL,authDomain)
+            return String(format: BASE_URL, authDomain)
         }
         
         open static func getTokenUrl(_ liveMode: Bool,  _ authDomain : String) -> String{
