@@ -1,6 +1,7 @@
 {
   "name": "FullAuthIOSClient",
-  "version": "0.7.0",
+  "version": "0.8.0",
+  "swift_version": "4.0",
   "summary": "A IOS client library to communicate with the FullAuth Apis for authentication, token exchange, retrieve access token, etc",
   "homepage": "https://github.com/FullCreative/fullauth-api-ios-client.git",
   "license": "MIT",
@@ -9,7 +10,7 @@
   },
   "source": {
     "git": "https://github.com/FullCreative/fullauth-api-ios-client.git",
-    "tag": "0.7.0"
+    "tag": "0.8.0"
   },
   "platforms": {
     "ios": "9.0"
