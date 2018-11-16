@@ -28,6 +28,5 @@ notifications:
 
 script:
 
-#- set -o pipefail && xcodebuild test -destination 'platform=iOS Simulator,name=iPhone 6s' -workspace Example/FullAuthIOSClient.xcworkspace -scheme FullAuthIOSClient-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
-- set -o pipefail && xcodebuild test -workspace Example/FullAuthIOSClient.xcworkspace -scheme FullAuthIOSClient-Example -sdk -destination 'platform=iOS Simulator,name=iPhone 6s' CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -destination 'platform=iOS Simulator,name=iPhone 6s' -workspace Example/FullAuthIOSClient.xcworkspace -scheme FullAuthIOSClient-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint --allow-warnings

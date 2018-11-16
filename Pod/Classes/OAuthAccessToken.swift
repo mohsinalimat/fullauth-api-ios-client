@@ -26,7 +26,7 @@ public struct OAuthAccessToken {
     
     public var accessType :OauthAccessType?
     
-    public var expires: Int64?
+    public var expires: NSNumber?
     
     public init(data : [String : Any?]) {
         
@@ -57,7 +57,7 @@ public struct OAuthAccessToken {
         }
         
         if let expiryInNumberFormat = data["expires"] as? NSNumber {
-            self.expires = expiryInNumberFormat.int64Value
+            self.expires = expiryInNumberFormat
         }
     }
 }
