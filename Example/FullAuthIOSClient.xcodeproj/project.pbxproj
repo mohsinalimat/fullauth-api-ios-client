@@ -14,6 +14,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		864BB8BEC9D8BF159B98FD0C /* Pods_FullAuthIOSClient_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BD3BB4C4D273EDC292E0890 /* Pods_FullAuthIOSClient_Tests.framework */; };
+		B819B0E5219E7283006FDE92 /* OAuthAccessTokenTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B819B0E4219E7283006FDE92 /* OAuthAccessTokenTest.swift */; };
 		DDF0E5FE212193D900659A61 /* ConstantsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF0E5FD212193D900659A61 /* ConstantsTest.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69E2DBCF19E0A1344ACD9C5D /* Pods-FullAuthIOSClient_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FullAuthIOSClient_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FullAuthIOSClient_Tests/Pods-FullAuthIOSClient_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		87F6ABCAD1B5CDC7B0CD011D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B819B0E4219E7283006FDE92 /* OAuthAccessTokenTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthAccessTokenTest.swift; sourceTree = "<group>"; };
 		CF729355F85933E433D43D2B /* Pods_FullAuthIOSClient_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FullAuthIOSClient_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BF4E8ECB8122BFC8554030 /* Pods-FullAuthIOSClient_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FullAuthIOSClient_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-FullAuthIOSClient_Example/Pods-FullAuthIOSClient_Example.release.xcconfig"; sourceTree = "<group>"; };
 		DDF0E5FC212193D900659A61 /* FullAuthIOSClient_Tests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FullAuthIOSClient_Tests-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				DDF0E5FD212193D900659A61 /* ConstantsTest.swift */,
+				B819B0E4219E7283006FDE92 /* OAuthAccessTokenTest.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 				DDF0E5FC212193D900659A61 /* FullAuthIOSClient_Tests-Bridging-Header.h */,
 			);
@@ -358,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDF0E5FE212193D900659A61 /* ConstantsTest.swift in Sources */,
+				B819B0E5219E7283006FDE92 /* OAuthAccessTokenTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
