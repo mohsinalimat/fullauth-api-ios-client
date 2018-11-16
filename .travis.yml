@@ -1,10 +1,13 @@
 # references:
 # * http://www.objc.io/issue-6/travis-ci.html
 # * https://github.com/supermarin/xcpretty#usage
-
+  
 language: objective-c
 
 osx_image: xcode9.4
+
+cache:
+  - cocoapods
 
 branches:
   only:
@@ -18,8 +21,12 @@ before_install:
 notifications:
   email:
     - monica.raja@anywhere.co
+    - ramesh@anywhere.co
+    - karthik.samy@anywhere.co
+    - sathish.gurunathan@anywhere.co
+    - gupta@anywhere.co
 
 script:
 
-- set -o pipefail && xcodebuild test -destination 'platform=iOS Simulator,name=iPhone 6s' -workspace Example/FullAuthIOSClient.xcworkspace -scheme FullAuthIOSClient-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild test -destination 'platform=iOS Simulator,name=iPhone 6s' -workspace Example/FullAuthIOSClient.xcworkspace -scheme FullAuthIOSClient-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=YES | xcpretty
 - pod lib lint --allow-warnings
