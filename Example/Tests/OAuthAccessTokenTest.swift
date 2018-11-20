@@ -14,7 +14,7 @@ class OAuthAccessTokenTest: XCTestCase {
     
     
     func test1ValidateOAuthAccessToken() {
-        let sampleData: [String: Any?] = ["expires":  NSNumber(value: 1542634836220),
+        let sampleData: [String: Any?] = ["expires": 1542634836220,
                                           "user_id":  "03e30e43-1762-4e71-a273-68f6484b8955",
                                           "access_token": "dummyAccessToken",
                                           "refresh_token": "dummyRefreshToken",
@@ -30,7 +30,6 @@ class OAuthAccessTokenTest: XCTestCase {
         XCTAssertEqual(oauthAccessToken.expiresIn, 348517)
         XCTAssertEqual(oauthAccessToken.tokenType, "BEARER")
         
-        XCTAssertNotNil(oauthAccessToken.expires)
         XCTAssertNotNil(oauthAccessToken.userId)
         XCTAssertNotNil(oauthAccessToken.refreshToken)
         XCTAssertNotNil(oauthAccessToken.accessType)
