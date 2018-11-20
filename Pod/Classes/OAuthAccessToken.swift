@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct OAuthAccessToken {
+public struct OAuthAccessToken: Codable {
     
     public var accessToken : String
     
