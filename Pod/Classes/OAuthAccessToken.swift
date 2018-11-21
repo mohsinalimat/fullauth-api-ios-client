@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct OAuthAccessToken {
+public struct OAuthAccessToken: Codable {
     
     public var accessToken : String
     
@@ -26,7 +26,7 @@ public struct OAuthAccessToken {
     
     public var accessType :OauthAccessType?
     
-    public var expires: NSNumber?
+    public var expires: Int64?
     
     public init(data : [String : Any?]) {
         
@@ -56,7 +56,7 @@ public struct OAuthAccessToken {
             self.accessType = OauthAccessType.getType(accessType: accessTypeString)
         }
         
-        if let expiryInNumberFormat = data["expires"] as? NSNumber {
+        if let expiryInNumberFormat = data["expires"] as? Int64 {
             self.expires = expiryInNumberFormat
         }
     }

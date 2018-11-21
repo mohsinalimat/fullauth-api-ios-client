@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum OauthAccessType : String {
+public enum OauthAccessType : String, Codable {
     
     case ONLINE = "online"
     
