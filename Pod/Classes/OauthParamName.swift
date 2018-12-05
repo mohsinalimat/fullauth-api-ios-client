@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-struct OauthParamName {
+struct OauthParamName: Codable {
     
      static let clientId = "client_id"
     
