@@ -148,14 +148,16 @@ open class FullAuthOAuthService {
     }
     
     
-    //MARK:REVOKE ACCESS TOKEN
-    open func revokeAccessToken(accessToken: String, handler: revokeTokenHandler?) throws{
+    //MARK:REVOKE TOKEN
+    open func revokeToken(token: String, revokeTokenType: RevokeTokenHintType, handler: revokeTokenHandler?) throws{
         
         try validateOauthDomain()
         
-        try validateAccessToken(accesstoken: accessToken, tokenType: .DEFAULT)
-        
-        revokeAccessToken(authDomain, accessToken: accessToken, handler: handler)
+        guard !token.isEmpty else {
+            throw OAuthError.illegalParameter("invalid \(revokeTokenType.rawValue)")
+        }
+
+        revokeToken(authDomain, token: token, tokenType: revokeTokenType, handler: handler)
     }
     
     
@@ -234,19 +236,20 @@ open class FullAuthOAuthService {
     internal func fetchAccessTokenInfo(_ authDomain : String,accessToken:String,handler : TokenInfoHandler?) {
         
         //TODO: Check
-        let url = Foundation.URL(string: Constants.OAuth.getTokenUrl(liveMode, authDomain))
+        let url = Foundation.URL(string: Constants.OAuth.getAccessTokenInfoUrl(liveMode, authDomain: authDomain))
         var request = URLRequest(url:url!)
         request.httpMethod = HTTPMethod.get.rawValue
         request.timeoutInterval = timeOutInterval
         
-        let parameter = [OauthParamName.ACCESS_TOKEN:accessToken]
+        request.setValue("access_token \(accessToken)", forHTTPHeaderField: "Authorization")
         
         do{
-            let urlRequest = try URLEncoding.queryString.encode(request, with: parameter)
-            
-            makeRequest(urlRequest) { (success, httpRequest, httpResponse, responseJson, error) -> Void in
+            makeRequest(request) { (success, httpRequest, httpResponse, responseJson, error) -> Void in
                 
-                self.handleTokenResponse(success, respJson: responseJson, error: error, handler: handler)
+                var responseJSON = responseJson
+                
+                responseJSON?.updateValue(accessToken, forKey: "access_token")
+                self.handleTokenResponse(success, respJson: responseJSON, error: error, handler: handler)
             }
             
         }catch let error as NSError{
@@ -255,20 +258,21 @@ open class FullAuthOAuthService {
     }
     
     
-    internal func revokeAccessToken(_ authDomain: String, accessToken: String,handler: revokeTokenHandler?) {
+    // MARK: Revoke Token
+    internal func revokeToken(_ authDomain: String, token: String, tokenType: RevokeTokenHintType, handler: revokeTokenHandler?) {
         
-        //TODO: Check
+        // TODO: Check
         let url = Foundation.URL(string: Constants.OAuth.getRevokeTokenUrl(liveMode, authDomain: authDomain))
         
         var request = URLRequest(url: url!)
-        request.httpMethod = HTTPMethod.get.rawValue
+        request.httpMethod = HTTPMethod.post.rawValue
         request.timeoutInterval = timeOutInterval
         
-        let parameter = ["token": accessToken]
+        let parameter = ["token": token, "token_type_hint": tokenType.rawValue]
         
-        do{
+        do {
             
-            let urlRequest = try URLEncoding.queryString.encode(request, with: parameter)
+            let urlRequest = try URLEncoding.default.encode(request, with: parameter)
             
             makeRequest(urlRequest) { (success, httpRequest, httpResponse, responseJson, error) in
                 
@@ -276,7 +280,7 @@ open class FullAuthOAuthService {
                     handler?(true, nil, nil)
                     return
                 }
-        
+                
                 var errorResp : OAuthTokenErrorResponse?
                 
                 if responseJson != nil {
@@ -287,11 +291,10 @@ open class FullAuthOAuthService {
                 handler?(false, error, errorResp)
             }
 
-        }catch let error as NSError{
+        } catch let error as NSError {
             handler?(false, error, nil)
         }
     }
-    
     
     //MARK: UTILS
     open func makeRequest(_ urlRequest : URLRequestConvertible, handler : ApiResponseHandler?) {
