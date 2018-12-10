@@ -120,7 +120,7 @@ Revoke a valid AccessToken.
 
 ```swift 
  do {
-     try authService.revokeAccessToken(accessToken: "your access token") { (success, err, errResp) in
+     try authService.revokeToken(token: "your token", tokenType: "tokenHintType") { (success, err, errResp) in
                // success for revoking the access token
      } catch {
           // print error
