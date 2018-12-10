@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "FullAuthIOSClient"
-  s.version          = "0.9.2"
+  s.version          = "0.9.3"
   s.swift_version    = '4.0'
   s.summary          = "A IOS client library to communicate with the FullAuth Apis for authentication, token exchange, retrieve access token, etc"
 
