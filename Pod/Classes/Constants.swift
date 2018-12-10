@@ -20,7 +20,9 @@ open class Constants {
         
         open static let FULLAUTH_OAUTH2_TOKEN = "/o/oauth2/v1/token"
         
-        open static let FULLAUTH_REVOKE_TOKEN = "/o/oauth2/revoke"  
+        open static let FULLAUTH_REVOKE_TOKEN = "/o/oauth2/v1/token/revoke"
+        
+        open static let FULLAUTH_OAUTH_TOKEN_INFO = "/o/oauth2/v1/tokeninfo"
         
         open static func getAuthUrl(_ liveMode: Bool, _ authDomain : String) -> String{
             
@@ -37,6 +39,11 @@ open class Constants {
         open static func getRevokeTokenUrl(_ liveMode: Bool, authDomain : String) -> String{
             
             return getAuthUrl(liveMode, authDomain) + FULLAUTH_REVOKE_TOKEN
+        }
+        
+        open static func getAccessTokenInfoUrl(_ liveMode: Bool, authDomain: String) -> String{
+            
+            return getAuthUrl(liveMode, authDomain) + FULLAUTH_OAUTH_TOKEN_INFO
         }
     }
 }

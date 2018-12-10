@@ -50,12 +50,12 @@ class ConstantsTest: XCTestCase {
     func test_getRevokeTokenUrl_liveMode() {
         
         let liveRevokeTokenUrl = Constants.OAuth.getRevokeTokenUrl(true, authDomain: "fullCreative")
-        XCTAssertEqual(liveRevokeTokenUrl, "https://fullCreative.fullauth.com/o/oauth2/revoke")
+        XCTAssertEqual(liveRevokeTokenUrl, "https://fullCreative.fullauth.com/o/oauth2/v1/token/revoke")
     }
     
     func test_getRevokeTokenUrl_stagingMode() {
         
         let liveRevokeTokenUrl = Constants.OAuth.getRevokeTokenUrl(false, authDomain: "fullCreative")
-        XCTAssertEqual(liveRevokeTokenUrl, "https://fullCreative.staging.anywhereauth.com/o/oauth2/revoke")
+        XCTAssertEqual(liveRevokeTokenUrl, "https://fullCreative.staging.anywhereauth.com/o/oauth2/v1/token/revoke")
     }
 }

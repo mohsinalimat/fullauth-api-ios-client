@@ -82,3 +82,10 @@ public enum AccessTokenType: String {
         return tokenStr
     }
 }
+
+public enum RevokeTokenHintType: String {
+    
+    case ACCESS_TOKEN = "ACCESS_TOKEN"
+    
+    case REFRESH_TOKEN = "REFRESH_TOKEN"
+}
