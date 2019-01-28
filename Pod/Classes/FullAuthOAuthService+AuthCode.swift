@@ -22,6 +22,8 @@ public struct AuthCodeRequest {
     
     public let liveMode: Bool
     
+    public var isCustomURL: Bool = false
+    
     public init(liveMode: Bool = true, authDomain: String, clientId: String, scopes: [String], accessType: OauthAccessType = .offline) {
         
         self.liveMode = liveMode
@@ -31,9 +33,17 @@ public struct AuthCodeRequest {
         self.accessType = accessType
     }
     
+    public init(liveMode: Bool = true, authDomain: String, clientId: String, scopes: [String], accessType: OauthAccessType = .offline, isCustomURL: Bool) {
+        
+        self.init(liveMode: liveMode, authDomain: authDomain, clientId: clientId, scopes: scopes, accessType: accessType)
+        self.isCustomURL = isCustomURL
+    }
+    
+    
     public func getAuthCodeUrl(withRedirectUrl redirectUrl: String) throws -> URL {
         
-        let oauthObj = FullAuthOAuthService(liveMode: self.liveMode, authDomain: self.authDomain)
+        let oauthObj = FullAuthOAuthService(liveMode: liveMode, isCustomURL: isCustomURL, authDomain: authDomain)
+        
         oauthObj.clientId = self.clientId
         
         do {

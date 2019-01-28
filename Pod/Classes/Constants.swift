@@ -23,13 +23,21 @@ open class Constants {
         
         open static let FULLAUTH_REVOKE_TOKEN = "/o/oauth2/revoke"
         
-        open static func getAuthUrl(_ liveMode: Bool, _ authDomain : String) -> String{
+        // Custom URL
+        open static let FULLAUTH_CUSTOM_BASE_URL = "https://%@"
+        
+        open static func getAuthUrl(_ liveMode: Bool, _ authDomain : String,  _ isCustomURL: Bool = false) -> String{
             
-            let BASE_URL = liveMode ? FULLAUTH_BASE_URL : STAGING_FULLAUTH_BASE_URL
+            guard isCustomURL else {
+                let BASE_URL = liveMode ? FULLAUTH_BASE_URL : STAGING_FULLAUTH_BASE_URL
+                return String(format: BASE_URL, authDomain)
+            }
+            
+            let BASE_URL = FULLAUTH_CUSTOM_BASE_URL
             return String(format: BASE_URL, authDomain)
         }
         
-        open static func getTokenUrl(_ liveMode: Bool,  _ authDomain : String) -> String{
+        open static func getTokenUrl(_ liveMode: Bool, _ authDomain : String) -> String{
 
             return getAuthUrl(liveMode, authDomain) + FULLAUTH_OAUTH2_TOKEN
         }

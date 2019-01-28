@@ -12,6 +12,8 @@ open class FullAuthOAuthService {
     var clientSecret : String?
     
     var liveMode: Bool
+    
+    var isCustomURL: Bool = false
 
     //For AuthCode
     var queryString: String?
@@ -39,6 +41,13 @@ open class FullAuthOAuthService {
         }
     }
     
+    public convenience init(liveMode: Bool = true, isCustomURL: Bool, authDomain: String, clientId :String? = nil, clientSecret : String? = nil) {
+
+        self.init(liveMode: liveMode, authDomain: authDomain, clientId: clientId, clientSecret: clientSecret)
+        self.isCustomURL = isCustomURL
+    }
+    
+    
     //MARK:FetchAuthUrl
     open func getAuthCodeUrl(scopes: [String], accessType : OauthAccessType? = .offline, approval_prompt: String? = "force", redirectUrl: String) throws -> String {
         
@@ -53,7 +62,7 @@ open class FullAuthOAuthService {
     
     private func generateAuthCodeUrl(scopes: [String], access_type: OauthAccessType?, approval_prompt: String?, redirectUrl: String) -> String {
         
-        var baseUrl: String = Constants.OAuth.getAuthUrl(liveMode, self.authDomain)
+        var baseUrl: String = Constants.OAuth.getAuthUrl(liveMode, self.authDomain, self.isCustomURL)
         
         let clientId = self.clientId ?? ""
         
